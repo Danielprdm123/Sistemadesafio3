@@ -5,6 +5,7 @@ public class Enfermidade {
 	private String nome;
 	private String tipo;
 	private String descricao;
+	
 	public void setIdEnfermidade(int idEnfermidade) {
 		this.idEnfermidade = idEnfermidade;
 	}
