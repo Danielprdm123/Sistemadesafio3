@@ -1,6 +1,6 @@
 package br.com.hospitalif.model;
 
-public class Gerente {
+public class Gerente extends Funcionario {
 	private String cargo;
 
 	public void setCargo(String cargo) {
