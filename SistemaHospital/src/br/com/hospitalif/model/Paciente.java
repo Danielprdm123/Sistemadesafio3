@@ -11,21 +11,21 @@ public class Paciente {
 		this.idPaciente = idPaciente;
 	}
 	public int getIdPaciente() {
-		return idPaciente;
+		return this. idPaciente;
 	}
 	
 	public void setDoenca(List doenca) {
 		this.doenca = doenca;
 	}
 	public List getDoenca() {
-		return doenca;
+		return this.doenca;
 	}
 	
 	public void setHistorico(List historico) {
 		this.historico = historico;
 	}
 	public List getHistorico() {
-		return historico;
+		return this. historico;
 	}
 	
 }

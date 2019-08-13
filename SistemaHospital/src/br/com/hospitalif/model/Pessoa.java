@@ -13,49 +13,49 @@ public class Pessoa {
 		this.idPessoa = idPessoa;
 	}
 	public int getIdPessoa() {
-		return idPessoa;
+		return this.idPessoa;
 	}
 	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 	
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 	public String getCpf() {
-		return cpf;
+		return this.cpf;
 	}
 	
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
 	public int getIdade() {
-		return idade;
+		return this.idade;
 	}
 	
 	public void setTipoSanguineo(String tipoSanguineo) {
 		this.tipoSanguineo = tipoSanguineo;
 	}
 	public String getTipoSanguineo() {
-		return tipoSanguineo;
+		return this.tipoSanguineo;
 	}
 	
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
 	public char getSexo() {
-		return sexo;
+		return this.sexo;
 	}
 	
 	public void setStatusPessoa(String statusPessoa) {
 		this.statusPessoa = statusPessoa;
 	}
 	public String getStatusPessoa() {
-		return statusPessoa;
+		return this.statusPessoa;
 	}
 	
 	

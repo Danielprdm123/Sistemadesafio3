@@ -7,6 +7,6 @@ public class Gerente extends Funcionario {
 		this.cargo = cargo;
 	}
 	public String getCargo() {
-		return cargo;
+		return this.cargo;
 	}
 }

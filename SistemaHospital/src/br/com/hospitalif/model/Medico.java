@@ -9,14 +9,14 @@ public class Medico extends Funcionario {
 		this.numeroderegistro = numeroderegistro;
 	}
 	public int getNumeroderegistro() {
-		return numeroderegistro;
+		return this.numeroderegistro;
 	}
 	
 	public void setEspecialidade(String especialidade) {
 		this.especialidade = especialidade;
 	}
 	public String getEspecialidade() {
-		return especialidade;
+		return this.especialidade;
 	}
 	
 	

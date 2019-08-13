@@ -7,6 +7,6 @@ public class Enfermeiro extends Funcionario {
 		this.numeroderegistro = numeroderegistro;
 	}
 	public int getNumeroderegistro() {
-		return numeroderegistro;
+		return this. numeroderegistro;
 	}
 }

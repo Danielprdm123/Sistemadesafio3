@@ -9,21 +9,21 @@ public class EnfermidadePessoal {
 		this.idEnfermidadePessoal = idEnfermidadePessoal;
 	}
 	public int getIdEnfermidadePessoal() {
-		return idEnfermidadePessoal;
+		return this. idEnfermidadePessoal;
 	}
 	
 	public void setComentario(String comentario) {
 		this.comentario = comentario;
 	}
 	public String getComentario() {
-		return comentario;
+		return this.comentario;
 	}
 	
 	public void setStatusDeEnfermidade(String statusDeEnfermidade) {
 		this.statusDeEnfermidade = statusDeEnfermidade;
 	}
 	public String getStatusDeEnfermidade() {
-		return statusDeEnfermidade;
+		return this.statusDeEnfermidade;
 	}
 	
 	

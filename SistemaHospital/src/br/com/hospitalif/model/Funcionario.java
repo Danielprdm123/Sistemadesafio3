@@ -10,28 +10,28 @@ public class Funcionario {
 		this.idFuncionario = idFuncionario;
 	}
 	public int getIdFuncionario() {
-		return idFuncionario;
+		return this. idFuncionario;
 	}
 	
 	public void setLogin(String login) {
 		this.login = login;
 	}
 	public String getLogin() {
-		return login;
+		return this.login;
 	}
 	
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 	public String getSenha() {
-		return senha;
+		return this.senha;
 	}
 	
 	public void setStatusDeUsuario(String statusDeUsuario) {
 		this.statusDeUsuario = statusDeUsuario;
 	}
 	public String getStatusDeUsuario() {
-		return statusDeUsuario;
+		return this.statusDeUsuario;
 	}
 	
 

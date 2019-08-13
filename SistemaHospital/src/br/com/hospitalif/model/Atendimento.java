@@ -1,7 +1,8 @@
 package br.com.hospitalif.model;
 
-import java.awt.List;
+
 import java.sql.Date;
+import java.util.List;
 
 public class Atendimento {
 	private int idAtendimento;
@@ -10,55 +11,55 @@ public class Atendimento {
 	private float peso;
 	private float altura;
 	private Date data;
-	private List doenca;
+	private List<EnfermidadePessoal> doenca;
 	
 	public void setIdAtendimento(int idAtendimento) {
 		this.idAtendimento = idAtendimento;
 	}
 	public int getIdAtendimento() {
-		return idAtendimento;
+		return this.idAtendimento;
 	}
 	
 	public void setComentarioEnfermeiro(String comentarioEnfermeiro) {
 		this.comentarioEnfermeiro = comentarioEnfermeiro;
 	}
 	public String getComentarioEnfermeiro() {
-		return comentarioEnfermeiro;
+		return this.comentarioEnfermeiro;
 	}
 	
 	public void setComentarioMedico(String comentarioMedico) {
 		this.comentarioMedico = comentarioMedico;
 	}
 	public String getComentarioMedico() {
-		return comentarioMedico;
+		return this.comentarioMedico;
 	}
 	
 	public void setPeso(float peso) {
 		this.peso = peso;
 	}
 	public float getPeso() {
-		return peso;
+		return this.peso;
 	}
 	
 	public void setAltura(float altura) {
 		this.altura = altura;
 	}
 	public float getAltura() {
-		return altura;
+		return this.altura;
 	}
 	
 	public void setData(Date data) {
 		this.data = data;
 	}
 	public Date getData() {
-		return data;
+		return this.data;
 	}
 	
 	public void setDoenca(List doenca) {
 		this.doenca = doenca;
 	}
 	public List getDoenca() {
-		return doenca;
+		return this.doenca;
 	}
 	
 
