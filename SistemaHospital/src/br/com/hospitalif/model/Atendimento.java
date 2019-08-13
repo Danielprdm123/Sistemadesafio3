@@ -55,10 +55,10 @@ public class Atendimento {
 		return this.data;
 	}
 	
-	public void setDoenca(List doenca) {
+	public void setDoenca(List<EnfermidadePessoal>  doenca) {
 		this.doenca = doenca;
 	}
-	public List getDoenca() {
+	public List<EnfermidadePessoal>  getDoenca() {
 		return this.doenca;
 	}
 	
