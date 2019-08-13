@@ -1,14 +1,15 @@
 package br.com.hospitalif.model;
 
-import java.awt.List;
+
 import java.sql.Date;
+import java.util.List;
 
 public class Entrada {
 	private int idEntrada;
 	private Date dataEntrada;
 	private Date dataDeSaida;
 	private String statusDeEntrada;
-	private List situacaoDePaciente;
+	private List <Atendimento>situacaoDePaciente;
 	
 	public void setIdEntrada(int idEntrada) {
 		this.idEntrada = idEntrada;
