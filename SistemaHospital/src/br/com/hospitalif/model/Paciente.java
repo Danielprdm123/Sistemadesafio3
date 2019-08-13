@@ -1,11 +1,11 @@
 package br.com.hospitalif.model;
 
-import java.awt.List;
+import java.util.List;
 
 public class Paciente {
 	private int idPaciente;
-	private List  doenca;
-	private List historico;
+	private List <EnfermidadePessoal> doenca;
+	private List <Entrada>historico;
 	
 	public void setIdPaciente(int idPaciente) {
 		this.idPaciente = idPaciente;
