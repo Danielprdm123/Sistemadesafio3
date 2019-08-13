@@ -21,10 +21,10 @@ public class Paciente {
 		return this.doenca;
 	}
 	
-	public void setHistorico(List <Entrada> historico) {
+	public void setHistorico(List<Entrada> historico) {
 		this.historico = historico;
 	}
-	public List <Entrada> getHistorico() {
+	public List<Entrada> getHistorico() {
 		return this. historico;
 	}
 	
