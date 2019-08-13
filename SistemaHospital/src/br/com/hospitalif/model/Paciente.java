@@ -14,17 +14,17 @@ public class Paciente {
 		return this. idPaciente;
 	}
 	
-	public void setDoenca(List doenca) {
+	public void setDoenca(List<EnfermidadePessoal>  doenca) {
 		this.doenca = doenca;
 	}
-	public List getDoenca() {
+	public List<EnfermidadePessoal>  getDoenca() {
 		return this.doenca;
 	}
 	
-	public void setHistorico(List historico) {
+	public void setHistorico(List <Entrada> historico) {
 		this.historico = historico;
 	}
-	public List getHistorico() {
+	public List <Entrada> getHistorico() {
 		return this. historico;
 	}
 	
