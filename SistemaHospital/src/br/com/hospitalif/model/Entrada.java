@@ -39,10 +39,10 @@ public class Entrada {
 		return this.statusDeEntrada;
 	}
 	
-	public void setSituacaoDePaciente(List situacaoDePaciente) {
+	public void setSituacaoDePaciente(List<Atendimento> situacaoDePaciente) {
 		this.situacaoDePaciente = situacaoDePaciente;
 	}
-	public List getSituacaoDePaciente() {
+	public List<Atendimento> getSituacaoDePaciente() {
 		return this.situacaoDePaciente;
 	}
 	
