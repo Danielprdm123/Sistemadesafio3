@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane layoutX="142.0" layoutY="100.0" prefHeight="158.0" prefWidth="359.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label prefHeight="43.0" prefWidth="129.0" text="Doença:">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField prefHeight="29.0" prefWidth="179.0" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <TextFlow layoutX="124.0" layoutY="29.0" prefHeight="60.0" prefWidth="393.0">
+         <children>
+            <Text fill="#0000007e" strokeType="OUTSIDE" strokeWidth="0.0" text="Paciente">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Text>
+         </children>
+      </TextFlow>
+   </children>
+</Pane>
