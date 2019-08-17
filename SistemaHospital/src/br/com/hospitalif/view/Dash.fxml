@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1E90FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextFlow layoutX="143.0" layoutY="20.0" prefHeight="44.0" prefWidth="298.0" />
+      <AnchorPane layoutX="-8.0" prefHeight="400.0" prefWidth="216.0" style="-fx-background-color: #1C1C1C;">
+         <children>
+            <HBox layoutY="68.0" prefHeight="31.0" prefWidth="224.0" style="-fx-background-color: #104E8B;">
+               <children>
+                  <Hyperlink prefHeight="23.0" prefWidth="64.0" text="Atendente" textFill="GHOSTWHITE" />
+               </children>
+            </HBox>
+            <HBox layoutY="99.0" prefHeight="31.0" prefWidth="224.0" style="-fx-background-color: #1C86EE;">
+               <children>
+                  <Hyperlink text="Atendimento" textFill="GHOSTWHITE" />
+               </children>
+            </HBox>
+            <HBox layoutY="130.0" prefHeight="31.0" prefWidth="224.0" style="-fx-background-color: #104E8B;">
+               <children>
+                  <Hyperlink prefHeight="23.0" prefWidth="87.0" text="Enfermeiro" textFill="GHOSTWHITE" />
+               </children>
+            </HBox>
+            <HBox layoutY="161.0" prefHeight="31.0" prefWidth="224.0" style="-fx-background-color: #1C86EE;">
+               <children>
+                  <Hyperlink prefHeight="23.0" prefWidth="86.0" text="Enfermidade" textFill="GHOSTWHITE" />
+               </children>
+            </HBox>
+            <HBox layoutY="192.0" prefHeight="31.0" prefWidth="224.0" style="-fx-background-color: #104E8B;">
+               <children>
+                  <Hyperlink prefHeight="23.0" prefWidth="127.0" text="Enfermidade Pessoal" textFill="GHOSTWHITE" />
+               </children>
+            </HBox>
+            <HBox layoutY="223.0" prefHeight="31.0" prefWidth="224.0" style="-fx-background-color: #1C86EE;">
+               <children>
+                  <Hyperlink prefHeight="23.0" prefWidth="88.0" text="Entrada" textFill="GHOSTWHITE" />
+               </children>
+            </HBox>
+            <HBox layoutX="-1.0" layoutY="254.0" prefHeight="31.0" prefWidth="224.0" style="-fx-background-color: #104E8B;">
+               <children>
+                  <Hyperlink prefHeight="23.0" prefWidth="91.0" text="Funcionario" textFill="GHOSTWHITE" />
+               </children>
+            </HBox>
+            <HBox layoutY="285.0" prefHeight="31.0" prefWidth="224.0" style="-fx-background-color: #1C86EE;">
+               <children>
+                  <Hyperlink prefHeight="23.0" prefWidth="88.0" text="Gerente" textFill="GHOSTWHITE" />
+               </children>
+            </HBox>
+            <HBox layoutY="37.0" prefHeight="31.0" prefWidth="224.0" style="-fx-background-color: #1C86EE;">
+               <children>
+                  <Hyperlink text="Administrador" textFill="GHOSTWHITE" />
+               </children>
+            </HBox>
+            <HBox layoutY="316.0" prefHeight="31.0" prefWidth="224.0" style="-fx-background-color: #104E8B;">
+               <children>
+                  <Hyperlink prefHeight="23.0" prefWidth="91.0" text="Médico" textFill="GHOSTWHITE" />
+               </children>
+            </HBox>
+            <HBox layoutY="347.0" prefHeight="31.0" prefWidth="224.0" style="-fx-background-color: #1C86EE;">
+               <children>
+                  <Hyperlink prefHeight="23.0" prefWidth="88.0" text="Paciente" textFill="GHOSTWHITE" />
+               </children>
+            </HBox>
+            <HBox layoutY="371.0" prefHeight="31.0" prefWidth="224.0" style="-fx-background-color: #104E8B;">
+               <children>
+                  <Hyperlink prefHeight="23.0" prefWidth="91.0" text="Pessoa" textFill="GHOSTWHITE" />
+               </children>
+            </HBox>
+            <HBox prefHeight="37.0" prefWidth="224.0" style="-fx-background-color: #1E90FF;">
+               <children>
+                  <Text fill="LIME" strokeType="OUTSIDE" strokeWidth="0.0" text="Seja bem Vindo !!" wrappingWidth="83.13671875">
+                     <font>
+                        <Font name="Arial Italic" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="2.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Circle fill="#fff11f" layoutX="535.0" layoutY="269.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+      <Arc fill="#fff11f" layoutX="489.0" layoutY="129.0" length="270.0" radiusX="96.0" radiusY="102.0" rotate="135.0" startAngle="46.6" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+      <Circle fill="#f0ff1f" layoutX="387.0" layoutY="200.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#f0ff1f" layoutX="358.0" layoutY="344.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#000000d6" layoutX="441.0" layoutY="81.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ec1fff" layoutX="292.0" layoutY="98.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ec1fff" layoutX="500.0" layoutY="344.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</Pane>
