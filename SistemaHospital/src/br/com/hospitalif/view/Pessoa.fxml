@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cadastroPessoa">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.cadastroPessoa">
    <children>
       <TextFlow layoutX="143.0" layoutY="20.0" prefHeight="44.0" prefWidth="298.0">
          <children>
@@ -58,7 +58,7 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtStatus" layoutX="307.0" layoutY="277.0" prefHeight="62.0" prefWidth="124.0" />
+      <TextField fx:id="txtStatus" layoutX="307.0" layoutY="277.0" prefHeight="62.0" prefWidth="111.0" />
       <TextField fx:id="textSangue" layoutX="323.0" layoutY="209.0" prefHeight="25.0" prefWidth="126.0" />
       <Label layoutX="228.0" layoutY="168.0" text="Idade:">
          <font>
