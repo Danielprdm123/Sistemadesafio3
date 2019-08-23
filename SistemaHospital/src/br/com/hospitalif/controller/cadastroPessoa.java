@@ -1,6 +1,7 @@
 package br.com.hospitalif.controller;
 
-public class cadastroPessoa {
+
+	import javafx.event.ActionEvent;
 	import javafx.fxml.FXML;
 	import javafx.scene.control.Button;
 	import javafx.scene.control.RadioButton;
@@ -8,50 +9,47 @@ public class cadastroPessoa {
 	import javafx.scene.control.ToggleGroup;
 	import javafx.scene.text.Text;
 
-	public class cadastroPessoa {
 
-	    @FXML
-	    private Text lblPessoa;
+		public class cadastroPessoa {
 
-	    @FXML
-	    private TextField txtStatus;
+		    @FXML
+		    private Text lblPessoa;
 
-	    @FXML
-	    private Button btnCadastrar;
+		    @FXML
+		    private TextField txtStatus;
 
-	    @FXML
-	    private TextField textSangue;
+		    @FXML
+		    private Button btnCadastrar;
 
-	    @FXML
-	    private TextField txtNome;
+		    @FXML
+		    private TextField textSangue;
 
-	    @FXML
-	    private TextField txtCpf;
+		    @FXML
+		    private TextField txtNome;
 
-	    @FXML
-	    private ToggleGroup sexo;
+		    @FXML
+		    private TextField txtCpf;
 
-	    @FXML
-	    private TextField txtIdade;
+		    @FXML
+		    private ToggleGroup sexo;
 
-	    @FXML
-	    private RadioButton cboSexo;
+		    @FXML
+		    private TextField txtIdade;
 
-	    @FXML
-	    void 00000079(ActionEvent event) {
+		    @FXML
+		    private RadioButton cboSexo;
 
-	    }
+		   
+		    @FXML
+		    void salvarPessoa(ActionEvent event) {
 
-	    @FXML
-	    void salvarPessoa(ActionEvent event) {
+		    }
 
-	    }
+		  
 
-	    @FXML
-	    void f8f8ffba(ActionEvent event) {
+		}
 
-	    }
 
-	}
+	
 
-}
+
