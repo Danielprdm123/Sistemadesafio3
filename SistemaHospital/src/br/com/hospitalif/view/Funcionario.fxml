@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -13,7 +18,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cadastarFuncionario">
    <children>
       <GridPane layoutX="176.0" layoutY="91.0" prefHeight="197.0" prefWidth="374.0" style="-fx-border-style: 10;">
          <columnConstraints>
@@ -28,7 +33,6 @@
             <RowConstraints maxHeight="81.33334350585938" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <TextField prefHeight="61.0" prefWidth="208.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <Label text="Status:" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font name="Arial Black" size="14.0" />
@@ -44,8 +48,9 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="195.0" layoutY="175.0" prefHeight="34.0" prefWidth="189.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <PasswordField prefHeight="34.0" prefWidth="189.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="txtLogin" layoutX="195.0" layoutY="175.0" prefHeight="34.0" prefWidth="189.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <PasswordField fx:id="txtSenha" prefHeight="34.0" prefWidth="189.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextArea fx:id="txtStatus" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <TextFlow layoutX="143.0" layoutY="20.0" prefHeight="44.0" prefWidth="298.0">
@@ -57,10 +62,13 @@
             </Text>
          </children>
       </TextFlow>
-      <Button layoutX="426.0" layoutY="350.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Enviar" textFill="#f8f8ffba">
+      <Button fx:id="btnEnviar" layoutX="426.0" layoutY="350.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Enviar" textFill="#f8f8ffba">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <AnchorPane layoutX="-8.0" prefHeight="400.0" prefWidth="149.0" style="-fx-background-color: #48D1CC;">
          <children>
@@ -75,5 +83,13 @@
             </TextFlow>
          </children>
       </AnchorPane>
+      <Button fx:id="btnVoltar" layoutX="209.0" layoutY="350.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Voltar" textFill="#f8f8ffba">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
    </children>
 </Pane>
