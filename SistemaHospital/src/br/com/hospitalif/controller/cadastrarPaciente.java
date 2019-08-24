@@ -19,6 +19,6 @@ public class cadastrarPaciente {
     @FXML
     private Button btnCadastrar;
 
- 
+
 
 }

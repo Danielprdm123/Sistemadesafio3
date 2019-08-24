@@ -27,7 +27,7 @@
             </Text>
          </children>
       </TextFlow>
-      <Button fx:id="btnCadastrar" layoutX="469.0" layoutY="324.0" mnemonicParsing="false" onAction="#salvarPessoa" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Cadastrar" textFill="#f8f8ffba">
+      <Button fx:id="btnCadastrar" layoutX="472.0" layoutY="355.0" mnemonicParsing="false" onAction="#cadastarPessoa" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Cadastrar" textFill="#f8f8ffba">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -58,7 +58,6 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtStatus" layoutX="307.0" layoutY="277.0" prefHeight="62.0" prefWidth="111.0" />
       <TextField fx:id="textSangue" layoutX="323.0" layoutY="209.0" prefHeight="25.0" prefWidth="126.0" />
       <Label layoutX="228.0" layoutY="168.0" text="Idade:">
          <font>
@@ -96,5 +95,14 @@
          </toggleGroup>
       </RadioButton>
       <RadioButton fx:id="cboSexo" layoutX="406.0" layoutY="246.0" mnemonicParsing="false" text="Feminino" toggleGroup="$sexo" />
+      <Button fx:id="btnCadastrar1" layoutX="153.0" layoutY="355.0" mnemonicParsing="false" onAction="#VoltarDash" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Voltar" textFill="#f8f8ffba">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="txtStatus" layoutX="295.0" layoutY="270.0" prefHeight="74.0" prefWidth="183.0" />
    </children>
 </Pane>

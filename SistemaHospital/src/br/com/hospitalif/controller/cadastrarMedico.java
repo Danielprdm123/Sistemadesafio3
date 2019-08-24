@@ -7,15 +7,18 @@ import javafx.scene.control.TextField;
 public class cadastrarMedico {
 
     @FXML
-    private TextField txtNumregistro;
+    private Button btnEnviar;
 
     @FXML
     private TextField txtEspecialidade;
 
     @FXML
-    private Button btnEnviar;
+    private TextField txtNumregistro;
 
     @FXML
     private Button btnVolta;
 
+  
+
 }
+

@@ -32,7 +32,7 @@
             </Text>
          </children>
       </TextFlow>
-      <Button fx:id="btnCadastrar" layoutX="477.0" layoutY="331.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Cadastrar" textFill="#f8f8ffba">
+      <Button fx:id="btnCadastrar" layoutX="477.0" layoutY="331.0" mnemonicParsing="false" onAction="#cadastrarPaciente" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Cadastrar" textFill="#f8f8ffba">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -73,7 +73,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ListView>
-      <Button fx:id="btnVoltar" layoutX="160.0" layoutY="331.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Voltar" textFill="#f8f8ffba">
+      <Button fx:id="btnVoltar" layoutX="160.0" layoutY="331.0" mnemonicParsing="false" onAction="#Voltardash" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Voltar" textFill="#f8f8ffba">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

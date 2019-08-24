@@ -10,9 +10,11 @@ public class Gerente {
     private Button btnEnviar;
 
     @FXML
-    private TextField txtCargo;
-
-    @FXML
     private Button btnVoltar;
 
+    @FXML
+    private TextField txtCargo;
+
+
 }
+
