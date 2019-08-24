@@ -1,5 +1,6 @@
 package br.com.hospitalif.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -21,6 +22,25 @@ public class Enfermidade {
 
     @FXML
     private TextArea txtDesc;
+
+   
+
+    @FXML
+    void Enviarenfermidade(ActionEvent event) {
+
+    }
+
+    @FXML
+    void f8f8ffba(ActionEvent event) {
+
+    }
+
+    @FXML
+    void Voltardash(ActionEvent event) {
+
+    }
+
+   
 
 }
 
