@@ -15,15 +15,23 @@ public class cadastrarFuncionario {
     private PasswordField txtSenha;
 
     @FXML
-    private Button btnEnviar;
+    private TextArea txtStatus;
 
     @FXML
-    private TextArea txtStatus;
+    private Button btnEnviar;
 
     @FXML
     private Button btnVoltar;
 
-   
+    @FXML
+    void Enviarfuncionario(ActionEvent event) {
+
+    }
+
+    @FXML
+    void Voltardash(ActionEvent event) {
+
+    }
 
 }
 
