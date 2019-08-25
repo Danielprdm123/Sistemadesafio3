@@ -4,17 +4,26 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+
 public class Enfermeiro {
 
     @FXML
-    private Button btnVoltar;
+    private Button btnEnvirar;
 
     @FXML
     private TextField txtNumres;
 
     @FXML
-    private Button btnEnvirar;
+    private Button btnVoltar;
 
+    @FXML
+    void enviarEnfermeiro(ActionEvent event) {
 
+    }
+
+    @FXML
+    void voltardash(ActionEvent event) {
+
+    }
 
 }
