@@ -5,20 +5,27 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 
-public class cadastrarPaciente {
+
+public class Paciente {
 
     @FXML
-    private ListView<?> txtHistorico;
+    private Button btnCadastrar;
 
     @FXML
     private ListView<?> txtDoenca;
 
     @FXML
+    private ListView<?> txtHistorico;
+
+    @FXML
     private Button btnVoltar;
 
     @FXML
-    private Button btnCadastrar;
+    void Voltardash(ActionEvent event) {
 
+    }
 
+    @FXML
+    void cadastrarPaciente(ActionEvent event) {
 
-}
+    }
