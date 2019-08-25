@@ -9,13 +9,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
 
-public class cadastroPessoa {
+public class Pessoa {
 
     @FXML
     private Text lblPessoa;
-
-    @FXML
-    private TextArea txtStatus;
 
     @FXML
     private Button btnCadastrar;
@@ -24,23 +21,35 @@ public class cadastroPessoa {
     private TextField textSangue;
 
     @FXML
-    private TextField txtNome;
+    private TextField txtIdade;
 
     @FXML
     private TextField txtCpf;
 
     @FXML
-    private ToggleGroup sexo;
-
-    @FXML
-    private Button btnCadastrar1;
-
-    @FXML
-    private TextField txtIdade;
+    private TextField txtNome;
 
     @FXML
     private RadioButton cboSexo;
 
+    @FXML
+    private ToggleGroup sexo;
+
+    @FXML
+    private Button btnVoltar;
+
+    @FXML
+    private TextArea txtStatus;
+
+    @FXML
+    void VoltarDash(ActionEvent event) {
+
+    }
+
+    @FXML
+    void cadastarPessoa(ActionEvent event) {
+
+    }
 
 }
 
