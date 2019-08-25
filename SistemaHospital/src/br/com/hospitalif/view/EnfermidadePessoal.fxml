@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.EnfermidadePessoal">
    <children>
       <TextFlow layoutX="143.0" layoutY="20.0" prefHeight="44.0" prefWidth="298.0">
          <children>
@@ -20,10 +21,13 @@
             </Text>
          </children>
       </TextFlow>
-      <Button layoutX="426.0" layoutY="350.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Enviar" textFill="#f8f8ffba">
+      <Button fx:id="btnEnviar" layoutX="426.0" layoutY="350.0" mnemonicParsing="false" onAction="#EnviarEnfermidadePessoal" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Enviar" textFill="#f8f8ffba">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <AnchorPane layoutX="-8.0" prefHeight="400.0" prefWidth="149.0" style="-fx-background-color: #48D1CC;">
          <children>
@@ -48,7 +52,15 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="328.0" layoutY="149.0" prefHeight="68.0" prefWidth="224.0" />
-      <TextField layoutX="326.0" layoutY="236.0" prefHeight="79.0" prefWidth="224.0" />
+      <Button fx:id="btnVoltar" layoutX="245.0" layoutY="350.0" mnemonicParsing="false" onAction="#voltarDash" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Voltar" textFill="#f8f8ffba">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextArea fx:id="txtStatusEnfermidade" layoutX="313.0" layoutY="233.0" prefHeight="89.0" prefWidth="224.0" />
+      <TextArea fx:id="txtComentario" layoutX="318.0" layoutY="132.0" prefHeight="89.0" prefWidth="224.0" />
    </children>
 </Pane>
