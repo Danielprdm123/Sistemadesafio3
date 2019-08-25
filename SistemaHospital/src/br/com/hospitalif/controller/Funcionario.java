@@ -6,7 +6,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class cadastrarFuncionario {
+public class Funcionario {
 
     @FXML
     private TextField txtLogin;
@@ -34,4 +34,3 @@ public class cadastrarFuncionario {
     }
 
 }
-
