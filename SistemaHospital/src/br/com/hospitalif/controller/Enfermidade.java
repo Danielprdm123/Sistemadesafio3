@@ -30,10 +30,6 @@ public class Enfermidade {
 
     }
 
-    @FXML
-    void f8f8ffba(ActionEvent event) {
-
-    }
 
     @FXML
     void Voltardash(ActionEvent event) {
