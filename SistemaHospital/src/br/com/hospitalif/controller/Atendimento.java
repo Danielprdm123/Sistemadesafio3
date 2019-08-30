@@ -1,46 +1,55 @@
 package br.com.hospitalif.controller;
 
-import com.gluonhq.charm.glisten.control.CharmListView;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class Atendimento {
 
     @FXML
-    private TextArea txtComentarioEnfermeiro;
-
-    @FXML
-    private TextArea txtComentarioMedico;
+    private DatePicker txtData;
 
     @FXML
     private TextField txtPeso;
 
     @FXML
-    private TextField txtAltura;
+    private ListView<?> txtDoenca;
 
     @FXML
-    private DatePicker dtData;
-
-    @FXML
-    private CharmListView<?, ?> txtDoenca;
+    private TextArea txtComentarioEnfermeiro;
 
     @FXML
     private Button btnVoltar;
 
     @FXML
-    private Button btnEnviar;
+    private Button btnCadastrar;
 
     @FXML
-    void EnviarAtendimento(ActionEvent event) {
+    private TextField txtAltura;
+
+    @FXML
+    private TextArea txtComentarioMedico;
+
+  
+
+    @FXML
+    void cadastrarAtendimento(ActionEvent event) {
 
     }
 
     @FXML
-    void VoltarDash(ActionEvent event) {
+    void Voltardash(ActionEvent event) {
+
+    }
+
+    @FXML
+    void f8f8ffba(ActionEvent event) {
 
     }
 
 }
+

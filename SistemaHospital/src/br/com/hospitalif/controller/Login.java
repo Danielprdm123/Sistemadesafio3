@@ -3,31 +3,27 @@ package br.com.hospitalif.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class Medico {
+public class Login {
 
     @FXML
-    private TextField txtNumregistro;
-
-    @FXML
-    private TextField txtEspecialidade;
+    private TextField txtLogin;
 
     @FXML
     private Button btnEnviar;
 
     @FXML
-    private Button btnVolta;
+    private PasswordField txtSenha;
+
+   
 
     @FXML
-    void Enviarmedico(ActionEvent event) {
+    void Entrar(ActionEvent event) {
 
     }
 
-    @FXML
-    void Voltardash(ActionEvent event) {
-
-    }
+  
 
 }
-

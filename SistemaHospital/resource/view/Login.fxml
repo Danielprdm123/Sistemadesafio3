@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.Login">
+   <children>
+      <TextFlow layoutX="282.0" layoutY="21.0" prefHeight="45.0" prefWidth="149.0">
+         <children>
+            <Text fill="#00000079" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="272.5703125">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Text>
+         </children>
+      </TextFlow>
+      <Button fx:id="btnEnviar" layoutX="451.0" layoutY="340.0" mnemonicParsing="false" onAction="#Entrar" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Entrar" textFill="#f8f8ffba">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="150.0" layoutY="219.0" text="Senha:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="150.0" layoutY="137.0" prefHeight="22.0" prefWidth="70.0" text="usuário:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtLogin" layoutX="262.0" layoutY="131.0" prefHeight="34.0" prefWidth="189.0" />
+      <PasswordField fx:id="txtSenha" layoutX="262.0" layoutY="213.0" prefHeight="34.0" prefWidth="189.0" />
+   </children>
+</Pane>

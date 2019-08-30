@@ -1,0 +1,17 @@
+.root{
+	-fx-background-color: #ffffff;
+	-fx-font-size: 14px;
+}
+
+
+textField{
+	-fx-text-fill: blue;
+	-fx-border-radius: 4px;
+	-fx-font-size: 12px;
+	-fx-cursor: text;
+}
+Blogin{
+	-fx-background-color: #0000d4;
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 16px;
+}
