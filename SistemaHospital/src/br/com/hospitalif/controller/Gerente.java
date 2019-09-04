@@ -18,7 +18,7 @@ public class Gerente {
 
     @FXML
     void Enviargerente(ActionEvent event) {
-
+    	String cargo = txtCargo.getText();
     }
 
     @FXML

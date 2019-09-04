@@ -38,6 +38,12 @@ public class Atendimento {
 
     @FXML
     void cadastrarAtendimento(ActionEvent event) {
+    	Chronology data = txtData.getChronology();
+    	String peso = txtPeso.getText();
+    	String doenca = txtDoenca.getCellFactory();
+    	String ComentarioEnfermeiro = txtComentarioEnfermeiro.getText();
+    	String altura = txtAltura.getText();
+    	String ComentarioMedico = txtComentarioMedico.getText();
 
     }
 
@@ -46,10 +52,6 @@ public class Atendimento {
 
     }
 
-    @FXML
-    void f8f8ffba(ActionEvent event) {
-
-    }
 
 }
 

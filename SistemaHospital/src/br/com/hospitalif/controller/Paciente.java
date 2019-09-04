@@ -23,11 +23,14 @@ public class Paciente {
 
     @FXML
     void Voltardash(ActionEvent event) {
+    	
 
     }
 
     @FXML
     void cadastrarPaciente(ActionEvent event) {
+    	String doenca = txtDoenca.getCellFactory();
+    	String historico = txtHistorico.getCellFactory();
 
     }
 }

@@ -26,6 +26,9 @@ public class Funcionario {
 
     @FXML
     void Enviarfuncionario(ActionEvent event) {
+    	String login = txtLogin.getText();
+    	String senha = txtSenha.getText();
+    	String Status = txtStatus.getText();
 
     }
 

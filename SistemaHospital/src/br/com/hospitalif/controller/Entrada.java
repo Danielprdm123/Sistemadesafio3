@@ -29,6 +29,10 @@ public class Entrada {
 
     @FXML
     void enviarEntrada(ActionEvent event) {
+    	String dataEntrada = dtDataEntrada.getAccessibleText();
+    	String dataSaida = dtDataSaida.getAccessibleText();
+    	String SituacaoPaciente = txtSituacaoPaciente.getCellFactory();
+    	String statusEntrada = txtStatusEntrada.getText();
 
     }
 

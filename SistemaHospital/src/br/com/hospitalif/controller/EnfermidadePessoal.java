@@ -21,6 +21,8 @@ public class EnfermidadePessoal {
 
     @FXML
     void EnviarEnfermidadePessoal(ActionEvent event) {
+    	String statusEnfermidade = txtStatusEnfermidade.getText();
+    	String comentario = txtComentario.getText();
 
     }
 

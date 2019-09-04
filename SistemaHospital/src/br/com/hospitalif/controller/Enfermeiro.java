@@ -19,6 +19,7 @@ public class Enfermeiro {
 
     @FXML
     void enviarEnfermeiro(ActionEvent event) {
+    	String NumRegistroEnfermeiro = txtNumres.getText();
 
     }
 

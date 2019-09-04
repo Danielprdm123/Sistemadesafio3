@@ -49,6 +49,12 @@ public class Pessoa {
 
     @FXML
     void cadastarPessoa(ActionEvent event) {
+    	String nome = txtNome.getText();
+    	String cpf = txtCpf.getText();
+    	String idade = txtIdade.getText();
+    	String tipoSangue = textSangue.getText();
+    	String sexo = cboSexo.getText();
+    	String status = txtStatus.getText();
 
     }
 

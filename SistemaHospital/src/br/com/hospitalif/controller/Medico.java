@@ -21,6 +21,8 @@ public class Medico {
 
     @FXML
     void Enviarmedico(ActionEvent event) {
+    	String NumRegristroMedico = txtNumregistro.getText();
+    	String especialidade = txtEspecialidade.getText();
 
     }
 

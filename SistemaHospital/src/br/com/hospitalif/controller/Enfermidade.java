@@ -27,6 +27,9 @@ public class Enfermidade {
 
     @FXML
     void Enviarenfermidade(ActionEvent event) {
+    	String TipoEnfermidade = txtTipo.getText();
+    	String NomeEnfermidade = txtNome.getText();
+    	String descricao = txtDesc.getText();
 
     }
 
