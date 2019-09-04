@@ -19,10 +19,6 @@ public class Administrador {
 
     }
 
-    @FXML
-    void f8f8ffba(ActionEvent event) {
-
-    }
 
     @FXML
     void voltadash(ActionEvent event) {
