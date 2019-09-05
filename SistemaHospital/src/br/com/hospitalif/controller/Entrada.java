@@ -1,5 +1,7 @@
 package br.com.hospitalif.controller;
 
+import java.time.LocalDate;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -29,8 +31,8 @@ public class Entrada {
 
     @FXML
     void enviarEntrada(ActionEvent event) {
-    	String dataEntrada = dtDataEntrada.getAccessibleText();
-    	String dataSaida = dtDataSaida.getAccessibleText();
+    	LocalDate dataEntrada = dtDataEntrada.getValue();
+    	LocalDate dataSaida = dtDataSaida.getValue();
     	String SituacaoPaciente = txtSituacaoPaciente.getCellFactory();
     	String statusEntrada = txtStatusEntrada.getText();
 
