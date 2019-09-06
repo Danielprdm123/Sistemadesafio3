@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.util.Callback;
 
 
 public class Paciente {
@@ -13,10 +14,10 @@ public class Paciente {
     private Button btnCadastrar;
 
     @FXML
-    private ListView<?> txtDoenca;
+    private ListView<EnfermidadePessoal> txtDoenca;
 
     @FXML
-    private ListView<?> txtHistorico;
+    private ListView<Entrada> txtHistorico;
 
     @FXML
     private Button btnVoltar;
@@ -29,8 +30,8 @@ public class Paciente {
 
     @FXML
     void cadastrarPaciente(ActionEvent event) {
-    	String doenca = txtDoenca.getCellFactory();
-    	String historico = txtHistorico.getCellFactory();
+    	Callback<?, ?> doenca = txtDoenca.getCellFactory();
+    	Callback<?, ?> historico = txtHistorico.getCellFactory();
 
     }
 }

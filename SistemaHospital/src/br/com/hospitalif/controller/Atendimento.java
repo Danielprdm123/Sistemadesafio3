@@ -9,6 +9,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.util.Callback;
 
 public class Atendimento {
 
@@ -19,7 +20,7 @@ public class Atendimento {
     private TextField txtPeso;
 
     @FXML
-    private ListView<?> txtDoenca;
+    private ListView<EnfermidadePessoal> txtDoenca;
 
     @FXML
     private TextArea txtComentarioEnfermeiro;
@@ -41,10 +42,10 @@ public class Atendimento {
     @FXML
     void cadastrarAtendimento(ActionEvent event) {
     	LocalDate data = txtData.getValue();
-    	float peso = txtPeso.getText();
-    	String doenca = txtDoenca.getCellFactory();
+    	String peso = txtPeso.getText();
+    	Callback<?, ?> doenca = txtDoenca.getCellFactory();
     	String ComentarioEnfermeiro = txtComentarioEnfermeiro.getText();
-    	float altura = txtAltura.getText();
+    	String altura = txtAltura.getText();
     	String ComentarioMedico = txtComentarioMedico.getText();
 
     }

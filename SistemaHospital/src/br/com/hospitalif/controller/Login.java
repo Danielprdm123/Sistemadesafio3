@@ -23,12 +23,13 @@ public class Login {
 
     @FXML
     void Entrar(ActionEvent event) {
-    	//System.out.println(txtLogin.getText());
+    	
+    	String Login = txtLogin.getText();
+    	String senha = txtSenha.getText();
+    	System.out.println(txtLogin.getText());
     	//Alert msg = new Alert (AlertType.INFORMATION,"Usuario: " + txtLogin.getText());
     	//msg.setContentText("Minha msg aqui");
     	//msg.setHeaderText("fff");
-    	String Login = txtLogin.getText();
-    	String senha = txtSenha.getText();
     }
 
   

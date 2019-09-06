@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+import javafx.util.Callback;
 
 public class Entrada {
 
@@ -18,7 +19,7 @@ public class Entrada {
     private DatePicker dtDataSaida;
 
     @FXML
-    private ListView<?> txtSituacaoPaciente;
+    private ListView<Atendimento> txtSituacaoPaciente;
 
     @FXML
     private TextArea txtStatusEntrada;
@@ -33,7 +34,7 @@ public class Entrada {
     void enviarEntrada(ActionEvent event) {
     	LocalDate dataEntrada = dtDataEntrada.getValue();
     	LocalDate dataSaida = dtDataSaida.getValue();
-    	String SituacaoPaciente = txtSituacaoPaciente.getCellFactory();
+    	Callback<?, ?> SituacaoPaciente = txtSituacaoPaciente.getCellFactory();
     	String statusEntrada = txtStatusEntrada.getText();
 
     }
