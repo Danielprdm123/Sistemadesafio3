@@ -40,12 +40,18 @@ public class conexao {
 		return this.status;
 	}
 	
-	public boolean closeConnection() {  // fecha conx
+	public boolean closeConnection ()throws SQLException {
+		this.conn.close();
 		return false;
 	}
 	
 	public void resetConnection() {
-		this.closeConnection();
+		try {
+			this.closeConnection();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.getConnection();
 	}
 	
