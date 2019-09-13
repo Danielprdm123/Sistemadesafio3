@@ -2,6 +2,7 @@ package app;
 
 import java.io.IOException;
 
+import br.com.hospitalif.conexao.Conexao;
 import br.com.hospitalif.util.Rotas;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +19,7 @@ public class Main extends Application{
 	public void start(Stage Stage) throws Exception {
 		stageAtual = Stage;
 		FXMLLoader loader = new FXMLLoader(getClass().getResource(Rotas.LOGIN));
+		
 		
 	try {
 		Parent root = loader.load();
@@ -36,7 +38,6 @@ public class Main extends Application{
 	
 	
 	
-	
 	public void openpage(String rota) throws IOException {
 		
 		  loader = new FXMLLoader(getClass().getResource(rota));
@@ -48,7 +49,10 @@ public class Main extends Application{
 		
 	}
 	public static void main (String[] args) {
-		launch(args);
+		Conexao conn = new  Conexao();
+		conn.getConnection();
+		System.out.println(conn.getStatus());
+		 launch(args);
 	}
 
 }

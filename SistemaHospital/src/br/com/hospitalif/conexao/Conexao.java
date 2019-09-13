@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class conexao {
+public class Conexao {
 		
 	    public String status = "não conectado";
 	
@@ -14,7 +14,7 @@ public class conexao {
 		 String driverName = "com.mysql.jdbc.Driver";
 		 String server ="localhost";
 		 String bdName = "hospitalFX";
- 		 String url ="jdbc:mysql://" + server + ":3306/" + bdName;
+ 		 String url ="jdbc:mysql://" + server + ":3306/" + bdName;   
 		
 	public Connection getConnection() {
 		try {
