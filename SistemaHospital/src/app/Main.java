@@ -52,6 +52,11 @@ public class Main extends Application{
 		Conexao conn = new  Conexao();
 		conn.getConnection();
 		System.out.println(conn.getStatus());
+		// string insere = "insert into ...  values ?,?"
+		//PreoaredStartement stm =?
+		//smt.setInt(1,Integer.parceInt("3"); 
+		// string n = 5 
+		//string beto = "" + n;
 		 launch(args);
 	}
 
