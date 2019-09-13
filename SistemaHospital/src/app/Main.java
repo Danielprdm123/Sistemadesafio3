@@ -51,12 +51,14 @@ public class Main extends Application{
 	public static void main (String[] args) {
 		Conexao conn = new  Conexao();
 		conn.getConnection();
+		
 		System.out.println(conn.getStatus());
 		// string insere = "insert into ...  values ?,?"
-		//PreoaredStartement stm =?
+		//PreparedStartement stm =?
 		//smt.setInt(1,Integer.parceInt("3"); 
 		// string n = 5 
 		//string beto = "" + n;
+		// snt.setInt(4,txtLogin.getText())
 		 launch(args);
 	}
 
