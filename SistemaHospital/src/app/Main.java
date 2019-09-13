@@ -1,6 +1,7 @@
 package app;
 
 import java.io.IOException;
+import java.sql.PreparedStatement;
 
 import br.com.hospitalif.conexao.Conexao;
 import br.com.hospitalif.util.Rotas;
@@ -52,9 +53,23 @@ public class Main extends Application{
 		Conexao conn = new  Conexao();
 		conn.getConnection();
 		
-		System.out.println(conn.getStatus());
-		// string insere = "insert into ...  values ?,?"
-		//PreparedStartement stm =?
+		String sql = "INSERT INTO Funcionario ("
+																					+ "idFuncionario,"
+																				    + "login,"
+																				    + "senha,"
+																				    + "statusFuncionario,"
+																				    + "idPessoa)"
+																				    + " VALUES ("
+																				    + "?,?,?,?,?)";
+		
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setInt(1,1);
+		stmt.setString(2, "teste");
+		stmt.setString(3, "senha123");
+		stmt.setString(4, "testando123");
+		stmt.setInt(5, 2);
+		stmt.execute();
+		
 		//smt.setInt(1,Integer.parceInt("3"); 
 		// string n = 5 
 		//string beto = "" + n;
