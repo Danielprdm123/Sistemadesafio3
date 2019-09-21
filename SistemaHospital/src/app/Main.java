@@ -1,9 +1,13 @@
 package app;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
+import br.com.hospitalif.DAO.Medico_DAO;
 import br.com.hospitalif.conexao.Conexao;
+import br.com.hospitalif.model.Medico;
 import br.com.hospitalif.util.Rotas;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -49,32 +53,14 @@ public class Main extends Application{
 		
 		
 	}
-	public static void main (String[] args) {
-		Conexao conn = new  Conexao();
-		conn.getConnection();
+	public static void main (String[] args) throws SQLException {
 		
-		String sql = "INSERT INTO Funcionario ("
-																					+ "idFuncionario,"
-																				    + "login,"
-																				    + "senha,"
-																				    + "statusFuncionario,"
-																				    + "idPessoa)"
-																				    + " VALUES ("
-																				    + "?,?,?,?,?)";
-		
-		PreparedStatement stmt = conn.prepareStatement(sql);
-		stmt.setInt(1,1);
-		stmt.setString(2, "teste");
-		stmt.setString(3, "senha123");
-		stmt.setString(4, "testando123");
-		stmt.setInt(5, 2);
-		stmt.execute();
-		
-		//smt.setInt(1,Integer.parceInt("3"); 
-		// string n = 5 
-		//string beto = "" + n;
-		// snt.setInt(4,txtLogin.getText())
-		 launch(args);
+		Medico m = new Medico();
+		MedicoDAO  mDAO = new Medico_DAO();
+		m.setEspecialidade("ffff");
+		m.getNumeroderegistro(123456);
+		mDAO.save(m);
+		// launch(args);
 	}
 
 }

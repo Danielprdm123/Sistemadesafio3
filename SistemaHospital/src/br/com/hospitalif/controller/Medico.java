@@ -23,7 +23,8 @@ public class Medico {
     void Enviarmedico(ActionEvent event) {
     	String NumRegristroMedico = txtNumregistro.getText();
     	String especialidade = txtEspecialidade.getText();
-
+    	Medico m = new Medico(); 
+    	m.set
     }
 
     @FXML
