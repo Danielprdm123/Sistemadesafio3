@@ -20,7 +20,7 @@ public class EnfermidadeDAO {
 			stmt.setString(4,e.getDescricao());
 			stmt.execute();
 	}
-	public void removeID(int id) throws SQLException {
+	public void  removeById(int id) throws SQLException {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
@@ -40,7 +40,7 @@ public class EnfermidadeDAO {
 			stmt.setString(2,e.getNome());
 			stmt.setString(3,e.getTipo());
 			stmt.setString(4,e.getDescricao());
-			stmt.executeQuery();
+			stmt.execute();
 	}
 	public void alterar(Enfermidade e) throws SQLException {
 		Conexao conn = new Conexao();

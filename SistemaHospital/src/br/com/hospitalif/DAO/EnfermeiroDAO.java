@@ -36,7 +36,7 @@ public class EnfermeiroDAO {
 		
 	}
 	
-	public void Selecionar (Enfermeiro e) throws SQLException {
+	public void selecionar (Enfermeiro e) throws SQLException {
 		Conexao conn = new  Conexao();
 		Connection conexao =  conn.getConnection();
 		System.out.println(conn.getStatus());
@@ -50,7 +50,7 @@ public class EnfermeiroDAO {
 		
 		
 	}
-	public void Alterar (Enfermeiro e) throws SQLException {
+	public void alterar (Enfermeiro e) throws SQLException {
 		Conexao conn = new  Conexao();
 		Connection conexao =  conn.getConnection();
 		System.out.println(conn.getStatus());
