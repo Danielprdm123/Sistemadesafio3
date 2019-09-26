@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import br.com.hospitalif.conexao.Conexao;
 import br.com.hospitalif.model.Medico;
 
-public class Medico_DAO {
+public class MedicoDAO {
 	public void save(Medico m) throws SQLException  {
 		Conexao conn = new  Conexao();
 		Connection conexao =  conn.getConnection();

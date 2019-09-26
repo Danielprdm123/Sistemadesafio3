@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import br.com.hospitalif.DAO.Medico_DAO;
+import br.com.hospitalif.DAO.MedicoDAO;
 import br.com.hospitalif.conexao.Conexao;
 import br.com.hospitalif.model.Medico;
 import br.com.hospitalif.util.Rotas;
@@ -56,7 +56,7 @@ public class Main extends Application{
 	public static void main (String[] args) throws SQLException {
 		
 		Medico m = new Medico();
-		MedicoDAO  mDAO = new Medico_DAO();
+		MedicoDAO  mDAO = new MedicoDAO();
 		m.setEspecialidade("ffff");
 		m.getNumeroderegistro(123456);
 		mDAO.save(m);
