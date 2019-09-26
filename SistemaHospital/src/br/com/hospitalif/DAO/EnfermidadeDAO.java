@@ -42,7 +42,7 @@ public class EnfermidadeDAO {
 			stmt.setString(4,e.getDescricao());
 			stmt.executeQuery();
 	}
-	public void Update(Enfermidade e) throws SQLException {
+	public void alterar(Enfermidade e) throws SQLException {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
