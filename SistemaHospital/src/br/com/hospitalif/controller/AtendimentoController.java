@@ -1,7 +1,10 @@
 package br.com.hospitalif.controller;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 
+import br.com.hospitalif.DAO.AtendimentoDAO;
+import br.com.hospitalif.model.Atendimento;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -40,13 +43,23 @@ public class AtendimentoController {
   
 
     @FXML
-    void cadastrarAtendimento(ActionEvent event) {
+    void cadastrarAtendimento(ActionEvent event) throws SQLException {
     	LocalDate data = txtData.getValue();
-    	String peso = txtPeso.getText();
+    	float peso = Float.parseFloat(txtPeso.getText());
     	Callback<?, ?> doenca = txtDoenca.getCellFactory();
     	String ComentarioEnfermeiro = txtComentarioEnfermeiro.getText();
-    	String altura = txtAltura.getText();
+    	float altura =Float.parseFloat(txtAltura.getText()) ;
     	String ComentarioMedico = txtComentarioMedico.getText();
+    	
+    	Atendimento a = new Atendimento();
+    	AtendimentoDAO aDAO = new AtendimentoDAO();
+    	// a.setData(data);
+    	a.setPeso(peso);
+    	// a.setDoenca(doenca);
+        a.setComentarioEnfermeiro(ComentarioEnfermeiro);
+    	a.setAltura(altura);
+    	a.setComentarioMedico(ComentarioMedico);
+    	 aDAO.save(a);
 
     }
 

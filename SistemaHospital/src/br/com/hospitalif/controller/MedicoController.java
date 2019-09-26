@@ -1,5 +1,8 @@
 package br.com.hospitalif.controller;
 
+import java.sql.SQLException;
+
+import br.com.hospitalif.DAO.MedicoDAO;
 import br.com.hospitalif.model.Medico;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,10 +24,15 @@ public class MedicoController {
     private Button btnVolta;
 
     @FXML
-    void Enviarmedico(ActionEvent event) {
-    	String NumRegristroMedico = txtNumregistro.getText();
+    void Enviarmedico(ActionEvent event) throws SQLException {
+    	int NumRegristroMedico = Integer.parseInt(txtNumregistro.getText());
     	String especialidade = txtEspecialidade.getText();
     	Medico m = new Medico(); 
+		MedicoDAO  mDAO = new MedicoDAO();
+		
+		m.setEspecialidade(especialidade);
+		m.setNumeroderegistro(NumRegristroMedico);
+		mDAO.save(m);
       
     }
 

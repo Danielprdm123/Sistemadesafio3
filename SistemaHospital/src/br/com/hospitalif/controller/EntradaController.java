@@ -1,7 +1,10 @@
 package br.com.hospitalif.controller;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 
+import br.com.hospitalif.DAO.EntradaDAO;
+import br.com.hospitalif.model.Entrada;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -31,12 +34,19 @@ public class EntradaController {
     private Button btnVoltar;
 
     @FXML
-    void enviarEntrada(ActionEvent event) {
+    void enviarEntrada(ActionEvent event) throws SQLException {
     	LocalDate dataEntrada = dtDataEntrada.getValue();
     	LocalDate dataSaida = dtDataSaida.getValue();
     	Callback<?, ?> SituacaoPaciente = txtSituacaoPaciente.getCellFactory();
     	String statusEntrada = txtStatusEntrada.getText();
-
+    	EntradaDAO enDAO = new EntradaDAO();
+    	Entrada en = new Entrada();
+    	
+    	// en.setDataEntrada(dataEntrada);
+    	// en.setDataDeSaida(dataSaida);
+    	// en.setSituacaoDePaciente(SituacaoPaciente);
+    	en.setStatusDeEntrada(statusEntrada);
+    	enDAO.save(en);
     }
 
     @FXML

@@ -1,6 +1,10 @@
 package br.com.hospitalif.controller;
 
 
+import java.sql.SQLException;
+
+import br.com.hospitalif.DAO.PacienteDAO;
+import br.com.hospitalif.model.Paciente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -29,9 +33,14 @@ public class PacienteController {
     }
 
     @FXML
-    void cadastrarPaciente(ActionEvent event) {
+    void cadastrarPaciente(ActionEvent event) throws SQLException {
     	Callback<?, ?> doenca = txtDoenca.getCellFactory();
     	Callback<?, ?> historico = txtHistorico.getCellFactory();
+    	Paciente p = new Paciente ();
+    	PacienteDAO pDAO = new PacienteDAO();
+    	// p.setDoenca(doenca);
+    	// p.setHistorico(historico);
+    	pDAO.save(p);
 
     }
 }

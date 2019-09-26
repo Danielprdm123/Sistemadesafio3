@@ -54,13 +54,8 @@ public class Main extends Application{
 		
 	}
 	public static void main (String[] args) throws SQLException {
-		
-		Medico m = new Medico();
-		MedicoDAO  mDAO = new MedicoDAO();
-		m.setEspecialidade("ffff");
-		m.getNumeroderegistro(123456);
-		mDAO.save(m);
-		// launch(args);
+
+		launch(args);
 	}
 
 }
