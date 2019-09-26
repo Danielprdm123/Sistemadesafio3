@@ -10,7 +10,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.util.Callback;
 
-public class Entrada {
+public class EntradaController {
 
     @FXML
     private DatePicker dtDataEntrada;
@@ -19,7 +19,7 @@ public class Entrada {
     private DatePicker dtDataSaida;
 
     @FXML
-    private ListView<Atendimento> txtSituacaoPaciente;
+    private ListView<AtendimentoController> txtSituacaoPaciente;
 
     @FXML
     private TextArea txtStatusEntrada;

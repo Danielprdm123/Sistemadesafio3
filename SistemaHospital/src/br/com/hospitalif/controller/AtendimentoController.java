@@ -11,7 +11,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.util.Callback;
 
-public class Atendimento {
+public class AtendimentoController {
 
     @FXML
     private DatePicker txtData;
@@ -20,7 +20,7 @@ public class Atendimento {
     private TextField txtPeso;
 
     @FXML
-    private ListView<EnfermidadePessoal> txtDoenca;
+    private ListView<EnfermidadePessoalController> txtDoenca;
 
     @FXML
     private TextArea txtComentarioEnfermeiro;

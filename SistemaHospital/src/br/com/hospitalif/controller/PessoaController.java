@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
 
-public class Pessoa {
+public class PessoaController {
 
     @FXML
     private Text lblPessoa;

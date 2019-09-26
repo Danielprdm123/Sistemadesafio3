@@ -3,17 +3,23 @@ package br.com.hospitalif.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
-public class Atendente {
+
+public class EnfermeiroController {
 
     @FXML
-    private Button btnCadastrarpaciente;
+    private Button btnEnvirar;
+
+    @FXML
+    private TextField txtNumres;
 
     @FXML
     private Button btnVoltar;
 
     @FXML
-    void cadastraratendente(ActionEvent event) {
+    void enviarEnfermeiro(ActionEvent event) {
+    	String NumRegistroEnfermeiro = txtNumres.getText();
 
     }
 

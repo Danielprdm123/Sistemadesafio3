@@ -7,7 +7,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class Funcionario {
+public class FuncionarioController {
 
     @FXML
     private TextField txtLogin;

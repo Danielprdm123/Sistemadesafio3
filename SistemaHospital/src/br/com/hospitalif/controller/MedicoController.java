@@ -1,11 +1,12 @@
 package br.com.hospitalif.controller;
 
+import br.com.hospitalif.model.Medico;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class Medico {
+public class MedicoController {
 
     @FXML
     private TextField txtNumregistro;
@@ -24,7 +25,7 @@ public class Medico {
     	String NumRegristroMedico = txtNumregistro.getText();
     	String especialidade = txtEspecialidade.getText();
     	Medico m = new Medico(); 
-    	m.set
+      
     }
 
     @FXML

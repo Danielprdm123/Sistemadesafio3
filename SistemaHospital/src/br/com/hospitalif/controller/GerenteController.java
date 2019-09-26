@@ -5,27 +5,26 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-
-public class Enfermeiro {
-
-    @FXML
-    private Button btnEnvirar;
+public class GerenteController {
 
     @FXML
-    private TextField txtNumres;
+    private Button btnEnviar;
+
+    @FXML
+    private TextField txtCargo;
 
     @FXML
     private Button btnVoltar;
 
     @FXML
-    void enviarEnfermeiro(ActionEvent event) {
-    	String NumRegistroEnfermeiro = txtNumres.getText();
-
+    void Enviargerente(ActionEvent event) {
+    	String cargo = txtCargo.getText();
     }
 
     @FXML
-    void voltardash(ActionEvent event) {
+    void Voltardash(ActionEvent event) {
 
     }
 
 }
+
