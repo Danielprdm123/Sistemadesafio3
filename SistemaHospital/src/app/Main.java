@@ -24,37 +24,27 @@ public class Main extends Application{
 	public void start(Stage Stage) throws Exception {
 		stageAtual = Stage;
 		FXMLLoader loader = new FXMLLoader(getClass().getResource(Rotas.LOGIN));
-		
+		System.out.println("xxx");
 		
 	try {
 		Parent root = loader.load();
 		Scene scene = new Scene(root,600,400);
 		scene.getStylesheets().add(getClass().getResource("/css/app.css").toExternalForm());
-		Stage.setScene(scene);
-		Stage.show();
+		stageAtual.setScene(scene);
+		stageAtual.show();
 		}catch(IOException a) {
-			
+			a.printStackTrace();
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
+
 	public void openpage(String rota) throws IOException {
 		
 		  loader = new FXMLLoader(getClass().getResource(rota));
 			Scene scene = new Scene(loader.load());
 			stageAtual.setScene(scene);
 			stageAtual.show();
-		
-		
-		
 	}
 	public static void main (String[] args) throws SQLException {
-
 		launch(args);
 	}
 
