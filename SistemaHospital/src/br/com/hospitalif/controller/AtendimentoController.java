@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 import br.com.hospitalif.DAO.AtendimentoDAO;
 import br.com.hospitalif.model.Atendimento;
+import br.com.hospitalif.model.EnfermidadePessoal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -23,7 +24,7 @@ public class AtendimentoController {
     private TextField txtPeso;
 
     @FXML
-    private ListView<EnfermidadePessoalController> txtDoenca;
+    private ListView<EnfermidadePessoal> txtDoenca;
 
     @FXML
     private TextArea txtComentarioEnfermeiro;

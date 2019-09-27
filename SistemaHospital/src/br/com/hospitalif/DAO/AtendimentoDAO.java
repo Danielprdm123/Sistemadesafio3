@@ -36,7 +36,7 @@ public class AtendimentoDAO {
 		stmt.execute();
 		
 	}
-	public void Selecionar (Atendimento a) throws SQLException {
+	/*public void Selecionar (Atendimento a) throws SQLException {
 		Conexao conn = new  Conexao();
 		Connection conexao =  conn.getConnection();
 		System.out.println(conn.getStatus());
@@ -52,9 +52,9 @@ public class AtendimentoDAO {
 		// stmt.setString(7, a.getDoenca());
 		stmt.execute();
 		
-	}
+	}*/
 	
-	public void Alterar (Atendimento a) throws SQLException {
+	/*public void Alterar (Atendimento a) throws SQLException {
 		Conexao conn = new  Conexao();
 		Connection conexao =  conn.getConnection();
 		System.out.println(conn.getStatus());
@@ -71,6 +71,6 @@ public class AtendimentoDAO {
 		stmt.execute();
 		
 	}
-	
+	*/
 	
 }

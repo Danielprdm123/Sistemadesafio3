@@ -33,7 +33,7 @@ public class Main extends Application{
 		stageAtual.setScene(scene);
 		stageAtual.show();
 		}catch(IOException a) {
-			a.printStackTrace();
+			//a.printStackTrace();
 		}
 	}
 
