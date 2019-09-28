@@ -71,11 +71,11 @@ public class MedicoDAO {
 		
 		
 	}
-	public void alterar(Medico m) throws SQLException {
+	public void update(Medico m) throws SQLException {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere = "UPDATE Medico SET(?,?,?,?,?,?,?,?,?,?,?) where id =(?)";
+		String sqlInsere = "UPDATE Medico SET(?,?,?,?,?,?,?,?,?,?,?) where idMedico =(?)";
 		
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		stmt.setString(1,m.getNome());
