@@ -1,10 +1,13 @@
 package br.com.hospitalif.controller;
 
 
+import java.io.IOException;
 import java.sql.SQLException;
 
+import app.Main;
 import br.com.hospitalif.DAO.PessoaDAO;
 import br.com.hospitalif.model.Pessoa;
+import br.com.hospitalif.util.Rotas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -14,7 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
 
-public class PessoaController {
+public class PessoaController  extends Main {
 
     @FXML
     private Text lblPessoa;
@@ -47,8 +50,8 @@ public class PessoaController {
     private TextArea txtStatus;
 
     @FXML
-    void VoltarDash(ActionEvent event) {
-
+    void VoltarDash(ActionEvent event) throws IOException {
+      openpage(Rotas.DASH);
     }
 
     @FXML
