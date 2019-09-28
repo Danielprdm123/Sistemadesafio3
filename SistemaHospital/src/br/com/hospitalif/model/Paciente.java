@@ -1,8 +1,8 @@
 package br.com.hospitalif.model;
 
-import java.util.List;
 
-public class Paciente {
+
+public class Paciente extends Pessoa {
 	private int idPaciente;
 	private String doenca;
 	private String historico;

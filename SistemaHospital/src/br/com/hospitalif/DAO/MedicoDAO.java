@@ -75,7 +75,7 @@ public class MedicoDAO {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere = "UPDATE Medico SET(?,?,?,?,?,?,?,?,?,?,?) where idMedico =(?)";
+		String sqlInsere = "UPDATE Medico SET(?,?,?,?,?,?,?,?,?,?,?) where id=(?)";
 		
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		stmt.setString(1,m.getNome());

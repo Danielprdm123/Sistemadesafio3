@@ -43,7 +43,6 @@ public class EnfermeiroDAO {
 		
 		stmt.setInt(1,id);
 		stmt.execute();
-		stmt.execute();
 		
 	}
 	
@@ -77,12 +76,11 @@ public class EnfermeiroDAO {
 		Conexao conn = new  Conexao();
 		Connection conexao =  conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere ="UPDATE Enfermeiro set(?,?,?,?,?,?,?,?,?,?) where idEnfermeiro=(?) ";
+		String sqlInsere ="UPDATE Enfermeiro set(?,?,?,?,?,?,?,?,?,?) where id=(?) ";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		
 		stmt.setInt(1, e.getIdFuncionario());
 		stmt.setInt(2, e.getNumeroderegistro());
-		
 		stmt.setString(1,e.getNome());
 		stmt.setString(2, e.getCpf());
 		stmt.setInt(3, e.getIdade());
