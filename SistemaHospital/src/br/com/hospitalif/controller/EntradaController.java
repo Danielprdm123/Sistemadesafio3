@@ -1,10 +1,13 @@
 package br.com.hospitalif.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
-import java.time.Instant;
+import java.time.LocalDate;
 
+import app.Main;
 import br.com.hospitalif.DAO.EntradaDAO;
 import br.com.hospitalif.model.Entrada;
+import br.com.hospitalif.util.Rotas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,7 +16,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.util.Callback;
 
-public class EntradaController {
+public class EntradaController extends Main  {
 
     @FXML
     private DatePicker dtDataEntrada;
@@ -36,22 +39,23 @@ public class EntradaController {
 
     @FXML
     void enviarEntrada(ActionEvent event) throws SQLException {
-    	Instant dataEntrada = dtDataEntrada.;
-    	Instant dataSaida = dtDataSaida.getValue();
+    	LocalDate dataEntrada = dtDataEntrada.getValue();
+    	LocalDate dataSaida = dtDataSaida.getValue();
     	String SituacaoPaciente = txtSituacaoPaciente.getText();
     	String statusEntrada = txtStatusEntrada.getText();
     	EntradaDAO enDAO = new EntradaDAO();
     	Entrada en = new Entrada();
     	
-    	 en.setDataEntrada(dataEntrada);
-    	 en.setDataDeSaida(dataSaida);
+    	// en.setDataEntrada(dataEntrada);
+    	//  en.setDataDeSaida(dataSaida);
     	 en.setSituacaoDePaciente(SituacaoPaciente);
     	en.setStatusDeEntrada(statusEntrada);
     	enDAO.save(en);
     }
 
     @FXML
-    void voltarDash(ActionEvent event) {
+    void voltarDash(ActionEvent event) throws IOException {
+    	openpage(Rotas.DASH);
 
     }
 

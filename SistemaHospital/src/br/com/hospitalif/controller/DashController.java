@@ -48,43 +48,43 @@ public class DashController extends Main{
     private Hyperlink linkMedico;
 
     @FXML
-    void Enfermeiro(ActionEvent event) {
-
+    void Enfermeiro(ActionEvent event) throws IOException {
+    	openpage(Rotas.ENFERMEIRO);
     }
 
     @FXML
-    void Enfermidade(ActionEvent event) {
-
+    void Enfermidade(ActionEvent event) throws IOException {
+    	openpage(Rotas.ENFERMIDADE);
     }
 
     @FXML
-    void EnfermidadePessoal(ActionEvent event) {
-
+    void EnfermidadePessoal(ActionEvent event) throws IOException {
+    	openpage(Rotas.ENFERMIDADEPESSOAL);
     }
 
     @FXML
-    void Entrada(ActionEvent event) {
-
+    void Entrada(ActionEvent event) throws IOException {
+    	openpage(Rotas.ENTRADA);
     }
 
     @FXML
-    void Funcionario(ActionEvent event) {
-
+    void Funcionario(ActionEvent event) throws IOException {
+    	openpage(Rotas.FUNCIONARIO);
     }
 
     @FXML
-    void Gerente(ActionEvent event) {
-
+    void Gerente(ActionEvent event) throws IOException {
+    	openpage(Rotas.GERENTE);
     }
 
     @FXML
-    void Atendente(ActionEvent event) {
-
+    void Atendente(ActionEvent event) throws IOException {
+    	openpage(Rotas.PACIENTE);
     }
 
     @FXML
-    void Medico(ActionEvent event) {
-
+    void Medico(ActionEvent event) throws IOException {
+    	openpage(Rotas.MEDICO);
     }
 
     @FXML
@@ -94,17 +94,20 @@ public class DashController extends Main{
     }
 
     @FXML
-    void Pessoa(ActionEvent event) {
+    void Pessoa(ActionEvent event) throws IOException {
+    	openpage(Rotas.PESSOA);
 
     }
 
     @FXML
-    void Administrador(ActionEvent event) {
+    void Administrador(ActionEvent event) throws IOException {
+    	openpage(Rotas.ADMINISTRADOR);
 
     }
 
     @FXML
-    void Atendimento(ActionEvent event) {
+    void Atendimento(ActionEvent event) throws IOException {
+    	openpage(Rotas.ATENDIMENTO);
 
     }
 

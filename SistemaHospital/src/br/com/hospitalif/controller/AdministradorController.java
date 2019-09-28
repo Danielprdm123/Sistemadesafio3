@@ -1,10 +1,14 @@
 package br.com.hospitalif.controller;
 
+import java.io.IOException;
+
+import app.Main;
+import br.com.hospitalif.util.Rotas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class AdministradorController {
+public class AdministradorController  extends Main {
 
     @FXML
     private Button btnCadastrarFuncionario;
@@ -15,14 +19,14 @@ public class AdministradorController {
   
 
     @FXML
-    void CadastrarFuncionario(ActionEvent event) {
-
+    void CadastrarFuncionario(ActionEvent event) throws IOException {
+    	openpage(Rotas.FUNCIONARIO);
     }
 
 
     @FXML
-    void voltadash(ActionEvent event) {
-
+    void voltadash(ActionEvent event) throws IOException {
+    	openpage(Rotas.DASH);
     }
 
  

@@ -1,9 +1,12 @@
 package br.com.hospitalif.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
+import app.Main;
 import br.com.hospitalif.DAO.FuncionarioDAO;
 import br.com.hospitalif.model.Funcionario;
+import br.com.hospitalif.util.Rotas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -11,7 +14,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class FuncionarioController {
+public class FuncionarioController  extends Main{
 
     @FXML
     private TextField txtLogin;
@@ -43,8 +46,8 @@ public class FuncionarioController {
     }
 
     @FXML
-    void Voltardash(ActionEvent event) {
-
+    void Voltardash(ActionEvent event) throws IOException {
+    	openpage(Rotas.DASH);
     }
 
 }

@@ -1,16 +1,19 @@
 package br.com.hospitalif.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
+import app.Main;
 import br.com.hospitalif.DAO.EnfermidadeDAO;
 import br.com.hospitalif.model.Enfermidade;
+import br.com.hospitalif.util.Rotas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class EnfermidadeController {
+public class EnfermidadeController extends Main{
 
     @FXML
     private Button btnEnviar;
@@ -45,7 +48,8 @@ public class EnfermidadeController {
 
 
     @FXML
-    void Voltardash(ActionEvent event) {
+    void Voltardash(ActionEvent event) throws IOException {
+    	openpage(Rotas.DASH);
 
     }
 

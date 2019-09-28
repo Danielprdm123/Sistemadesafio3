@@ -2,10 +2,13 @@ package br.com.hospitalif.controller;
 
 
 
+import java.io.IOException;
 import java.sql.SQLException;
 
+import app.Main;
 import br.com.hospitalif.DAO.PacienteDAO;
 import br.com.hospitalif.model.Paciente;
+import br.com.hospitalif.util.Rotas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,7 +16,7 @@ import javafx.scene.control.TextArea;
 
 
 
-public class PacienteController {
+public class PacienteController extends Main {
 
     @FXML
     private Button btnCadastrar;
@@ -28,8 +31,8 @@ public class PacienteController {
     private Button btnVoltar;
 
     @FXML
-    void Voltardash(ActionEvent event) {
-    	
+    void Voltardash(ActionEvent event) throws IOException {
+    	 openpage(Rotas.DASH);
 
     }
 

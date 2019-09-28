@@ -23,7 +23,7 @@ public class Main extends Application{
 	@Override
 	public void start(Stage Stage) throws Exception {
 		stageAtual = Stage;
-		FXMLLoader loader = new FXMLLoader(getClass().getResource(Rotas.PESSOA));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource(Rotas.LOGIN));
 		
 		
 	try {
