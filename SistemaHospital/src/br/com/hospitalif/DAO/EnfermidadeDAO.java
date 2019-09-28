@@ -26,7 +26,7 @@ public class EnfermidadeDAO {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere = "DELETE * FROM Enfermidade WHERE id=(?)";	
+		String sqlInsere = "DELETE  FROM Enfermidade WHERE id=(?)";	
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		stmt.setInt(1,id);
 		stmt.execute();

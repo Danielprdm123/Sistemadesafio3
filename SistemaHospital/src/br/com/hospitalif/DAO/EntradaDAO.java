@@ -58,7 +58,7 @@ public class EntradaDAO {
 		String sqlInsere = "UPDATE Entrada SET(?,?,?,?) where id =(?)";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		                 
-		 //stmt.setString(1, en.getDataEntrada());
+		 //stmt.setDate(1, en.getDataEntrada());
         //stmt.setString(2, en.getDataDeSaida());
 		 stmt.setString(3,en.getStatusDeEntrada());
 	     stmt.setString(4,en.getSituacaoDePaciente());

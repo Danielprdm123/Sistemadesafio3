@@ -2,7 +2,10 @@ package br.com.hospitalif.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.hospitalif.conexao.Conexao;
 import br.com.hospitalif.model.Atendimento;
@@ -39,17 +42,20 @@ public class AtendimentoDAO {
 		Conexao conn = new  Conexao();
 		Connection conexao =  conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere = "select from Atendimento(?,?,?,?,?,?,?)";
+		String sqlInsere = "select * from Atendimento";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
-		
-		stmt.setInt(1, a.getIdAtendimento());
-		stmt.setString(2, a.getComentarioEnfermeiro());
-		stmt.setString(3, a.getComentarioMedico());
-		stmt.setFloat(4, a.getPeso());
-		stmt.setFloat(5, a.getAltura());
-		stmt.setDate(6, a.getData());
-		// stmt.setString(7, a.getDoenca());
-		stmt.execute();
+		ResultSet rs = stmt.executeQuery();
+		List <Atendimento> atendimentos = new ArrayList<Atendimento>();
+		while(rs.next()) {
+			Atendimento a1 = new Atendimento();
+			a1.setComentarioEnfermeiro(rs.getString("comentarioEnfermeiro"));
+			a1.setComentarioMedico(rs.getString("comentarioMedico"));
+			a1.setPeso(rs.getFloat("peso"));
+			a1.setAltura(rs.getFloat("peso"));
+			a1.setData(rs.getDate("dtData"));
+			a1.setDoenca(rs.getString("doenca"));
+			atendimentos.add(a1);
+		}
 		
 	}
 	
