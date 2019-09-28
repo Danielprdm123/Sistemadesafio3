@@ -9,7 +9,7 @@ public class Entrada {
 	private Date dataEntrada;
 	private Date dataDeSaida;
 	private String statusDeEntrada;
-	private List <Atendimento>situacaoDePaciente;
+	private String situacaoDePaciente;
 	
 	public void setIdEntrada(int idEntrada) {
 		this.idEntrada = idEntrada;
@@ -39,10 +39,10 @@ public class Entrada {
 		return this.statusDeEntrada;
 	}
 	
-	public void setSituacaoDePaciente(List<Atendimento> situacaoDePaciente) {
+	public void setSituacaoDePaciente(String situacaoDePaciente) {
 		this.situacaoDePaciente = situacaoDePaciente;
 	}
-	public List<Atendimento> getSituacaoDePaciente() {
+	public String getSituacaoDePaciente() {
 		return this.situacaoDePaciente;
 	}
 	

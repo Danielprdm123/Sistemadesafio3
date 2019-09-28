@@ -11,7 +11,7 @@ public class Atendimento {
 	private float peso;
 	private float altura;
 	private Date data;
-	private List<EnfermidadePessoal> doenca;
+	private String doenca;
 	
 	public void setIdAtendimento(int idAtendimento) {
 		this.idAtendimento = idAtendimento;
@@ -55,10 +55,10 @@ public class Atendimento {
 		return this.data;
 	}
 	
-	public void setDoenca(List<EnfermidadePessoal>  doenca) {
+	public void setDoenca(String  doenca) {
 		this.doenca = doenca;
 	}
-	public List<EnfermidadePessoal>  getDoenca() {
+	public String  getDoenca() {
 		return this.doenca;
 	}
 	

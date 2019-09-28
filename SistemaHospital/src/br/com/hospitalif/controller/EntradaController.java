@@ -1,7 +1,7 @@
 package br.com.hospitalif.controller;
 
 import java.sql.SQLException;
-import java.time.LocalDate;
+import java.time.Instant;
 
 import br.com.hospitalif.DAO.EntradaDAO;
 import br.com.hospitalif.model.Entrada;
@@ -21,8 +21,9 @@ public class EntradaController {
     @FXML
     private DatePicker dtDataSaida;
 
+    
     @FXML
-    private ListView<AtendimentoController> txtSituacaoPaciente;
+    private TextArea txtSituacaoPaciente;
 
     @FXML
     private TextArea txtStatusEntrada;
@@ -35,16 +36,16 @@ public class EntradaController {
 
     @FXML
     void enviarEntrada(ActionEvent event) throws SQLException {
-    	LocalDate dataEntrada = dtDataEntrada.getValue();
-    	LocalDate dataSaida = dtDataSaida.getValue();
-    	Callback<?, ?> SituacaoPaciente = txtSituacaoPaciente.getCellFactory();
+    	Instant dataEntrada = dtDataEntrada.get;
+    	Instant dataSaida = dtDataSaida.getValue();
+    	String SituacaoPaciente = txtSituacaoPaciente.getText();
     	String statusEntrada = txtStatusEntrada.getText();
     	EntradaDAO enDAO = new EntradaDAO();
     	Entrada en = new Entrada();
     	
-    	// en.setDataEntrada(dataEntrada);
-    	// en.setDataDeSaida(dataSaida);
-    	// en.setSituacaoDePaciente(SituacaoPaciente);
+    	 en.setDataEntrada(dataEntrada);
+    	 en.setDataDeSaida(dataSaida);
+    	 en.setSituacaoDePaciente(SituacaoPaciente);
     	en.setStatusDeEntrada(statusEntrada);
     	enDAO.save(en);
     }

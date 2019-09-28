@@ -23,8 +23,8 @@ public class Main extends Application{
 	@Override
 	public void start(Stage Stage) throws Exception {
 		stageAtual = Stage;
-		FXMLLoader loader = new FXMLLoader(getClass().getResource(Rotas.LOGIN));
-		System.out.println("xxx");
+		FXMLLoader loader = new FXMLLoader(getClass().getResource(Rotas.PACIENTE));
+		
 		
 	try {
 		Parent root = loader.load();
@@ -33,7 +33,7 @@ public class Main extends Application{
 		stageAtual.setScene(scene);
 		stageAtual.show();
 		}catch(IOException a) {
-			//a.printStackTrace();
+			a.printStackTrace();
 		}
 	}
 
