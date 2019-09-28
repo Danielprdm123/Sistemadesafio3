@@ -33,7 +33,7 @@ public class EntradaDAO {
 			stmt.setInt(1,id);	
 			stmt.execute();
 	}
-	public void update(Entrada en) throws SQLException {
+	public void select(Entrada en) throws SQLException {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
@@ -51,7 +51,7 @@ public class EntradaDAO {
 		}
 
 	}
-	public void alterar(Entrada en) throws SQLException {
+	public void update(Entrada en) throws SQLException {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
