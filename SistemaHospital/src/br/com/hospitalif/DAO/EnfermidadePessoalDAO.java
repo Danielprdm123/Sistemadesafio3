@@ -33,7 +33,7 @@ public void removeById(int id) throws SQLException {
 		stmt.setInt(1,id);	
 		stmt.execute();
 }
-public void update(EnfermidadePessoal ep) throws SQLException {
+public void select(EnfermidadePessoal ep) throws SQLException {
 	Conexao conn = new Conexao();
 	Connection conexao = conn.getConnection();
 	System.out.println(conn.getStatus());
@@ -50,7 +50,7 @@ public void update(EnfermidadePessoal ep) throws SQLException {
 	}	
 	
 }
-public void alterar(EnfermidadePessoal e) throws SQLException {
+public void update(EnfermidadePessoal e) throws SQLException {
 	Conexao conn = new Conexao();
 	Connection conexao = conn.getConnection();
 	System.out.println(conn.getStatus());
