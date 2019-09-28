@@ -1,13 +1,18 @@
 package br.com.hospitalif.controller;
 
+import java.io.IOException;
+
+import app.Main;
+import br.com.hospitalif.util.Rotas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
 
-public class DashController {
+public class DashController extends Main{
 
     @FXML
     private Hyperlink linkPaciente;
+    
 
     @FXML
     private Hyperlink linkPessoa;
@@ -83,7 +88,8 @@ public class DashController {
     }
 
     @FXML
-    void Paciente(ActionEvent event) {
+    void Paciente(ActionEvent event) throws IOException {
+    	openpage(Rotas.PACIENTE);
 
     }
 

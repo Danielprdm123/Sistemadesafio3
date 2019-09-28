@@ -36,7 +36,7 @@ public class EntradaController {
 
     @FXML
     void enviarEntrada(ActionEvent event) throws SQLException {
-    	Instant dataEntrada = dtDataEntrada.get;
+    	Instant dataEntrada = dtDataEntrada.;
     	Instant dataSaida = dtDataSaida.getValue();
     	String SituacaoPaciente = txtSituacaoPaciente.getText();
     	String statusEntrada = txtStatusEntrada.getText();
