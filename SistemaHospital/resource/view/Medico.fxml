@@ -3,14 +3,18 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.MedicoController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="586.0" prefWidth="600.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.MedicoController">
    <children>
       <TextFlow layoutX="143.0" layoutY="20.0" prefHeight="44.0" prefWidth="298.0">
          <children>
@@ -21,7 +25,7 @@
             </Text>
          </children>
       </TextFlow>
-      <AnchorPane layoutX="-8.0" prefHeight="400.0" prefWidth="149.0" style="-fx-background-color: #48D1CC;">
+      <AnchorPane layoutX="-8.0" prefHeight="585.0" prefWidth="149.0" style="-fx-background-color: #48D1CC;">
          <children>
             <TextFlow layoutX="17.0" layoutY="26.0" prefHeight="52.0" prefWidth="112.0">
                <children>
@@ -34,19 +38,19 @@
             </TextFlow>
          </children>
       </AnchorPane>
-      <Label layoutX="225.0" layoutY="145.0" text="Número Registro:">
+      <Label layoutX="196.0" layoutY="413.0" text="Número Registro:">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtNumregistro" layoutX="386.0" layoutY="138.0" prefHeight="36.0" prefWidth="111.0" />
-      <Label layoutX="236.0" layoutY="238.0" text="Especialidade:">
+      <TextField fx:id="txtNumregistro" layoutX="356.0" layoutY="412.0" prefHeight="25.0" prefWidth="127.0" />
+      <Label layoutX="204.0" layoutY="458.0" text="Especialidade:">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtEspecialidade" layoutX="380.0" layoutY="231.0" prefHeight="36.0" prefWidth="189.0" />
-      <Button fx:id="btnEnviar" layoutX="461.0" layoutY="307.0" mnemonicParsing="false" onAction="#Enviarmedico" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Enviar" textFill="#f8f8ffba">
+      <TextField fx:id="txtEspecialidade" layoutX="347.0" layoutY="456.0" prefHeight="25.0" prefWidth="134.0" />
+      <Button fx:id="btnEnviar" layoutX="448.0" layoutY="537.0" mnemonicParsing="false" onAction="#Enviarmedico" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Enviar" textFill="#f8f8ffba">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -54,7 +58,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btnVolta" layoutX="193.0" layoutY="307.0" mnemonicParsing="false" onAction="#Voltardash" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Voltar" textFill="#f8f8ffba">
+      <Button fx:id="btnVolta" layoutX="171.0" layoutY="536.0" mnemonicParsing="false" onAction="#Voltardash" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Voltar" textFill="#f8f8ffba">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -62,5 +66,75 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
+      <TextField fx:id="txtNome" layoutX="255.0" layoutY="113.0" prefHeight="26.0" prefWidth="150.0">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </TextField>
+      <Label layoutX="176.0" layoutY="115.0" text="Nome:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCpf" layoutX="234.0" layoutY="150.0" prefHeight="25.0" prefWidth="95.0" />
+      <Label layoutX="181.0" layoutY="152.0" text="CPF:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="423.0" layoutY="114.0" text="Idade:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtIdade" layoutX="487.0" layoutY="113.0" prefHeight="25.0" prefWidth="43.0" />
+      <TextField fx:id="textSangue" layoutX="481.0" layoutY="150.0" prefHeight="25.0" prefWidth="84.0" />
+      <Label layoutX="338.0" layoutY="152.0" prefHeight="22.0" prefWidth="128.0" text="Tipo Sanguineo:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="196.0" layoutY="195.0" prefHeight="28.0" prefWidth="98.0" text="Sexo:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="cboSexo" layoutX="289.0" layoutY="200.0" mnemonicParsing="false" text="Masculino">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="sexo" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="cboSexo" layoutX="397.0" layoutY="199.0" mnemonicParsing="false" text="Feminino" toggleGroup="$sexo">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </RadioButton>
+      <TextArea fx:id="txtStatus" layoutX="348.0" layoutY="234.0" prefHeight="34.0" prefWidth="169.0" />
+      <Label layoutX="208.0" layoutY="243.0" text="Status Pessoa:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtLogin" layoutX="252.0" layoutY="289.0" prefHeight="34.0" prefWidth="112.0" />
+      <Label layoutX="190.0" layoutY="293.0" prefHeight="22.0" prefWidth="70.0" text="Login:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="txtSenha" layoutX="450.0" layoutY="289.0" prefHeight="34.0" prefWidth="112.0" />
+      <Label layoutX="388.0" layoutY="294.0" text="Senha:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="txtStatusf" layoutX="343.0" layoutY="343.0" prefHeight="47.0" prefWidth="188.0" />
+      <Label layoutX="174.0" layoutY="353.0" prefHeight="22.0" prefWidth="152.0" text="Status Funcionario:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
