@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import app.Main;
-import br.com.hospitalif.DAO.PessoaDAO;
+
 import br.com.hospitalif.model.Pessoa;
 import br.com.hospitalif.util.Rotas;
 import javafx.event.ActionEvent;
@@ -64,14 +64,14 @@ public class PessoaController  extends Main {
     	String status = txtStatus.getText();
     	
     	Pessoa p = new Pessoa();
-    	PessoaDAO pDAO = new PessoaDAO();
+    //	PessoaDAO pDAO = new PessoaDAO();
     	p.setNome(nome);
     	p.setCpf(cpf);
     	p.setIdade(idade);
     	p.setTipoSanguineo(tipoSangue);
     	p.setSexo(sexo);
     	p.setStatusPessoa(status);
-    	pDAO.save(p);
+//    	pDAO.save(p);
 
     }
 

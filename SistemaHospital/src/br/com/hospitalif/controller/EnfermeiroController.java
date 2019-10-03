@@ -59,10 +59,28 @@ public class EnfermeiroController extends Main {
 
     @FXML
     void enviarEnfermeiro(ActionEvent event) throws SQLException {
+    	String nome = txtNome.getText();
+    	String cpf = txtCpf.getText();
+    	int idade = Integer.parseInt(txtIdade.getText());
+    	String tipoSangue = textSangue.getText();
+    	String sexo = cboSexo.getText();
+    	String status = txtStatus.getText();
+    	String login = txtLogin.getText();
+    	String senha = txtSenha.getText();
+    	String statusF = txtStatusf.getText();
     	int  NumRegistroEnfermeiro = Integer.parseInt(txtNumres.getText());
     	
     	Enfermeiro e = new Enfermeiro();
     	EnfermeiroDAO eDAO = new EnfermeiroDAO();
+    	e.setNome(nome);
+    	e.setCpf(cpf);
+    	e.setIdade(idade);
+    	e.setTipoSanguineo(tipoSangue);
+    	e.setSexo(sexo);
+    	e.setStatusPessoa(status);
+    	e.setLogin(login);
+    	e.setSenha(senha);
+    	e.setStatusDeUsuario(statusF);
         e.setNumeroderegistro(NumRegistroEnfermeiro);
     	eDAO.save(e);
     }

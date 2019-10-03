@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import app.Main;
-import br.com.hospitalif.DAO.FuncionarioDAO;
 import br.com.hospitalif.model.Funcionario;
 import br.com.hospitalif.util.Rotas;
 import javafx.event.ActionEvent;
@@ -37,11 +36,11 @@ public class FuncionarioController  extends Main{
     	String senha = txtSenha.getText();
     	String Status = txtStatus.getText();
     	Funcionario f = new Funcionario();
-    	FuncionarioDAO fDAO = new FuncionarioDAO();
+    //	FuncionarioDAO fDAO = new FuncionarioDAO();
     	f.setLogin(login);
     	f.setSenha(senha);
     	f.setStatusDeUsuario(Status);
-    	fDAO.save(f);
+    	//fDAO.save(f);
 
     }
 

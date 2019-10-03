@@ -58,9 +58,28 @@ public class GerenteController extends Main {
 
     @FXML
     void Enviargerente(ActionEvent event) throws SQLException {
+    	String nome = txtNome.getText();
+    	String cpf = txtCpf.getText();
+    	int idade = Integer.parseInt(txtIdade.getText());
+    	String tipoSangue = textSangue.getText();
+    	String sexo = cboSexo.getText();
+    	String status = txtStatus.getText();
+    	String login = txtLogin.getText();
+    	String senha = txtSenha.getText();
+    	String statusF = txtStatusf.getText();
     	String cargo = txtCargo.getText();
+    	
     	Gerente g = new Gerente();
     	GerenteDAO gDAO = new GerenteDAO();
+    	g.setNome(nome);
+    	g.setCpf(cpf);
+    	g.setIdade(idade);
+    	g.setTipoSanguineo(tipoSangue);
+    	g.setSexo(sexo);
+    	g.setStatusPessoa(status);
+    	g.setLogin(login);
+    	g.setSenha(senha);
+    	g.setStatusDeUsuario(statusF);
     	g.setCargo(cargo);
     	gDAO.save(g);
     }

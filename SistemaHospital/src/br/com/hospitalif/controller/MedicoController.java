@@ -61,11 +61,28 @@ public class MedicoController  extends Main {
 
     @FXML
     void Enviarmedico(ActionEvent event) throws SQLException {
+    	String nome = txtNome.getText();
+    	String cpf = txtCpf.getText();
+    	int idade = Integer.parseInt(txtIdade.getText());
+    	String tipoSangue = textSangue.getText();
+    	String sexo = cboSexo.getText();
+    	String status = txtStatus.getText();
+    	String login = txtLogin.getText();
+    	String senha = txtSenha.getText();
+    	String statusF = txtStatusf.getText();
     	int NumRegristroMedico = Integer.parseInt(txtNumregistro.getText());
     	String especialidade = txtEspecialidade.getText();
     	Medico m = new Medico(); 
 		MedicoDAO  mDAO = new MedicoDAO();
-		
+		m.setNome(nome);
+    	m.setCpf(cpf);
+    	m.setIdade(idade);
+    	m.setTipoSanguineo(tipoSangue);
+    	m.setSexo(sexo);
+    	m.setStatusPessoa(status);
+    	m.setLogin(login);
+    	m.setSenha(senha);
+    	m.setStatusDeUsuario(statusF);
 		m.setEspecialidade(especialidade);
 		m.setNumeroderegistro(NumRegristroMedico);
 		mDAO.save(m);

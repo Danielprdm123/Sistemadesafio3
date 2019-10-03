@@ -63,10 +63,23 @@ public class PacienteController extends Main {
 
     @FXML
     void cadastrarPaciente(ActionEvent event) throws SQLException {
+    	String nome = txtNome.getText();
+    	String cpf = txtCpf.getText();
+    	int idade = Integer.parseInt(txtIdade.getText());
+    	String tipoSangue = textSangue.getText();
+    	String sexo = cboSexo.getText();
+    	String status = txtStatus.getText();
     	String historico = txtHistorico.getText();
     	String doenca = txtDoenca.getText();
+    	
     	Paciente p = new Paciente ();
     	PacienteDAO pDAO = new PacienteDAO();
+    	p.setNome(nome);
+    	p.setCpf(cpf);
+    	p.setIdade(idade);
+    	p.setTipoSanguineo(tipoSangue);
+    	p.setSexo(sexo);
+    	p.setStatusPessoa(status);
     	p.setDoenca(doenca);
     	p.setHistorico(historico);
     	pDAO.save(p);
