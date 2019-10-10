@@ -43,8 +43,8 @@ public class EntradaDAO {
 		List <Entrada> entradas = new ArrayList<Entrada>();
 		while(rs.next()) {
 			Entrada en1 = new Entrada();
-			en1.setDataEntrada(rs.getDate("dataEntrada"));
-			en1.setDataDeSaida(rs.getDate("dataSaida"));
+			//en1.setDataEntrada(rs.getDate("dataEntrada"));
+		// 	en1.setDataDeSaida(rs.getDate("dataSaida"));
 			en1.setStatusDeEntrada(rs.getString("statusEntrada"));
 			en1.setSituacaoDePaciente(rs.getString("situacaoPaciente"));
 			entradas.add(en1);

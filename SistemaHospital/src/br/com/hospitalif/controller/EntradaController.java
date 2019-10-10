@@ -46,8 +46,8 @@ public class EntradaController extends Main  {
     	EntradaDAO enDAO = new EntradaDAO();
     	Entrada en = new Entrada();
     	
-    	// en.setDataEntrada(dataEntrada);
-    	//  en.setDataDeSaida(dataSaida);
+    	en.setDataEntrada(dataEntrada);
+        en.setDataDeSaida(dataSaida);
     	 en.setSituacaoDePaciente(SituacaoPaciente);
     	en.setStatusDeEntrada(statusEntrada);
     	enDAO.save(en);
