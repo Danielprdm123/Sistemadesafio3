@@ -15,18 +15,18 @@ public class PacienteDAO {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere = "INSERT INTO Paciente VALUES(?,?,?,?,?,?,?,?,?,?)";
+		String sqlInsere = "INSERT INTO Paciente VALUES(?,?,?,?,?,?,?,?,?)";
 		
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
-				
-			stmt.setString(1,p.getNome());
-			stmt.setString(2, p.getCpf());
-			stmt.setInt(3, p.getIdade());
-			stmt.setString(4, p.getTipoSanguineo());
-			stmt.setString(5,p.getSexo());
-			stmt.setString(6, p.getStatusPessoa());
-			stmt.setString(7,p.getDoenca());
-			stmt.setString(8,p.getHistorico());
+			stmt.setInt(1,p.getIdPaciente());	
+			stmt.setString(2,p.getNome());
+			stmt.setString(3, p.getCpf());
+			stmt.setInt(4, p.getIdade());
+			stmt.setString(5, p.getTipoSanguineo());
+			stmt.setString(6,p.getSexo());
+			stmt.setString(7, p.getStatusPessoa());
+			stmt.setString(8,p.getDoenca());
+			stmt.setString(9,p.getHistorico());
 			stmt.execute();
 	}
 	public void removeById(int id) throws SQLException {
@@ -66,7 +66,7 @@ public class PacienteDAO {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere = "UPDATE Paciente SET(?,?,?,?,?,?,?,?,?,?) where id=(?)";
+		String sqlInsere = "UPDATE Paciente SET(?,?,?,?,?,?,?,?,?) where id=(?)";
 		
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		stmt.setString(1,p.getNome());
