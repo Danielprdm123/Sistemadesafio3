@@ -15,19 +15,20 @@ public class MedicoDAO {
 		Conexao conn = new  Conexao();
 		Connection conexao =  conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere = "INSERT INTO Medico VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+		String sqlInsere = "INSERT INTO Medico VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
-		stmt.setString(1,m.getNome());
-		stmt.setString(2, m.getCpf());
-		stmt.setInt(3, m.getIdade());
-		stmt.setString(4, m.getTipoSanguineo());
-		stmt.setString(5, m.getSexo());
-		stmt.setString(6, m.getStatusPessoa());
-		stmt.setString(7, m.getLogin());
-		stmt.setString(8, m.getSenha());
-		stmt.setString(9, m.getStatusDeUsuario());
-		stmt.setInt(10, m.getNumeroderegistro());
-		stmt.setString(11, m.getEspecialidade());
+		stmt.setInt(1,m.getIdFuncionario());	
+		stmt.setString(2,m.getNome());
+		stmt.setString(3, m.getCpf());
+		stmt.setInt(4, m.getIdade());
+		stmt.setString(5, m.getTipoSanguineo());
+		stmt.setString(6, m.getSexo());
+		stmt.setString(7, m.getStatusPessoa());
+		stmt.setString(8, m.getLogin());
+		stmt.setString(9, m.getSenha());
+		stmt.setString(10, m.getStatusDeUsuario());
+		stmt.setInt(11, m.getNumeroderegistro());
+		stmt.setString(12, m.getEspecialidade());
 
 		stmt.execute();
 		
@@ -75,20 +76,21 @@ public class MedicoDAO {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere = "UPDATE Medico SET(?,?,?,?,?,?,?,?,?,?,?) where id=(?)";
+		String sqlInsere = "UPDATE Medico SET(?,?,?,?,?,?,?,?,?,?,?,?) where id=(?)";
 		
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
-		stmt.setString(1,m.getNome());
-		stmt.setString(2, m.getCpf());
-		stmt.setInt(3, m.getIdade());
-		stmt.setString(4, m.getTipoSanguineo());
-		stmt.setString(5, m.getSexo());
-		stmt.setString(6, m.getStatusPessoa());
-		stmt.setString(7, m.getLogin());
-		stmt.setString(8, m.getSenha());
-		stmt.setString(9, m.getStatusDeUsuario());
-		stmt.setInt(10, m.getNumeroderegistro());
-		stmt.setString(11, m.getEspecialidade());
+		stmt.setInt(1,m.getIdFuncionario());	
+		stmt.setString(2,m.getNome());
+		stmt.setString(3, m.getCpf());
+		stmt.setInt(4, m.getIdade());
+		stmt.setString(5, m.getTipoSanguineo());
+		stmt.setString(6, m.getSexo());
+		stmt.setString(7, m.getStatusPessoa());
+		stmt.setString(8, m.getLogin());
+		stmt.setString(9, m.getSenha());
+		stmt.setString(10, m.getStatusDeUsuario());
+		stmt.setInt(11, m.getNumeroderegistro());
+		stmt.setString(12, m.getEspecialidade());
 		stmt.execute();
 	}
 }

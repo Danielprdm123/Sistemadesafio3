@@ -69,6 +69,7 @@ public class PacienteDAO {
 		String sqlInsere = "UPDATE Paciente SET(?,?,?,?,?,?,?,?,?) where id=(?)";
 		
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
+		stmt.setInt(1,p.getIdPaciente());	
 		stmt.setString(1,p.getNome());
 		stmt.setString(2, p.getCpf());
 		stmt.setInt(3, p.getIdade());
