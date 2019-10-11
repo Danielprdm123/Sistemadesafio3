@@ -14,19 +14,19 @@ public class GerenteDAO {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere = "INSERT INTO  Gerente VALUES(?,?,?,?,?,?,?,?,?,?)";
+		String sqlInsere = "INSERT INTO  Gerente VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
-		
-		stmt.setString(1,g.getNome());
-		stmt.setString(2, g.getCpf());
-		stmt.setInt(3, g.getIdade());
-		stmt.setString(4, g.getTipoSanguineo());
-		stmt.setString(5,g.getSexo());
-		stmt.setString(6, g.getStatusPessoa());
-		stmt.setString(7, g.getLogin());
-		stmt.setString(8, g.getSenha());
-		stmt.setString(9, g.getStatusDeUsuario());
-		stmt.setString(10,g.getCargo());
+		stmt.setInt(1,g.getIdFuncionario());
+		stmt.setString(2,g.getNome());
+		stmt.setString(3, g.getCpf());
+		stmt.setInt(4, g.getIdade());
+		stmt.setString(5, g.getTipoSanguineo());
+		stmt.setString(6,g.getSexo());
+		stmt.setString(7, g.getStatusPessoa());
+		stmt.setString(8, g.getLogin());
+		stmt.setString(9, g.getSenha());
+		stmt.setString(10, g.getStatusDeUsuario());
+		stmt.setString(11,g.getCargo());
 		stmt.execute();
 	}
 	public void removeById(int id) throws SQLException {
@@ -67,18 +67,19 @@ public class GerenteDAO {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere = "UPDATE Gerente set(?,?,?,?,?,?,?,?,?,?) where id=(?) ";
+		String sqlInsere = "UPDATE Gerente set(?,?,?,?,?,?,?,?,?,?,?) where id=(?) ";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
-		stmt.setString(1,g.getNome());
-		stmt.setString(2, g.getCpf());
-		stmt.setInt(3, g.getIdade());
-		stmt.setString(4, g.getTipoSanguineo());
-		stmt.setString(5,g.getSexo());
-		stmt.setString(6, g.getStatusPessoa());
-		stmt.setString(7, g.getLogin());
-		stmt.setString(8, g.getSenha());
-		stmt.setString(9, g.getStatusDeUsuario());
-		stmt.setString(10,g.getCargo());
+		stmt.setInt(1,g.getIdFuncionario());
+		stmt.setString(2,g.getNome());
+		stmt.setString(3, g.getCpf());
+		stmt.setInt(4, g.getIdade());
+		stmt.setString(5, g.getTipoSanguineo());
+		stmt.setString(6,g.getSexo());
+		stmt.setString(7, g.getStatusPessoa());
+		stmt.setString(8, g.getLogin());
+		stmt.setString(9, g.getSenha());
+		stmt.setString(10, g.getStatusDeUsuario());
+		stmt.setString(11,g.getCargo());
 				stmt.execute();
 	}
 	
