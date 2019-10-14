@@ -16,12 +16,13 @@ public class EntradaDAO {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere = "insert into Entrada VALUES(?,?,?,?)";
+		String sqlInsere = "insert into Entrada VALUES(?,?,?,?,?)";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
-		 //stmt.setString(1, en.getDataEntrada());
-         //stmt.setString(2, en.getDataDeSaida());
-		 stmt.setString(3,en.getStatusDeEntrada());
-	     stmt.setString(4,en.getSituacaoDePaciente());
+		stmt.setInt(1,en.getIdEntrada());
+		 //stmt.setString(2, en.getDataEntrada());
+         //stmt.setString(3, en.getDataDeSaida());
+		 stmt.setString(4,en.getStatusDeEntrada());
+	     stmt.setString(5,en.getSituacaoDePaciente());
 		    stmt.execute();
 	}
 	public void removeById(int id) throws SQLException {
@@ -55,13 +56,14 @@ public class EntradaDAO {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere = "UPDATE Entrada SET(?,?,?,?) where id =(?)";
+		String sqlInsere = "UPDATE Entrada SET(?,?,?,?,?) where id =(?)";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		                 
-		 //stmt.setDate(1, en.getDataEntrada());
-        //stmt.setString(2, en.getDataDeSaida());
-		 stmt.setString(3,en.getStatusDeEntrada());
-	     stmt.setString(4,en.getSituacaoDePaciente());
+		stmt.setInt(1,en.getIdEntrada());
+		 //stmt.setString(2, en.getDataEntrada());
+        //stmt.setString(3, en.getDataDeSaida());
+		 stmt.setString(4,en.getStatusDeEntrada());
+	     stmt.setString(5,en.getSituacaoDePaciente());
 		    stmt.execute();
 	}
 }

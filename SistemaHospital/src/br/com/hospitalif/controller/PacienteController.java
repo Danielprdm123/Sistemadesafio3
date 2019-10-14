@@ -62,7 +62,7 @@ public class PacienteController extends Main {
     }
 
     @FXML
-    void cadastrarPaciente(ActionEvent event) throws SQLException {
+    void cadastrarPaciente(ActionEvent event) throws SQLException, IOException {
     	String nome = txtNome.getText();
     	String cpf = txtCpf.getText();
     	int idade = Integer.parseInt(txtIdade.getText());
@@ -83,6 +83,7 @@ public class PacienteController extends Main {
     	p.setDoenca(doenca);
     	p.setHistorico(historico);
     	pDAO.save(p);
+    	 openpage(Rotas.DASH);
 
     }
 }

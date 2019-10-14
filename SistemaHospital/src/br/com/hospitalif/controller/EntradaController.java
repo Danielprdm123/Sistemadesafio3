@@ -38,7 +38,7 @@ public class EntradaController extends Main  {
     private Button btnVoltar;
 
     @FXML
-    void enviarEntrada(ActionEvent event) throws SQLException {
+    void enviarEntrada(ActionEvent event) throws SQLException, IOException {
     	LocalDate dataEntrada = dtDataEntrada.getValue();
     	LocalDate dataSaida = dtDataSaida.getValue();
     	String SituacaoPaciente = txtSituacaoPaciente.getText();
@@ -51,6 +51,7 @@ public class EntradaController extends Main  {
     	 en.setSituacaoDePaciente(SituacaoPaciente);
     	en.setStatusDeEntrada(statusEntrada);
     	enDAO.save(en);
+    	 openpage(Rotas.DASH);
     }
 
     @FXML

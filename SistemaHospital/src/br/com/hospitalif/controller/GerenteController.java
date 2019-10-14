@@ -57,7 +57,7 @@ public class GerenteController extends Main {
     private TextArea txtStatusf;
 
     @FXML
-    void Enviargerente(ActionEvent event) throws SQLException {
+    void Enviargerente(ActionEvent event) throws SQLException, IOException {
     	String nome = txtNome.getText();
     	String cpf = txtCpf.getText();
     	int idade = Integer.parseInt(txtIdade.getText());
@@ -82,6 +82,7 @@ public class GerenteController extends Main {
     	g.setStatusDeUsuario(statusF);
     	g.setCargo(cargo);
     	gDAO.save(g);
+    	 openpage(Rotas.DASH);
     }
 
     @FXML

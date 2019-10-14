@@ -27,7 +27,7 @@ public class EnfermidadePessoalController extends Main {
     private TextArea txtComentario;
 
     @FXML
-    void EnviarEnfermidadePessoal(ActionEvent event) throws SQLException {
+    void EnviarEnfermidadePessoal(ActionEvent event) throws SQLException, IOException {
     	String statusEnfermidade = txtStatusEnfermidade.getText();
     	String comentario = txtComentario.getText();
     	
@@ -36,6 +36,7 @@ public class EnfermidadePessoalController extends Main {
     	ep.setStatusDeEnfermidade(statusEnfermidade);
     	ep.setComentario(comentario);
     	epDAO.save(ep);
+    	 openpage(Rotas.DASH);
     }
 
     @FXML

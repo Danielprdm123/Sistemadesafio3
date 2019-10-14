@@ -60,7 +60,7 @@ public class MedicoController  extends Main {
     private TextArea txtStatusf;
 
     @FXML
-    void Enviarmedico(ActionEvent event) throws SQLException {
+    void Enviarmedico(ActionEvent event) throws SQLException, IOException {
     	String nome = txtNome.getText();
     	String cpf = txtCpf.getText();
     	int idade = Integer.parseInt(txtIdade.getText());
@@ -86,6 +86,7 @@ public class MedicoController  extends Main {
 		m.setEspecialidade(especialidade);
 		m.setNumeroderegistro(NumRegristroMedico);
 		mDAO.save(m);
+		 openpage(Rotas.DASH);
       
     }
 

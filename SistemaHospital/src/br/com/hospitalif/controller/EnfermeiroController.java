@@ -58,7 +58,7 @@ public class EnfermeiroController extends Main {
     private TextArea txtStatusf;
 
     @FXML
-    void enviarEnfermeiro(ActionEvent event) throws SQLException {
+    void enviarEnfermeiro(ActionEvent event) throws SQLException, IOException {
     	String nome = txtNome.getText();
     	String cpf = txtCpf.getText();
     	int idade = Integer.parseInt(txtIdade.getText());
@@ -83,6 +83,7 @@ public class EnfermeiroController extends Main {
     	e.setStatusDeUsuario(statusF);
         e.setNumeroderegistro(NumRegistroEnfermeiro);
     	eDAO.save(e);
+    	 openpage(Rotas.DASH);
     }
 
     @FXML

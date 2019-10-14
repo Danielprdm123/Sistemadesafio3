@@ -47,7 +47,7 @@ public class AtendimentoController  extends Main {
   
 
     @FXML
-    void cadastrarAtendimento(ActionEvent event) throws SQLException {
+    void cadastrarAtendimento(ActionEvent event) throws SQLException, IOException {
     	LocalDate data = txtData.getValue();
     	float peso = Float.parseFloat(txtPeso.getText());
     	String doenca = txtDoenca.getText();
@@ -64,6 +64,7 @@ public class AtendimentoController  extends Main {
     	a.setAltura(altura);
     	a.setComentarioMedico(ComentarioMedico);
     	 aDAO.save(a);
+    	 openpage(Rotas.DASH);
 
     }
 

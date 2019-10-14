@@ -33,7 +33,7 @@ public class EnfermidadeController extends Main{
    
 
     @FXML
-    void Enviarenfermidade(ActionEvent event) throws SQLException {
+    void Enviarenfermidade(ActionEvent event) throws SQLException, IOException {
     	String TipoEnfermidade = txtTipo.getText();
     	String NomeEnfermidade = txtNome.getText();
     	String descricao = txtDesc.getText();
@@ -44,6 +44,7 @@ public class EnfermidadeController extends Main{
     	e.setNome(NomeEnfermidade);
     	e.setDescricao(descricao);
         enDAO.save(e);
+        openpage(Rotas.DASH);
     }
 
 
