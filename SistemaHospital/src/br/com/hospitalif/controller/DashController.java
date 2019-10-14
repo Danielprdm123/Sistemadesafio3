@@ -15,9 +15,6 @@ public class DashController extends Main{
     
 
     @FXML
-    private Hyperlink linkPessoa;
-
-    @FXML
     private Hyperlink linkEntrada;
 
     @FXML
@@ -90,12 +87,6 @@ public class DashController extends Main{
     @FXML
     void Paciente(ActionEvent event) throws IOException {
     	openpage(Rotas.PACIENTE);
-
-    }
-
-    @FXML
-    void Pessoa(ActionEvent event) throws IOException {
-    	openpage(Rotas.PESSOA);
 
     }
 
