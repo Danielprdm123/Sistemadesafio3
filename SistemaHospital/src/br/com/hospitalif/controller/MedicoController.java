@@ -58,14 +58,19 @@ public class MedicoController  extends Main {
 
     @FXML
     private TextArea txtStatusf;
+    
+    @FXML
+    private RadioButton cboSexo1;
 
     @FXML
     void Enviarmedico(ActionEvent event) throws SQLException, IOException {
+    	try {
     	String nome = txtNome.getText();
     	String cpf = txtCpf.getText();
     	int idade = Integer.parseInt(txtIdade.getText());
     	String tipoSangue = textSangue.getText();
     	String sexo = cboSexo.getText();
+    	String sexo1 = cboSexo1.getText();
     	String status = txtStatus.getText();
     	String login = txtLogin.getText();
     	String senha = txtSenha.getText();
@@ -79,6 +84,7 @@ public class MedicoController  extends Main {
     	m.setIdade(idade);
     	m.setTipoSanguineo(tipoSangue);
     	m.setSexo(sexo);
+    	m.setSexo(sexo1);
     	m.setStatusPessoa(status);
     	m.setLogin(login);
     	m.setSenha(senha);
@@ -87,6 +93,9 @@ public class MedicoController  extends Main {
 		m.setNumeroderegistro(NumRegristroMedico);
 		mDAO.save(m);
 		 openpage(Rotas.DASH);
+    	}catch (NumberFormatException e) {
+    		System.out.println("Campo idade vazio e num registro");
+    		}
       
     }
 

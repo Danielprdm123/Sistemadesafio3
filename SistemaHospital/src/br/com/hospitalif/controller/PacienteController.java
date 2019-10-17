@@ -54,7 +54,8 @@ public class PacienteController extends Main {
     private TextArea txtStatus;
 
    
-
+    @FXML
+    private RadioButton cboSexo1;
     @FXML
     void Voltardash(ActionEvent event) throws IOException {
     	 openpage(Rotas.DASH);
@@ -63,11 +64,13 @@ public class PacienteController extends Main {
 
     @FXML
     void cadastrarPaciente(ActionEvent event) throws SQLException, IOException {
+    	try {
     	String nome = txtNome.getText();
     	String cpf = txtCpf.getText();
     	int idade = Integer.parseInt(txtIdade.getText());
     	String tipoSangue = textSangue.getText();
     	String sexo = cboSexo.getText();
+    	String sexo1 = cboSexo1.getText();
     	String status = txtStatus.getText();
     	String historico = txtHistorico.getText();
     	String doenca = txtDoenca.getText();
@@ -79,11 +82,15 @@ public class PacienteController extends Main {
     	p.setIdade(idade);
     	p.setTipoSanguineo(tipoSangue);
     	p.setSexo(sexo);
+    	p.setSexo(sexo1);
     	p.setStatusPessoa(status);
     	p.setDoenca(doenca);
     	p.setHistorico(historico);
     	pDAO.save(p);
     	 openpage(Rotas.DASH);
+    	}catch (NumberFormatException e) {
+		System.out.println("Campo idade vazio");
+		}
 
     }
 }

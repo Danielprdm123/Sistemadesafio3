@@ -55,14 +55,19 @@ public class GerenteController extends Main {
 
     @FXML
     private TextArea txtStatusf;
+    
+    @FXML
+    private RadioButton cboSexo1;
 
     @FXML
     void Enviargerente(ActionEvent event) throws SQLException, IOException {
+    	try {
     	String nome = txtNome.getText();
     	String cpf = txtCpf.getText();
     	int idade = Integer.parseInt(txtIdade.getText());
     	String tipoSangue = textSangue.getText();
     	String sexo = cboSexo.getText();
+    	String sexo1 = cboSexo.getText();
     	String status = txtStatus.getText();
     	String login = txtLogin.getText();
     	String senha = txtSenha.getText();
@@ -76,6 +81,7 @@ public class GerenteController extends Main {
     	g.setIdade(idade);
     	g.setTipoSanguineo(tipoSangue);
     	g.setSexo(sexo);
+    	g.setSexo(sexo1);
     	g.setStatusPessoa(status);
     	g.setLogin(login);
     	g.setSenha(senha);
@@ -83,6 +89,10 @@ public class GerenteController extends Main {
     	g.setCargo(cargo);
     	gDAO.save(g);
     	 openpage(Rotas.DASH);
+    	}
+    	 catch (NumberFormatException e) {
+    			System.out.println("Campo idade vazio");
+    			}
     }
 
     @FXML
