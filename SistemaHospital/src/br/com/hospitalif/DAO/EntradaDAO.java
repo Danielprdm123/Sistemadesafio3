@@ -19,8 +19,8 @@ public class EntradaDAO {
 		String sqlInsere = "insert into Entrada VALUES(?,?,?,?,?)";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		stmt.setInt(1,en.getIdEntrada());
-		 //stmt.setString(2, en.getDataEntrada());
-         //stmt.setString(3, en.getDataDeSaida());
+		 stmt.setDate(2,new java.sql.Date(en.getDataEntrada()));
+		 stmt.setDate(3,new java.sql.Date(en.getDataDeSaida()));
 		 stmt.setString(4,en.getStatusDeEntrada());
 	     stmt.setString(5,en.getSituacaoDePaciente());
 		    stmt.execute();
