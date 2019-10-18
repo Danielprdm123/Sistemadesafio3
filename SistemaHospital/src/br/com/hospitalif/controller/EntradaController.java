@@ -14,7 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
-import javafx.util.Callback;
+
 
 public class EntradaController extends Main  {
 
@@ -46,7 +46,6 @@ public class EntradaController extends Main  {
     	String statusEntrada = txtStatusEntrada.getText();
     	EntradaDAO enDAO = new EntradaDAO();
     	Entrada en = new Entrada();
-    	
     	en.setDataEntrada(dataEntrada);
         en.setDataDeSaida(dataSaida);
     	en.setSituacaoDePaciente(SituacaoPaciente);

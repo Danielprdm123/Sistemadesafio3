@@ -24,7 +24,7 @@ public class AtendimentoDAO {
 		stmt.setString(3, a.getComentarioMedico());
 		stmt.setFloat(4, a.getPeso());
 		stmt.setFloat(5, a.getAltura());
-		stmt.setDate(6, a.getData());
+		stmt.setDate(6,  java.sql.Date.valueOf(a.getData()));
 		stmt.setString(7, a.getDoenca());
 		stmt.execute();
 	}
@@ -52,7 +52,7 @@ public class AtendimentoDAO {
 			a1.setComentarioMedico(rs.getString("comentarioMedico"));
 			a1.setPeso(rs.getFloat("peso"));
 			a1.setAltura(rs.getFloat("peso"));
-			a1.setData(rs.getDate("dtData"));
+			a1.setData(rs.getDate("dtData").toLocalDate());
 			a1.setDoenca(rs.getString("doenca"));
 			atendimentos.add(a1);
 		}
@@ -71,7 +71,7 @@ public class AtendimentoDAO {
 		stmt.setString(3, a.getComentarioMedico());
 		stmt.setFloat(4, a.getPeso());
 		stmt.setFloat(5, a.getAltura());
-		stmt.setDate(6, a.getData());
+		stmt.setDate(6,  java.sql.Date.valueOf(a.getData()));
 		stmt.setString(7, a.getDoenca());
 		stmt.execute();
 		

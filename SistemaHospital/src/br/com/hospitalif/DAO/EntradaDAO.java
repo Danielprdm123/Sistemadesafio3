@@ -19,8 +19,8 @@ public class EntradaDAO {
 		String sqlInsere = "insert into Entrada VALUES(?,?,?,?,?)";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		stmt.setInt(1,en.getIdEntrada());
-		 stmt.setDate(2,new java.sql.Date(en.getDataEntrada()));
-		 stmt.setDate(3,new java.sql.Date(en.getDataDeSaida()));
+		 stmt.setDate(2, java.sql.Date.valueOf(en.getDataEntrada()));
+		 stmt.setDate(3 ,java.sql.Date.valueOf(en.getDataDeSaida()));
 		 stmt.setString(4,en.getStatusDeEntrada());
 	     stmt.setString(5,en.getSituacaoDePaciente());
 		    stmt.execute();
@@ -44,8 +44,8 @@ public class EntradaDAO {
 		List <Entrada> entradas = new ArrayList<Entrada>();
 		while(rs.next()) {
 			Entrada en1 = new Entrada();
-			//en1.setDataEntrada(rs.getDate("dataEntrada"));
-		// 	en1.setDataDeSaida(rs.getDate("dataSaida"));
+			en1.setDataEntrada(rs.getDate("dataEntrada").toLocalDate());
+		    en1.setDataDeSaida(rs.getDate("dataSaida").toLocalDate());
 			en1.setStatusDeEntrada(rs.getString("statusEntrada"));
 			en1.setSituacaoDePaciente(rs.getString("situacaoPaciente"));
 			entradas.add(en1);
@@ -60,8 +60,8 @@ public class EntradaDAO {
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		                 
 		stmt.setInt(1,en.getIdEntrada());
-		 //stmt.setString(2, en.getDataEntrada());
-        //stmt.setString(3, en.getDataDeSaida());
+		 stmt.setDate(2, java.sql.Date.valueOf(en.getDataEntrada()));
+		 stmt.setDate(3 ,java.sql.Date.valueOf(en.getDataDeSaida()));
 		 stmt.setString(4,en.getStatusDeEntrada());
 	     stmt.setString(5,en.getSituacaoDePaciente());
 		    stmt.execute();

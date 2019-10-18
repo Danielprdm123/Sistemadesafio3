@@ -48,6 +48,7 @@ public class AtendimentoController  extends Main {
 
     @FXML
     void cadastrarAtendimento(ActionEvent event) throws SQLException, IOException {
+    	try {
     	LocalDate data = txtData.getValue();
     	float peso = Float.parseFloat(txtPeso.getText());
     	String doenca = txtDoenca.getText();
@@ -57,7 +58,7 @@ public class AtendimentoController  extends Main {
     	
     	Atendimento a = new Atendimento();
     	AtendimentoDAO aDAO = new AtendimentoDAO();
-    	// a.setData(data);
+    	a.setData(data);
     	a.setPeso(peso);
     	 a.setDoenca(doenca);
         a.setComentarioEnfermeiro(ComentarioEnfermeiro);
@@ -65,6 +66,9 @@ public class AtendimentoController  extends Main {
     	a.setComentarioMedico(ComentarioMedico);
     	 aDAO.save(a);
     	 openpage(Rotas.DASH);
+    	}catch (NumberFormatException e) {
+    		System.out.println("Campo Peso e altura vazios");
+    		}
 
     }
 
