@@ -48,7 +48,7 @@ public class EntradaController extends Main  {
     	
     	en.setDataEntrada(dataEntrada);
         en.setDataDeSaida(dataSaida);
-    	 en.setSituacaoDePaciente(SituacaoPaciente);
+    	en.setSituacaoDePaciente(SituacaoPaciente);
     	en.setStatusDeEntrada(statusEntrada);
     	enDAO.save(en);
     	 openpage(Rotas.DASH);

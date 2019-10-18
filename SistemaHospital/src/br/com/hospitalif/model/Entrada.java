@@ -2,8 +2,9 @@ package br.com.hospitalif.model;
 
 
 
+import java.sql.Date;
 import java.time.LocalDate;
-import java.util.List;
+
 
 public class Entrada {
 	private int idEntrada;
