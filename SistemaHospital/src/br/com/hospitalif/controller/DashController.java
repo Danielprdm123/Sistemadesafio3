@@ -76,7 +76,7 @@ public class DashController extends Main{
 
     @FXML
     void Atendente(ActionEvent event) throws IOException {
-    	openpage(Rotas.PACIENTE);
+    	openpage(Rotas.ATENDENTE);
     }
 
     @FXML

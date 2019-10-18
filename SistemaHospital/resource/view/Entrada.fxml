@@ -53,7 +53,7 @@
             <DatePicker fx:id="dtDataEntrada" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <DatePicker fx:id="dtDataSaida" layoutX="208.0" layoutY="26.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <TextArea fx:id="txtSituacaoPaciente" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <TextArea fx:id="txtStatusEntrada1" layoutX="195.0" layoutY="129.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextArea fx:id="txtStatusEntrada" layoutX="195.0" layoutY="129.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <TextFlow layoutX="143.0" layoutY="20.0" prefHeight="44.0" prefWidth="298.0">
