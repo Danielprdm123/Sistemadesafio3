@@ -1,24 +1,28 @@
-package br.com.hospitalif.controller;
+  package br.com.hospitalif.controller;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.ResourceBundle;
 
 import app.Main;
 import br.com.hospitalif.DAO.AtendimentoDAO;
 import br.com.hospitalif.model.Atendimento;
-import br.com.hospitalif.model.EnfermidadePessoal;
 import br.com.hospitalif.util.Rotas;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.util.Callback;
 
-public class AtendimentoController  extends Main {
+public class AtendimentoController  extends Main implements Initializable {
 
     @FXML
     private DatePicker txtData;
@@ -44,7 +48,16 @@ public class AtendimentoController  extends Main {
     @FXML
     private TextArea txtComentarioMedico;
 
-  
+    @FXML
+    private TableView<Atendimento> listAtendimento;
+    
+    
+    public AtendimentoController() {
+		// TODO Auto-generated constructor stub
+    	
+		 
+	}
+    
 
     @FXML
     void cadastrarAtendimento(ActionEvent event) throws SQLException, IOException {
@@ -71,12 +84,31 @@ public class AtendimentoController  extends Main {
     		}
 
     }
+    
+    
 
     @FXML
     void Voltardash(ActionEvent event) throws IOException {
     	 openpage(Rotas.DASH);
 
     }
+    
+   
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+		AtendimentoDAO adao = new AtendimentoDAO();
+    	List<Atendimento> atendimentos = adao.select();
+    	
+    	System.out.println("Tamanho " + atendimentos.size());
+    	ObservableList<Atendimento> obsA = FXCollections.observableArrayList(atendimentos);
+    	    	
+    	listAtendimento.setItems(obsA);
+    	
+		
+		
+	}
 
 
 }

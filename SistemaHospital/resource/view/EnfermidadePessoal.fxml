@@ -33,7 +33,7 @@
          <children>
             <TextFlow layoutX="17.0" layoutY="26.0" prefHeight="52.0" prefWidth="112.0">
                <children>
-                  <Text fill="GHOSTWHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font: white;" text="BEM VINDO !!">
+                  <Text fill="GHOSTWHITE" strokeType="OUTSIDE" strokeWidth="0.0"  text="BEM VINDO !!">
                      <font>
                         <Font name="System Italic" size="18.0" />
                      </font>

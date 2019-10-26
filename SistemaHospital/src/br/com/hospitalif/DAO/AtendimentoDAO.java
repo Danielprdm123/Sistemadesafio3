@@ -10,72 +10,80 @@ import java.util.List;
 import br.com.hospitalif.conexao.Conexao;
 import br.com.hospitalif.model.Atendimento;
 
-
 public class AtendimentoDAO {
 
 	public void save(Atendimento a) throws SQLException {
-		Conexao conn = new  Conexao();
-		Connection conexao =  conn.getConnection();
+		Conexao conn = new Conexao();
+		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere ="INSERT INTO Atendimento VALUES (?,?,?,?,?,?,?) ";
+		String sqlInsere = "INSERT INTO Atendimento VALUES (?,?,?,?,?,?,?) ";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		stmt.setInt(1, a.getIdAtendimento());
 		stmt.setString(2, a.getComentarioEnfermeiro());
 		stmt.setString(3, a.getComentarioMedico());
 		stmt.setFloat(4, a.getPeso());
 		stmt.setFloat(5, a.getAltura());
-		stmt.setDate(6,  java.sql.Date.valueOf(a.getData()));
+		stmt.setDate(6, java.sql.Date.valueOf(a.getData()));
 		stmt.setString(7, a.getDoenca());
 		stmt.execute();
 	}
+
 	public void removeById(int id) throws SQLException {
-		Conexao conn = new  Conexao();
-		Connection conexao =  conn.getConnection();
+		Conexao conn = new Conexao();
+		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
 		String sqlInsere = "DELETE from Atendimento where id =(?)";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
-		stmt.setInt(1,id);
+		stmt.setInt(1, id);
 		stmt.execute();
-		
+
 	}
-	public void select (Atendimento a) throws SQLException {
-		Conexao conn = new  Conexao();
-		Connection conexao =  conn.getConnection();
-		System.out.println(conn.getStatus());
-		String sqlInsere = "select * from Atendimento";
-		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
-		ResultSet rs = stmt.executeQuery();
-		List <Atendimento> atendimentos = new ArrayList<Atendimento>();
-		while(rs.next()) {
-			Atendimento a1 = new Atendimento();
-			a1.setComentarioEnfermeiro(rs.getString("comentarioEnfermeiro"));
-			a1.setComentarioMedico(rs.getString("comentarioMedico"));
-			a1.setPeso(rs.getFloat("peso"));
-			a1.setAltura(rs.getFloat("peso"));
-			a1.setData(rs.getDate("dtData").toLocalDate());
-			a1.setDoenca(rs.getString("doenca"));
-			atendimentos.add(a1);
+
+	public List<Atendimento> select() {
+		List<Atendimento> atendimentos = new ArrayList<Atendimento>();
+		try {
+
+			Conexao conn = new Conexao();
+			Connection conexao = conn.getConnection();
+			System.out.println(conn.getStatus());
+			String sqlInsere = "select * from Atendimento";
+			PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
+			ResultSet rs = stmt.executeQuery();
+			
+			while (rs.next()) {
+				Atendimento a1 = new Atendimento();
+				a1.setComentarioEnfermeiro(rs.getString("comentarioEnfermeiro"));
+				a1.setComentarioMedico(rs.getString("comentarioMedico"));
+				a1.setPeso(rs.getFloat("peso"));
+				a1.setAltura(rs.getFloat("peso"));
+				a1.setData(rs.getDate("dtData").toLocalDate());
+				a1.setDoenca(rs.getString("doenca"));
+				atendimentos.add(a1);
+			}
+		} catch (SQLException e) {
+			// TODO: handle exception
 		}
 		
+		return atendimentos;
+
 	}
-	
-	public void update (Atendimento a) throws SQLException {
-		Conexao conn = new  Conexao();
-		Connection conexao =  conn.getConnection();
+
+	public void update(Atendimento a) throws SQLException {
+		Conexao conn = new Conexao();
+		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
 		String sqlInsere = "update Atendimento set (?,?,?,?,?,?,?) where id=(?)";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
-		
+
 		stmt.setInt(1, a.getIdAtendimento());
 		stmt.setString(2, a.getComentarioEnfermeiro());
 		stmt.setString(3, a.getComentarioMedico());
 		stmt.setFloat(4, a.getPeso());
 		stmt.setFloat(5, a.getAltura());
-		stmt.setDate(6,  java.sql.Date.valueOf(a.getData()));
+		stmt.setDate(6, java.sql.Date.valueOf(a.getData()));
 		stmt.setString(7, a.getDoenca());
 		stmt.execute();
-		
+
 	}
-	
-	
+
 }
