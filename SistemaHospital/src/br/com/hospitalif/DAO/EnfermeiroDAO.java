@@ -46,14 +46,16 @@ public class EnfermeiroDAO {
 		
 	}
 	
-	public void select (Enfermeiro e) throws SQLException {
+	public List<Enfermeiro> select()  {
+		List <Enfermeiro> enfermeiros = new ArrayList<Enfermeiro>();
+		try {
+			
 		Conexao conn = new  Conexao();
 		Connection conexao =  conn.getConnection();
 		System.out.println(conn.getStatus());
 		String sqlInsere ="SELECT * FROM  Enfermeiro ";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		ResultSet rs = stmt.executeQuery();
-		List <Enfermeiro> enfermeiros = new ArrayList<Enfermeiro>();
 		while(rs.next()) {
 			Enfermeiro e1 = new Enfermeiro();
 			
@@ -69,7 +71,10 @@ public class EnfermeiroDAO {
 			e1.setNumeroderegistro(rs.getInt("numeroRegistro"));
 			enfermeiros.add(e1);
 		}
-		
+		}catch (SQLException en) {
+			// TODO: handle exception
+		}
+		return enfermeiros;
 		
 	}
 	public void update (Enfermeiro e) throws SQLException {

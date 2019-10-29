@@ -18,9 +18,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class AtendimentoController  extends Main implements Initializable {
 
@@ -50,6 +52,14 @@ public class AtendimentoController  extends Main implements Initializable {
 
     @FXML
     private TableView<Atendimento> listAtendimento;
+    @FXML
+    private TableColumn<Atendimento, String> tableCoEnf;
+
+    @FXML
+    private TableColumn<Atendimento, String> tableCoMedi;
+
+    @FXML
+    private TableColumn<Atendimento, String> tableDonca;
     
     
     public AtendimentoController() {
@@ -97,7 +107,10 @@ public class AtendimentoController  extends Main implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
+		tableCoEnf.setCellValueFactory(new PropertyValueFactory<>("comentarioEnfermeiro"));
+		tableCoMedi.setCellValueFactory(new PropertyValueFactory<>("comentarioMedico"));
+		tableDonca.setCellValueFactory(new PropertyValueFactory<>("doenca"));
+		
 		AtendimentoDAO adao = new AtendimentoDAO();
     	List<Atendimento> atendimentos = adao.select();
     	

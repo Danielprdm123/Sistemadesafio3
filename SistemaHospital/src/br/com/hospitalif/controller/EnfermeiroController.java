@@ -1,23 +1,32 @@
 package br.com.hospitalif.controller;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.ResourceBundle;
 
 import app.Main;
 import br.com.hospitalif.DAO.EnfermeiroDAO;
 import br.com.hospitalif.model.Enfermeiro;
 import br.com.hospitalif.util.Rotas;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 
-public class EnfermeiroController extends Main {
+public class EnfermeiroController extends Main implements Initializable{
 
     @FXML
     private Button btnEnvirar;
@@ -56,6 +65,16 @@ public class EnfermeiroController extends Main {
 
     @FXML
     private TextArea txtStatusf;
+    @FXML
+    private TableView<Enfermeiro> ListaEnfermeiro;
+    @FXML
+    private TableColumn<Enfermeiro, String> tableNome;
+
+    @FXML
+    private TableColumn<Enfermeiro, String> tableLogin;
+
+    @FXML
+    private TableColumn<Enfermeiro, Float> tabkeRegis;
 
     @FXML
     void enviarEnfermeiro(ActionEvent event) throws SQLException, IOException {
@@ -90,5 +109,22 @@ public class EnfermeiroController extends Main {
     void voltardash(ActionEvent event) throws IOException {
     	openpage(Rotas.DASH);
     }
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		tableNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		tableLogin.setCellValueFactory(new PropertyValueFactory<>("login"));
+		tabkeRegis.setCellValueFactory(new PropertyValueFactory<>("numeroderegistro"));
+		
+		EnfermeiroDAO endao = new EnfermeiroDAO();
+    	List<Enfermeiro> atendimentos = endao.select();
+    	
+    	System.out.println("Tamanho " + atendimentos.size());
+    	ObservableList<Enfermeiro> obsen = FXCollections.observableArrayList(atendimentos);
+    	    	
+    	ListaEnfermeiro.setItems(obsen);
+    	
+		
+		
+	}
 
 }
