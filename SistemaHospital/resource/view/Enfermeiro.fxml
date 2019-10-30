@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="714.0" prefWidth="792.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.EnfermeiroController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="767.0" prefWidth="1236.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.EnfermeiroController">
    <children>
       <TextFlow layoutX="143.0" layoutY="20.0" prefHeight="44.0" prefWidth="298.0">
          <children>
@@ -26,7 +26,7 @@
             </Text>
          </children>
       </TextFlow>
-      <AnchorPane layoutX="-8.0" prefHeight="712.0" prefWidth="149.0" style="-fx-background-color: #48D1CC;">
+      <AnchorPane layoutX="-8.0" prefHeight="754.0" prefWidth="149.0" style="-fx-background-color: #48D1CC;">
          <children>
             <TextFlow layoutX="17.0" layoutY="26.0" prefHeight="52.0" prefWidth="112.0">
                <children>
@@ -96,7 +96,7 @@
             <ToggleGroup fx:id="Sexo" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="cboSexo" layoutX="407.0" layoutY="209.0" mnemonicParsing="false" text="Feminino" toggleGroup="$Sexo">
+      <RadioButton fx:id="cboSexo1" layoutX="407.0" layoutY="209.0" mnemonicParsing="false" text="Feminino" toggleGroup="$Sexo">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -125,13 +125,19 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TableView fx:id="ListaEnfermeiro" layoutX="145.0" layoutY="524.0" prefHeight="186.0" prefWidth="644.0">
+      <TableView fx:id="ListaEnfermeiro" layoutX="145.0" layoutY="524.0" prefHeight="246.0" prefWidth="1088.0">
         <columns>
           <TableColumn fx:id="tableNome" prefWidth="75.0" text="Nome" />
           <TableColumn fx:id="tableLogin" prefWidth="75.0" text="Login" />
             <TableColumn fx:id="tabkeRegis" prefWidth="160.33331298828125" text="Número registro" />
+            <TableColumn fx:id="tableSexo" prefWidth="105.0" text="Sexo" />
+            <TableColumn fx:id="tableCpf" prefWidth="122.0" text="CPF" />
+            <TableColumn fx:id="tableSangue" prefWidth="61.0" text="Sangue" />
+            <TableColumn fx:id="tableStaF" prefWidth="155.6666259765625" text="Status Funcionario" />
+            <TableColumn fx:id="tableStaP" prefWidth="131.3333740234375" text="Status pessoa" />
+            <TableColumn fx:id="tableIdade" prefWidth="80.66668701171875" text="Idade" />
         </columns>
       </TableView>
-      <Button layoutX="729.0" layoutY="500.0" mnemonicParsing="false" text="Remover" />
+      <Button layoutX="1068.0" layoutY="482.0" mnemonicParsing="false" text="Remover" />
    </children>
 </Pane>

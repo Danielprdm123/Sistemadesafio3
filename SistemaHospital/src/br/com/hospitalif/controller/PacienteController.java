@@ -52,10 +52,10 @@ public class PacienteController extends Main {
 
     @FXML
     private TextArea txtStatus;
-
    
     @FXML
     private RadioButton cboSexo1;
+    
     @FXML
     void Voltardash(ActionEvent event) throws IOException {
     	 openpage(Rotas.DASH);
