@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="799.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.AtendimentoController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="992.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.AtendimentoController">
    <children>
       <TextFlow layoutX="124.0" layoutY="29.0" prefHeight="60.0" prefWidth="393.0">
          <cursor>
@@ -95,13 +95,16 @@
       </Label>
       <TextArea fx:id="txtComentarioEnfermeiro" layoutX="339.0" layoutY="81.0" prefHeight="45.0" prefWidth="182.0" />
       <TextArea fx:id="txtDoenca" layoutX="272.0" layoutY="241.0" prefHeight="79.0" prefWidth="182.0" />
-      <TableView fx:id="listAtendimento" layoutX="154.0" layoutY="443.0" prefHeight="143.0" prefWidth="645.0">
+      <TableView fx:id="listAtendimento" layoutX="154.0" layoutY="443.0" prefHeight="143.0" prefWidth="834.0">
         <columns>
           <TableColumn fx:id="tableCoEnf" prefWidth="139.0" text="ComentarioEnfermiro" />
           <TableColumn fx:id="tableCoMedi" minWidth="5.6666717529296875" prefWidth="149.33334350585938" text="Comentario Medico" />
             <TableColumn fx:id="tableDonca" minWidth="5.6666717529296875" prefWidth="149.33334350585938" text="Doença" />
+            <TableColumn fx:id="tablePeso" minWidth="5.6666717529296875" prefWidth="149.33334350585938" text="Peso" />
+            <TableColumn fx:id="tableAltura" minWidth="5.6666717529296875" prefWidth="111.33331298828125" text="Altura" />
+            <TableColumn fx:id="tableData" minWidth="5.6666717529296875" prefWidth="188.66668701171875" text="Data" />
         </columns>
       </TableView>
-      <Button fx:id="remove" layoutX="735.0" layoutY="413.0" mnemonicParsing="false" text="Remover" />
+      <Button fx:id="remove" layoutX="930.0" layoutY="414.0" mnemonicParsing="false" text="Remover" />
    </children>
 </Pane>

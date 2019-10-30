@@ -60,6 +60,16 @@ public class AtendimentoController  extends Main implements Initializable {
 
     @FXML
     private TableColumn<Atendimento, String> tableDonca;
+    @FXML
+    private TableColumn<Atendimento, String> tablePeso;
+
+    @FXML
+    private TableColumn<Atendimento, String> tableAltura;
+
+    @FXML
+    private TableColumn<Atendimento, String> tableData;
+    @FXML
+    private Button remove;
     
     
     public AtendimentoController() {
@@ -110,6 +120,9 @@ public class AtendimentoController  extends Main implements Initializable {
 		tableCoEnf.setCellValueFactory(new PropertyValueFactory<>("comentarioEnfermeiro"));
 		tableCoMedi.setCellValueFactory(new PropertyValueFactory<>("comentarioMedico"));
 		tableDonca.setCellValueFactory(new PropertyValueFactory<>("doenca"));
+		tablePeso.setCellValueFactory(new PropertyValueFactory<>("peso"));
+		tableAltura.setCellValueFactory(new PropertyValueFactory<>("altura"));
+		tableData.setCellValueFactory(new PropertyValueFactory<>("data"));
 		
 		AtendimentoDAO adao = new AtendimentoDAO();
     	List<Atendimento> atendimentos = adao.select();
