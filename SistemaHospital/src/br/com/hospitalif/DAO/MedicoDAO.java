@@ -43,7 +43,9 @@ public class MedicoDAO {
 		stmt.execute();
 		
 	}
-	public void select(Medico m) throws SQLException {
+	public List<Medico> select() {
+		List<Medico> medicos = new ArrayList<Medico>();
+		try {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
@@ -51,8 +53,6 @@ public class MedicoDAO {
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		
 		ResultSet rs = stmt.executeQuery();
-		
-		List<Medico> medicos = new ArrayList<Medico>();
 		
 		while(rs.next()) {
 			Medico m1 = new Medico();
@@ -69,7 +69,10 @@ public class MedicoDAO {
 			m1.setEspecialidade(rs.getString("especialidade"));
 			medicos.add(m1);
 		}
-		
+		}catch (SQLException e) {
+			// TODO: handle exception
+		}
+		return medicos;
 		
 	}
 	public void update(Medico m) throws SQLException {

@@ -1,22 +1,31 @@
 package br.com.hospitalif.controller;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.ResourceBundle;
 
 import app.Main;
 import br.com.hospitalif.DAO.MedicoDAO;
 import br.com.hospitalif.model.Medico;
 import br.com.hospitalif.util.Rotas;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class MedicoController  extends Main {
+public class MedicoController  extends Main implements Initializable{
 
     @FXML
     private TextField txtNumregistro;
@@ -61,6 +70,38 @@ public class MedicoController  extends Main {
     
     @FXML
     private RadioButton cboSexo1;
+    @FXML
+    private TableView<Medico> ListaMedico;
+
+    @FXML
+    private TableColumn<Medico, String> TableNome;
+
+    @FXML
+    private TableColumn<Medico, String> tableIdade;
+
+    @FXML
+    private TableColumn<Medico, String> tableCpf;
+
+    @FXML
+    private TableColumn<Medico, String> tableSangue;
+
+    @FXML
+    private TableColumn<Medico, String> tableSexo;
+
+    @FXML
+    private TableColumn<Medico, String> tableStaP;
+
+    @FXML
+    private TableColumn<Medico, String> tableLogin;
+
+    @FXML
+    private TableColumn<Medico, String> tableStaF;
+
+    @FXML
+    private TableColumn<Medico, String> tableNumR;
+
+    @FXML
+    private TableColumn<Medico, String> tableEspecialidade;
 
     @FXML
     void Enviarmedico(ActionEvent event) throws SQLException, IOException {
@@ -103,6 +144,26 @@ public class MedicoController  extends Main {
     void Voltardash(ActionEvent event) throws IOException {
     	openpage(Rotas.DASH);
 
+    }
+    @Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+    	TableNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		tableLogin.setCellValueFactory(new PropertyValueFactory<>("login"));
+		tableNumR.setCellValueFactory(new PropertyValueFactory<>("numeroderegistro"));
+		tableSexo.setCellValueFactory(new PropertyValueFactory<>("sexo"));
+		tableCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+		tableSangue.setCellValueFactory(new PropertyValueFactory<>("tipoSanguineo"));
+		tableStaF.setCellValueFactory(new PropertyValueFactory<>("statusDeUsuario"));
+		tableStaP.setCellValueFactory(new PropertyValueFactory<>("statusPessoa"));
+		tableIdade.setCellValueFactory(new PropertyValueFactory<>("idade"));
+		tableEspecialidade.setCellValueFactory(new PropertyValueFactory<>("especialidade"));
+		MedicoDAO mdao = new MedicoDAO();
+		List<Medico> medico = mdao.select();
+		ObservableList<Medico> obsm = FXCollections.observableArrayList(medico);
+    	
+		ListaMedico.setItems(obsm);
+    	
+    	
     }
 
 }

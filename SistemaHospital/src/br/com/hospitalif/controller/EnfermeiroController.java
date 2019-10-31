@@ -149,10 +149,10 @@ public class EnfermeiroController extends Main implements Initializable{
 		tableIdade.setCellValueFactory(new PropertyValueFactory<>("idade"));
 		
 		EnfermeiroDAO endao = new EnfermeiroDAO();
-    	List<Enfermeiro> atendimentos = endao.select();
+    	List<Enfermeiro> enfermeiro = endao.select();
     	
-    	System.out.println("Tamanho " + atendimentos.size());
-    	ObservableList<Enfermeiro> obsen = FXCollections.observableArrayList(atendimentos);
+    	System.out.println("Tamanho " + enfermeiro.size());
+    	ObservableList<Enfermeiro> obsen = FXCollections.observableArrayList(enfermeiro);
     	    	
     	ListaEnfermeiro.setItems(obsen);
     	
