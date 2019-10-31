@@ -34,21 +34,26 @@ public void removeById(int id) throws SQLException {
 		stmt.setInt(1,id);	
 		stmt.execute();
 }
-public void select(EnfermidadePessoal ep) throws SQLException {
+public List<EnfermidadePessoal> select() {
+	List<EnfermidadePessoal> enfermidadePessoais = new ArrayList<EnfermidadePessoal>();
+	try {
 	Conexao conn = new Conexao();
 	Connection conexao = conn.getConnection();
 	System.out.println(conn.getStatus());
 	String sqlInsere = "SELECT * FROM EnfermidadePessoal";
 	PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 	ResultSet rs = stmt.executeQuery();
-	List<EnfermidadePessoal> enfermidadePessoais = new ArrayList<EnfermidadePessoal>();
 	while(rs.next()) {
 		EnfermidadePessoal ep1 = new EnfermidadePessoal();
 		ep1.setComentario(rs.getString("comentario"));
 		ep1.setStatusDeEnfermidade(rs.getString("comentario"));
 		enfermidadePessoais .add(ep1);
 		
-	}	
+	}
+	}catch (SQLException e) {
+		// TODO: handle exception
+	}
+	return enfermidadePessoais;
 	
 }
 public void update(EnfermidadePessoal ep) throws SQLException {

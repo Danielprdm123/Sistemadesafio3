@@ -1,22 +1,31 @@
 package br.com.hospitalif.controller;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.ResourceBundle;
 
 import app.Main;
 import br.com.hospitalif.DAO.GerenteDAO;
 import br.com.hospitalif.model.Gerente;
 import br.com.hospitalif.util.Rotas;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class GerenteController extends Main {
+public class GerenteController extends Main implements Initializable {
 
     @FXML
     private Button btnEnviar;
@@ -58,6 +67,35 @@ public class GerenteController extends Main {
     
     @FXML
     private RadioButton cboSexo1;
+    @FXML
+    private TableView<Gerente> listaGerente;
+    @FXML
+    private TableColumn<Gerente, String> tableNome;
+
+    @FXML
+    private TableColumn<Gerente, String> tableIdade;
+
+    @FXML
+    private TableColumn<Gerente, String> tableCpf;
+
+    @FXML
+    private TableColumn<Gerente, String> tableSangue;
+
+    @FXML
+    private TableColumn<Gerente, String> tableSexo;
+
+    @FXML
+    private TableColumn<Gerente, String> tableLogin;
+
+    @FXML
+    private TableColumn<Gerente, String> tableStaF;
+
+    @FXML
+    private TableColumn<Gerente, String> tableStaP;
+
+    @FXML
+    private TableColumn<Gerente, String> tableCargo;
+
 
     @FXML
     void Enviargerente(ActionEvent event) throws SQLException, IOException {
@@ -67,7 +105,7 @@ public class GerenteController extends Main {
     	int idade = Integer.parseInt(txtIdade.getText());
     	String tipoSangue = textSangue.getText();
     	String sexo = cboSexo.getText();
-    	String sexo1 = cboSexo.getText();
+    	String sexo1 = cboSexo1.getText();
     	String status = txtStatus.getText();
     	String login = txtLogin.getText();
     	String senha = txtSenha.getText();
@@ -100,6 +138,24 @@ public class GerenteController extends Main {
     	openpage(Rotas.DASH);
 
     }
-
+    @Override
+   	public void initialize(URL arg0, ResourceBundle arg1) {
+    	tableNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+   		tableLogin.setCellValueFactory(new PropertyValueFactory<>("login"));
+   		tableSexo.setCellValueFactory(new PropertyValueFactory<>("sexo"));
+   		tableCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+   		tableSangue.setCellValueFactory(new PropertyValueFactory<>("tipoSanguineo"));
+   		tableStaF.setCellValueFactory(new PropertyValueFactory<>("statusDeUsuario"));
+   		tableStaP.setCellValueFactory(new PropertyValueFactory<>("statusPessoa"));
+   		tableIdade.setCellValueFactory(new PropertyValueFactory<>("idade"));
+   		tableCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
+   		GerenteDAO gdao = new GerenteDAO();
+   		List<Gerente> gerente = gdao.select();
+   		ObservableList<Gerente> obsg = FXCollections.observableArrayList(gerente);
+       	
+   		listaGerente.setItems(obsg);
+       	
+       	
+       }
 }
 

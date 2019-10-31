@@ -34,14 +34,15 @@ public class EntradaDAO {
 			stmt.setInt(1,id);	
 			stmt.execute();
 	}
-	public void select(Entrada en) throws SQLException {
+	public List<Entrada> select() {
+		List <Entrada> entradas = new ArrayList<Entrada>();
+		try {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
 		String sqlInsere = "SELECT *  FROM Entrada";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		ResultSet rs = stmt.executeQuery();
-		List <Entrada> entradas = new ArrayList<Entrada>();
 		while(rs.next()) {
 			Entrada en1 = new Entrada();
 			en1.setDataEntrada(rs.getDate("dataEntrada").toLocalDate());
@@ -50,6 +51,10 @@ public class EntradaDAO {
 			en1.setSituacaoDePaciente(rs.getString("situacaoPaciente"));
 			entradas.add(en1);
 		}
+		}catch (SQLException e) {
+			// TODO: handle exception
+		}
+		return entradas;
 
 	}
 	public void update(Entrada en) throws SQLException {

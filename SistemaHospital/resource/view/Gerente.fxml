@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
@@ -19,7 +16,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="600.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.GerenteController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="885.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.GerenteController">
    <children>
       <TextFlow layoutX="143.0" layoutY="20.0" prefHeight="44.0" prefWidth="298.0">
          <children>
@@ -30,11 +27,11 @@
             </Text>
          </children>
       </TextFlow>
-      <AnchorPane layoutX="-8.0" prefHeight="507.0" prefWidth="149.0" style="-fx-background-color: #48D1CC;">
+      <AnchorPane layoutX="-8.0" prefHeight="680.0" prefWidth="149.0" style="-fx-background-color: #48D1CC;">
          <children>
             <TextFlow layoutX="17.0" layoutY="26.0" prefHeight="52.0" prefWidth="112.0">
                <children>
-                  <Text fill="GHOSTWHITE" strokeType="OUTSIDE" strokeWidth="0.0"  text="BEM VINDO !!">
+                  <Text fill="GHOSTWHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="BEM VINDO !!">
                      <font>
                         <Font name="System Italic" size="18.0" />
                      </font>
@@ -135,5 +132,18 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
+      <TableView fx:id="listaGerente" layoutX="142.0" layoutY="504.0" prefHeight="177.0" prefWidth="739.0">
+        <columns>
+          <TableColumn fx:id="tableNome" prefWidth="75.0" text="Nome" />
+          <TableColumn fx:id="tableIdade" prefWidth="75.0" text="Idade" />
+            <TableColumn fx:id="tableCpf" prefWidth="75.0" text="CPF" />
+            <TableColumn fx:id="tableSangue" prefWidth="75.0" text="Sangue" />
+            <TableColumn fx:id="tableSexo" prefWidth="75.0" text="Sexo" />
+            <TableColumn fx:id="tableLogin" prefWidth="75.0" text="Login" />
+            <TableColumn fx:id="tableStaF" prefWidth="109.0" text="Status Funcionario" />
+            <TableColumn fx:id="tableStaP" prefWidth="95.66668701171875" text="Status Pessoa" />
+            <TableColumn fx:id="tableCargo" prefWidth="95.66668701171875" text="Cargo" />
+        </columns>
+      </TableView>
    </children>
 </Pane>

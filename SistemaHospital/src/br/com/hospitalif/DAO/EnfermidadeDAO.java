@@ -34,22 +34,27 @@ public class EnfermidadeDAO {
 
 	}
 
-	public void select(Enfermidade e) throws SQLException {
+	public List<Enfermidade> select() {
+		List<Enfermidade> enfermidades = new ArrayList<Enfermidade>();
+		try {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
 		String sqlInsere = "SELECT *  FROM Enfermidade";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		ResultSet rs = stmt.executeQuery();
-		List<Enfermidade> enfermidades = new ArrayList<Enfermidade>();
 		while(rs.next()) {
 			Enfermidade e1 = new Enfermidade();
 			e1.setNome(rs.getString("nome"));
 			e1.setTipo(rs.getString("tipo"));
-			e1.setDescricao(rs.getString("tipo"));
+			e1.setDescricao(rs.getString("descricao"));
 			enfermidades.add(e1);
 			
 		}
+		}catch (SQLException e) {
+			// TODO: handle exception
+		}
+		return enfermidades;
 			
 	}
 	public void updade(Enfermidade e) throws SQLException {

@@ -38,14 +38,15 @@ public class GerenteDAO {
 			stmt.setInt(1,id);	
 			stmt.execute();
 	}
-	public void select(Gerente g) throws SQLException {
+	public List<Gerente> select(){
+		List <Gerente> gerentes = new ArrayList<Gerente>();
+		try {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
 		String sqlInsere = "SELECT *  FROM Gerente";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		ResultSet rs = stmt.executeQuery();
-		List <Gerente> gerentes = new ArrayList<Gerente>();
 		while(rs.next()) {
 			Gerente g1 = new Gerente();
 			
@@ -61,6 +62,10 @@ public class GerenteDAO {
 			g1.setCargo(rs.getString("cargo"));
 			gerentes.add(g1);
 		}
+		}catch (SQLException e) {
+			// TODO: handle exception
+		}
+		return gerentes;
 		
 	}
 	public void update(Gerente g) throws SQLException {
