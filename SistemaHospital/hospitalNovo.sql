@@ -56,7 +56,7 @@ constraint PK_Paciente primary key(id));
 create table EnfermidadePessoal (
 id int not null AUTO_INCREMENT,
 comentario varchar(100) ,
-statusEnfermeiro varchar(100) ,
+statusDeEnfermidade varchar(100) ,
 constraint PK_EnfermidadePessoal primary key (id));
 
 create table Enfermidade(

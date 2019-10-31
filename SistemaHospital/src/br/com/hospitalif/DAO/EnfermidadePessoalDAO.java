@@ -46,7 +46,7 @@ public List<EnfermidadePessoal> select() {
 	while(rs.next()) {
 		EnfermidadePessoal ep1 = new EnfermidadePessoal();
 		ep1.setComentario(rs.getString("comentario"));
-		ep1.setStatusDeEnfermidade(rs.getString("comentario"));
+		ep1.setStatusDeEnfermidade(rs.getString("statusDeEnfermidade"));
 		enfermidadePessoais .add(ep1);
 		
 	}
