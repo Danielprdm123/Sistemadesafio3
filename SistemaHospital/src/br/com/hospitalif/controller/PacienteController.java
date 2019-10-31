@@ -140,14 +140,9 @@ public class PacienteController extends Main implements Initializable{
 		tableHistorico.setCellValueFactory(new PropertyValueFactory<>("historico"));
 		
 		PacienteDAO pdao = new PacienteDAO();
-    	List<Paciente> atendimentos = pdao.select();
-    	
-    	System.out.println("Tamanho " + atendimentos.size());
-    	ObservableList<Paciente> obsp = FXCollections.observableArrayList(atendimentos);
+    	List<Paciente> paciente = pdao.select();
+    	ObservableList<Paciente> obsp = FXCollections.observableArrayList(paciente);
     	    	
     	listaPaiente.setItems(obsp);
-    	
-		
-		
 	}
 }

@@ -150,8 +150,6 @@ public class EnfermeiroController extends Main implements Initializable{
 		
 		EnfermeiroDAO endao = new EnfermeiroDAO();
     	List<Enfermeiro> enfermeiro = endao.select();
-    	
-    	System.out.println("Tamanho " + enfermeiro.size());
     	ObservableList<Enfermeiro> obsen = FXCollections.observableArrayList(enfermeiro);
     	    	
     	ListaEnfermeiro.setItems(obsen);
