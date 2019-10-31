@@ -9,7 +9,6 @@ import java.util.List;
 
 import br.com.hospitalif.conexao.Conexao;
 import br.com.hospitalif.model.EnfermidadePessoal;
-import br.com.hospitalif.model.Medico;
 
 public class EnfermidadePessoalDAO {
 	
@@ -40,7 +39,7 @@ public List<EnfermidadePessoal> select() {
 	Conexao conn = new Conexao();
 	Connection conexao = conn.getConnection();
 	System.out.println(conn.getStatus());
-	String sqlInsere = "SELECT * FROM EnfermidadePessoal";
+	String sqlInsere = "SELECT * FROM enfermidadepessoal";
 	PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 	ResultSet rs = stmt.executeQuery();
 	while(rs.next()) {

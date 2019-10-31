@@ -1,13 +1,10 @@
 package app;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+
 import java.sql.SQLException;
 
-import br.com.hospitalif.DAO.MedicoDAO;
-import br.com.hospitalif.conexao.Conexao;
-import br.com.hospitalif.model.Medico;
+
 import br.com.hospitalif.util.Rotas;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +26,7 @@ public class Main extends Application{
 	try {
 		Parent root = loader.load();
 		Scene scene = new Scene(root,600,400);
-		scene.getStylesheets().add(getClass().getResource("/css/app.css").toExternalForm());
+		//scene.getStylesheets().add(getClass().getResource("/css/app.css").toExternalForm());
 		stageAtual.setScene(scene);
 		stageAtual.show();
 		}catch(IOException a) {

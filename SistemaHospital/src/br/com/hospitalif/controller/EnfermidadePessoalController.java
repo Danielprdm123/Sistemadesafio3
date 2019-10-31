@@ -14,13 +14,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class EnfermidadePessoalController extends Main {
+public class EnfermidadePessoalController extends Main implements Initializable{
 
     @FXML
     private Button btnEnviar;
@@ -60,6 +61,7 @@ public class EnfermidadePessoalController extends Main {
     void voltarDash(ActionEvent event) throws IOException {
     	openpage(Rotas.DASH);
     }
+    
     public void initialize(URL arg0, ResourceBundle arg1) {
     	tableComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
     	tableStatusEnf.setCellValueFactory(new PropertyValueFactory<>("statusDeEnfermidade"));
@@ -69,8 +71,6 @@ public class EnfermidadePessoalController extends Main {
     	ObservableList<EnfermidadePessoal> obsenp = FXCollections.observableArrayList(enfermidadeP);
     	    	
     	ListaEnfermidadePessoal.setItems(obsenp);
-    	
-		
 		
 	}
 
