@@ -39,14 +39,15 @@ public class PacienteDAO {
 			stmt.setInt(1,id);	
 			stmt.execute();
 	}
-	public void select(Paciente p) throws SQLException {
+	public List<Paciente> select() {
+		List<Paciente> pacientes = new ArrayList<Paciente>();
+		try {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
 		String sqlInsere = "SELECT * FROM Paciente";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		ResultSet rs = stmt.executeQuery();
-		List<Paciente> pacientes = new ArrayList<Paciente>();
 		while(rs.next()) {
 			Paciente p1 = new Paciente();
 			p1.setNome(rs.getString("nome"));
@@ -58,8 +59,11 @@ public class PacienteDAO {
 			p1.setDoenca(rs.getString("doenca"));
 			p1.setHistorico(rs.getString("historico"));
 			pacientes.add(p1);
-			
 		}
+		}catch (SQLException en) {
+			// TODO: handle exception
+		}
+		return pacientes;
 		
 	}
 	public void updade(Paciente p) throws SQLException {

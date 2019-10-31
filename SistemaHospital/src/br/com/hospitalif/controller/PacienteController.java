@@ -3,23 +3,32 @@ package br.com.hospitalif.controller;
 
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.ResourceBundle;
 
 import app.Main;
 import br.com.hospitalif.DAO.PacienteDAO;
 import br.com.hospitalif.model.Paciente;
 import br.com.hospitalif.util.Rotas;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 
 
-public class PacienteController extends Main {
+public class PacienteController extends Main implements Initializable{
 
     @FXML
     private Button btnCadastrar;
@@ -55,6 +64,32 @@ public class PacienteController extends Main {
    
     @FXML
     private RadioButton cboSexo1;
+    @FXML
+    private TableView<Paciente> listaPaiente;
+
+    @FXML
+    private TableColumn<Paciente, String> tableNome;
+
+    @FXML
+    private TableColumn<Paciente, String> tableIdade;
+
+    @FXML
+    private TableColumn<Paciente, String> tableCpf;
+
+    @FXML
+    private TableColumn<Paciente, String> tableSangue;
+
+    @FXML
+    private TableColumn<Paciente, String> tableSexo;
+
+    @FXML
+    private TableColumn<Paciente, String> tableStaPessoa;
+
+    @FXML
+    private TableColumn<Paciente, String> tableDoenca;
+
+    @FXML
+    private TableColumn<Paciente, String> tableHistorico;
     
     @FXML
     void Voltardash(ActionEvent event) throws IOException {
@@ -93,4 +128,26 @@ public class PacienteController extends Main {
 		}
 
     }
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		tableNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		tableIdade.setCellValueFactory(new PropertyValueFactory<>("idade"));
+		tableDoenca.setCellValueFactory(new PropertyValueFactory<>("doenca"));
+		tableSexo.setCellValueFactory(new PropertyValueFactory<>("sexo"));
+		tableCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+		tableSangue.setCellValueFactory(new PropertyValueFactory<>("tipoSanguineo"));
+		tableStaPessoa.setCellValueFactory(new PropertyValueFactory<>("statusPessoa"));
+		tableHistorico.setCellValueFactory(new PropertyValueFactory<>("historico"));
+		
+		PacienteDAO pdao = new PacienteDAO();
+    	List<Paciente> atendimentos = pdao.select();
+    	
+    	System.out.println("Tamanho " + atendimentos.size());
+    	ObservableList<Paciente> obsp = FXCollections.observableArrayList(atendimentos);
+    	    	
+    	listaPaiente.setItems(obsp);
+    	
+		
+		
+	}
 }
