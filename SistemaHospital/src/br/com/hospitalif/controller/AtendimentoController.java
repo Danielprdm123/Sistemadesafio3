@@ -131,9 +131,19 @@ public class AtendimentoController  extends Main implements Initializable {
     	ObservableList<Atendimento> obsA = FXCollections.observableArrayList(atendimentos);
     	    	
     	listAtendimento.setItems(obsA);
+    	listAtendimento.getSelectionModel().selectedItemProperty().addListener((observable,oldValue,newValue)->seleciona(newValue));
     	
 		
 		
+	}
+	@FXML
+    void excluir(ActionEvent event) {
+		Atendimento a= listAtendimento.getSelectionModel().getSelectedItem();
+		AtendimentoDAO adao = new AtendimentoDAO();
+    }
+	private void seleciona(Atendimento atendimento) {
+		System.out.println("selecionado" + atendimento.getAltura());
+
 	}
 
 
