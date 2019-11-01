@@ -105,6 +105,6 @@
             <TableColumn fx:id="tableData" minWidth="5.6666717529296875" prefWidth="188.66668701171875" text="Data" />
         </columns>
       </TableView>
-      <Button fx:id="remove" layoutX="930.0" layoutY="414.0" mnemonicParsing="false" text="Remover" />
+      <Button fx:id="remove" layoutX="930.0" layoutY="414.0" mnemonicParsing="false" onAction="#excluir" text="Remover" />
    </children>
 </Pane>
