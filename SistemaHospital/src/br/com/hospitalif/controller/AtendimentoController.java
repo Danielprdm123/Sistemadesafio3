@@ -152,6 +152,7 @@ public class AtendimentoController extends Main implements Initializable {
 			openpage(Rotas.ATENDIMENTO);
 			Atendimento a = listAtendimento.getSelectionModel().getSelectedItem();
 			txtComentarioEnfermeiro.setText(a.getComentarioEnfermeiro());
+			txtPeso.setText(""+ a.getPeso());
 			System.out.println(txtComentarioEnfermeiro.getText());
 			
 			
