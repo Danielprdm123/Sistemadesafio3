@@ -137,9 +137,15 @@ public class AtendimentoController  extends Main implements Initializable {
 		
 	}
 	@FXML
-    void excluir(ActionEvent event) {
+    void excluir(ActionEvent event) throws SQLException {
+		
 		Atendimento a= listAtendimento.getSelectionModel().getSelectedItem();
+		System.out.println(a.getIdAtendimento());
 		AtendimentoDAO adao = new AtendimentoDAO();
+		adao.removeById(a.getIdAtendimento());
+		
+		
+		
     }
 	private void seleciona(Atendimento atendimento) {
 		System.out.println("selecionado" + atendimento.getAltura());

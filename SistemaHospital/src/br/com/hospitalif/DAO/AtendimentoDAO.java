@@ -52,6 +52,7 @@ public class AtendimentoDAO {
 			
 			while (rs.next()) {
 				Atendimento a1 = new Atendimento();
+				a1.setIdAtendimento(rs.getInt("id"));
 				a1.setComentarioEnfermeiro(rs.getString("comentarioEnfermeiro"));
 				a1.setComentarioMedico(rs.getString("comentarioMedico"));
 				a1.setPeso(rs.getFloat("peso"));
