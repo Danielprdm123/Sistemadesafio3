@@ -1,4 +1,4 @@
-  package br.com.hospitalif.controller;
+package br.com.hospitalif.controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,96 +24,91 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class AtendimentoController  extends Main implements Initializable {
+public class AtendimentoController extends Main implements Initializable {
 
-    @FXML
-    private DatePicker txtData;
+	@FXML
+	private DatePicker txtData;
 
-    @FXML
-    private TextField txtPeso;
+	@FXML
+	private TextField txtPeso;
 
-    @FXML
-    private TextArea txtDoenca;
+	@FXML
+	private TextArea txtDoenca;
 
-    @FXML
-    private TextArea txtComentarioEnfermeiro;
+	@FXML
+	private TextArea txtComentarioEnfermeiro;
 
-    @FXML
-    private Button btnVoltar;
+	@FXML
+	private Button btnVoltar;
 
-    @FXML
-    private Button btnCadastrar;
+	@FXML
+	private Button btnCadastrar;
 
-    @FXML
-    private TextField txtAltura;
+	@FXML
+	private TextField txtAltura;
 
-    @FXML
-    private TextArea txtComentarioMedico;
+	@FXML
+	private TextArea txtComentarioMedico;
 
-    @FXML
-    private TableView<Atendimento> listAtendimento;
-    @FXML
-    private TableColumn<Atendimento, String> tableCoEnf;
+	@FXML
+	private TableView<Atendimento> listAtendimento;
+	@FXML
+	private TableColumn<Atendimento, String> tableCoEnf;
 
-    @FXML
-    private TableColumn<Atendimento, String> tableCoMedi;
+	@FXML
+	private TableColumn<Atendimento, String> tableCoMedi;
 
-    @FXML
-    private TableColumn<Atendimento, String> tableDonca;
-    @FXML
-    private TableColumn<Atendimento, String> tablePeso;
+	@FXML
+	private TableColumn<Atendimento, String> tableDonca;
+	@FXML
+	private TableColumn<Atendimento, String> tablePeso;
 
-    @FXML
-    private TableColumn<Atendimento, String> tableAltura;
+	@FXML
+	private TableColumn<Atendimento, String> tableAltura;
 
+	@FXML
+	private TableColumn<Atendimento, String> tableData;
+	@FXML
+	private Button remove;
     @FXML
-    private TableColumn<Atendimento, String> tableData;
-    @FXML
-    private Button remove;
-    
-    
-    public AtendimentoController() {
+    private Button atualizar;
+
+	public AtendimentoController() {
 		// TODO Auto-generated constructor stub
-    	
-		 
+
 	}
-    
 
-    @FXML
-    void cadastrarAtendimento(ActionEvent event) throws SQLException, IOException {
-    	try {
-    	LocalDate data = txtData.getValue();
-    	float peso = Float.parseFloat(txtPeso.getText());
-    	String doenca = txtDoenca.getText();
-    	String ComentarioEnfermeiro = txtComentarioEnfermeiro.getText();
-    	float altura =Float.parseFloat(txtAltura.getText()) ;
-    	String ComentarioMedico = txtComentarioMedico.getText();
-    	
-    	Atendimento a = new Atendimento();
-    	AtendimentoDAO aDAO = new AtendimentoDAO();
-    	a.setData(data);
-    	a.setPeso(peso);
-    	 a.setDoenca(doenca);
-        a.setComentarioEnfermeiro(ComentarioEnfermeiro);
-    	a.setAltura(altura);
-    	a.setComentarioMedico(ComentarioMedico);
-    	 aDAO.save(a);
-    	 openpage(Rotas.DASH);
-    	}catch (NumberFormatException e) {
-    		System.out.println("Campo Peso e altura vazios");
-    		}
+	@FXML
+	void cadastrarAtendimento(ActionEvent event) throws SQLException, IOException {
+		try {
+			LocalDate data = txtData.getValue();
+			float peso = Float.parseFloat(txtPeso.getText());
+			String doenca = txtDoenca.getText();
+			String ComentarioEnfermeiro = txtComentarioEnfermeiro.getText();
+			float altura = Float.parseFloat(txtAltura.getText());
+			String ComentarioMedico = txtComentarioMedico.getText();
 
-    }
-    
-    
+			Atendimento a = new Atendimento();
+			AtendimentoDAO aDAO = new AtendimentoDAO();
+			a.setData(data);
+			a.setPeso(peso);
+			a.setDoenca(doenca);
+			a.setComentarioEnfermeiro(ComentarioEnfermeiro);
+			a.setAltura(altura);
+			a.setComentarioMedico(ComentarioMedico);
+			aDAO.save(a);
+			openpage(Rotas.DASH);
+		} catch (NumberFormatException e) {
+			System.out.println("Campo Peso e altura vazios");
+		}
 
-    @FXML
-    void Voltardash(ActionEvent event) throws IOException {
-    	 openpage(Rotas.DASH);
+	}
 
-    }
-    
-   
+	@FXML
+	void Voltardash(ActionEvent event) throws IOException {
+		openpage(Rotas.DASH);
+
+	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -123,31 +118,42 @@ public class AtendimentoController  extends Main implements Initializable {
 		tablePeso.setCellValueFactory(new PropertyValueFactory<>("peso"));
 		tableAltura.setCellValueFactory(new PropertyValueFactory<>("altura"));
 		tableData.setCellValueFactory(new PropertyValueFactory<>("data"));
-		
+
 		AtendimentoDAO adao = new AtendimentoDAO();
-    	List<Atendimento> atendimentos = adao.select();
-    	
-    	System.out.println("Tamanho " + atendimentos.size());
-    	ObservableList<Atendimento> obsA = FXCollections.observableArrayList(atendimentos);
-    	    	
-    	listAtendimento.setItems(obsA);
-    	
-    	
-		
-		
+		List<Atendimento> atendimentos = adao.select();
+
+		System.out.println("Tamanho " + atendimentos.size());
+		ObservableList<Atendimento> obsA = FXCollections.observableArrayList(atendimentos);
+
+		listAtendimento.setItems(obsA);
+
+	}
+
+	@FXML
+	void excluir(ActionEvent event) {
+		try {
+			Atendimento a = listAtendimento.getSelectionModel().getSelectedItem();
+			System.out.println(a.getIdAtendimento());
+			AtendimentoDAO adao = new AtendimentoDAO();
+			adao.removeById(a.getIdAtendimento());
+			openpage(Rotas.ATENDIMENTO);
+		} catch (SQLException e) {
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (NullPointerException e) {
+
+		}
 	}
 	@FXML
-    void excluir(ActionEvent event) throws SQLException {
+    void editar(ActionEvent event) {
 		
-		Atendimento a= listAtendimento.getSelectionModel().getSelectedItem();
-		System.out.println(a.getIdAtendimento());
-		AtendimentoDAO adao = new AtendimentoDAO();
-		adao.removeById(a.getIdAtendimento());
-		
-		
-		
+		try {
+			openpage(Rotas.ATENDIMENTO);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
     }
 
-
 }
-

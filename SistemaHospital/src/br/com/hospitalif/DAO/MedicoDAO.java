@@ -56,6 +56,7 @@ public class MedicoDAO {
 		
 		while(rs.next()) {
 			Medico m1 = new Medico();
+			m1.setIdFuncionario(rs.getInt("id"));
 			m1.setNome(rs.getString("nome"));
 			m1.setCpf(rs.getString("cpf"));
 			m1.setIdade(rs.getInt("idade"));

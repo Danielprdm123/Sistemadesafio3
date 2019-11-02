@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -12,7 +17,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="648.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.EnfermidadePessoalController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="648.0" style="-fx-background-color: #B0E2FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.EnfermidadePessoalController">
    <children>
       <TextFlow layoutX="143.0" layoutY="20.0" prefHeight="44.0" prefWidth="298.0">
          <children>
@@ -64,11 +69,12 @@
       </Button>
       <TextArea fx:id="txtStatusEnfermidade" layoutX="313.0" layoutY="233.0" prefHeight="89.0" prefWidth="224.0" />
       <TextArea fx:id="txtComentario" layoutX="318.0" layoutY="132.0" prefHeight="89.0" prefWidth="224.0" />
-      <TableView fx:id="ListaEnfermidadePessoal" layoutX="148.0" layoutY="395.0" prefHeight="128.0" prefWidth="472.0">
+      <TableView fx:id="ListaEnfermidadePessoal" layoutX="143.0" layoutY="395.0" prefHeight="135.0" prefWidth="504.0">
         <columns>
           <TableColumn fx:id="tableComentario" prefWidth="254.0" text="Comentario" />
           <TableColumn fx:id="tableStatusEnf" prefWidth="135.0" text="Status Enfermidade" />
         </columns>
       </TableView>
+      <Button fx:id="remover" layoutX="582.0" layoutY="370.0" mnemonicParsing="false" onAction="#excluir" text="Remover" />
    </children>
 </Pane>

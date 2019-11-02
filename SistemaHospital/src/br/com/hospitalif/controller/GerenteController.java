@@ -95,6 +95,8 @@ public class GerenteController extends Main implements Initializable {
 
     @FXML
     private TableColumn<Gerente, String> tableCargo;
+    @FXML
+    private Button Remover;
 
 
     @FXML
@@ -157,5 +159,10 @@ public class GerenteController extends Main implements Initializable {
        	
        	
        }
+
+    @FXML
+    void excluir(ActionEvent event) {
+
+    }
 }
 

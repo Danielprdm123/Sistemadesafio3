@@ -49,6 +49,8 @@ public class EnfermidadeController extends Main implements Initializable{
 
     @FXML
     private TableColumn<Enfermidade, String> tableDesc;
+    @FXML
+    private Button remover;
 
    
 
@@ -84,12 +86,25 @@ public class EnfermidadeController extends Main implements Initializable{
     	ObservableList<Enfermidade> obsenf = FXCollections.observableArrayList(enfermidade);
     	    	
     	ListaEnfermidade.setItems(obsenf);
-    	
-		
 		
 	}
+    @FXML
+    void excluir(ActionEvent event) {
+    	try {
+			Enfermidade e = ListaEnfermidade.getSelectionModel().getSelectedItem();
+			EnfermidadeDAO edao = new EnfermidadeDAO();
+			edao.removeById(e.getIdEnfermidade());
+			openpage(Rotas.ENFERMIDADE);
+		} catch (SQLException e) {
 
-   
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (NullPointerException e) {
 
+		}
+	}
+
+    
 }
+
 

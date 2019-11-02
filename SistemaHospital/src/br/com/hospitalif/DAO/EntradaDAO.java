@@ -45,6 +45,7 @@ public class EntradaDAO {
 		ResultSet rs = stmt.executeQuery();
 		while(rs.next()) {
 			Entrada en1 = new Entrada();
+			en1.setIdEntrada(rs.getInt("id"));
 			en1.setDataEntrada(rs.getDate("dataEntrada").toLocalDate());
 		    en1.setDataDeSaida(rs.getDate("dataSaida").toLocalDate());
 			en1.setStatusDeEntrada(rs.getString("statusEntrada"));

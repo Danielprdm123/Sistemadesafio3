@@ -49,7 +49,7 @@ public class GerenteDAO {
 		ResultSet rs = stmt.executeQuery();
 		while(rs.next()) {
 			Gerente g1 = new Gerente();
-			
+			g1.setIdFuncionario(rs.getInt("id"));
 			g1.setNome(rs.getString("nome"));
 			g1.setCpf(rs.getString("cpf"));
 			g1.setIdade(rs.getInt("idade"));

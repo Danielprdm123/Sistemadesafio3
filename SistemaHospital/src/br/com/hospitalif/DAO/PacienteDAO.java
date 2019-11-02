@@ -50,6 +50,7 @@ public class PacienteDAO {
 		ResultSet rs = stmt.executeQuery();
 		while(rs.next()) {
 			Paciente p1 = new Paciente();
+			p1.setIdPaciente(rs.getInt("id"));
 			p1.setNome(rs.getString("nome"));
 			p1.setCpf(rs.getString("cpf"));
 			p1.setIdade(rs.getInt("idade"));

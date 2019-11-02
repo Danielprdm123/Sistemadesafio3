@@ -21,58 +21,75 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class EnfermidadePessoalController extends Main implements Initializable{
+public class EnfermidadePessoalController extends Main implements Initializable {
 
-    @FXML
-    private Button btnEnviar;
+	@FXML
+	private Button btnEnviar;
 
-    @FXML
-    private Button btnVoltar;
+	@FXML
+	private Button btnVoltar;
 
-    @FXML
-    private TextArea txtStatusEnfermidade;
+	@FXML
+	private TextArea txtStatusEnfermidade;
 
-    @FXML
-    private TextArea txtComentario;
-    @FXML
-    private TableView<EnfermidadePessoal> ListaEnfermidadePessoal;
+	@FXML
+	private TextArea txtComentario;
+	@FXML
+	private TableView<EnfermidadePessoal> ListaEnfermidadePessoal;
 
-    @FXML
-    private TableColumn<EnfermidadePessoal, String> tableComentario;
+	@FXML
+	private TableColumn<EnfermidadePessoal, String> tableComentario;
 
-    @FXML
-    private TableColumn<EnfermidadePessoal, String> tableStatusEnf;
+	@FXML
+	private TableColumn<EnfermidadePessoal, String> tableStatusEnf;
+	@FXML
+	private Button remover;
 
+	@FXML
+	void EnviarEnfermidadePessoal(ActionEvent event) throws SQLException, IOException {
+		String statusEnfermidade = txtStatusEnfermidade.getText();
+		String comentario = txtComentario.getText();
 
-    @FXML
-    void EnviarEnfermidadePessoal(ActionEvent event) throws SQLException, IOException {
-    	String statusEnfermidade = txtStatusEnfermidade.getText();
-    	String comentario = txtComentario.getText();
-    	
-    	EnfermidadePessoal ep = new EnfermidadePessoal();
-    	EnfermidadePessoalDAO epDAO = new EnfermidadePessoalDAO();
-    	ep.setStatusDeEnfermidade(statusEnfermidade);
-    	ep.setComentario(comentario);
-    	epDAO.save(ep);
-    	 openpage(Rotas.DASH);
-    }
+		EnfermidadePessoal ep = new EnfermidadePessoal();
+		EnfermidadePessoalDAO epDAO = new EnfermidadePessoalDAO();
+		ep.setStatusDeEnfermidade(statusEnfermidade);
+		ep.setComentario(comentario);
+		epDAO.save(ep);
+		openpage(Rotas.DASH);
+	}
 
-    @FXML
-    void voltarDash(ActionEvent event) throws IOException {
-    	openpage(Rotas.DASH);
-    }
-    
-    public void initialize(URL arg0, ResourceBundle arg1) {
-    	tableComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
-    	tableStatusEnf.setCellValueFactory(new PropertyValueFactory<>("statusDeEnfermidade"));
-		
+	@FXML
+	void voltarDash(ActionEvent event) throws IOException {
+		openpage(Rotas.DASH);
+	}
+
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		tableComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
+		tableStatusEnf.setCellValueFactory(new PropertyValueFactory<>("statusDeEnfermidade"));
+
 		EnfermidadePessoalDAO enpdao = new EnfermidadePessoalDAO();
-    	List<EnfermidadePessoal> enfermidadeP = enpdao.select();
-    	ObservableList<EnfermidadePessoal> obsenp = FXCollections.observableArrayList(enfermidadeP);
-    	    	
-    	ListaEnfermidadePessoal.setItems(obsenp);
-		
+		List<EnfermidadePessoal> enfermidadeP = enpdao.select();
+		ObservableList<EnfermidadePessoal> obsenp = FXCollections.observableArrayList(enfermidadeP);
+
+		ListaEnfermidadePessoal.setItems(obsenp);
+
+	}
+
+	@FXML
+	void excluir(ActionEvent event) {
+		try {
+			EnfermidadePessoal e = ListaEnfermidadePessoal.getSelectionModel().getSelectedItem();
+			System.out.println(e.getIdEnfermidadePessoal());
+			EnfermidadePessoalDAO adao = new EnfermidadePessoalDAO();
+			adao.removeById(e.getIdEnfermidadePessoal());
+			openpage(Rotas.ENFERMIDADEPESSOAL);
+		} catch (SQLException e) {
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (NullPointerException e) {
+
+		}
 	}
 
 }
-

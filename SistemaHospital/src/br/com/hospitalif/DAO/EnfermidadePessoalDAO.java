@@ -44,6 +44,7 @@ public List<EnfermidadePessoal> select() {
 	ResultSet rs = stmt.executeQuery();
 	while(rs.next()) {
 		EnfermidadePessoal ep1 = new EnfermidadePessoal();
+		ep1.setIdEnfermidadePessoal(rs.getInt("id"));
 		ep1.setComentario(rs.getString("comentario"));
 		ep1.setStatusDeEnfermidade(rs.getString("statusDeEnfermidade"));
 		enfermidadePessoais .add(ep1);
