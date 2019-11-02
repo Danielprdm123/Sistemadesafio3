@@ -150,6 +150,11 @@ public class AtendimentoController extends Main implements Initializable {
 		
 		try {
 			openpage(Rotas.ATENDIMENTO);
+			Atendimento a = listAtendimento.getSelectionModel().getSelectedItem();
+			txtComentarioEnfermeiro.setText(a.getComentarioEnfermeiro());
+			System.out.println(txtComentarioEnfermeiro.getText());
+			
+			
 		} catch (IOException e) {
 			
 			e.printStackTrace();
