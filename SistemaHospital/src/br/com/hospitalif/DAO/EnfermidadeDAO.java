@@ -45,6 +45,7 @@ public class EnfermidadeDAO {
 		ResultSet rs = stmt.executeQuery();
 		while(rs.next()) {
 			Enfermidade e1 = new Enfermidade();
+			e1.setIdEnfermidade(rs.getInt("id"));
 			e1.setNome(rs.getString("nome"));
 			e1.setTipo(rs.getString("tipo"));
 			e1.setDescricao(rs.getString("descricao"));

@@ -131,7 +131,7 @@ public class AtendimentoController  extends Main implements Initializable {
     	ObservableList<Atendimento> obsA = FXCollections.observableArrayList(atendimentos);
     	    	
     	listAtendimento.setItems(obsA);
-    	listAtendimento.getSelectionModel().selectedItemProperty().addListener((observable,oldValue,newValue)->seleciona(newValue));
+    	
     	
 		
 		
@@ -147,10 +147,6 @@ public class AtendimentoController  extends Main implements Initializable {
 		
 		
     }
-	private void seleciona(Atendimento atendimento) {
-		System.out.println("selecionado" + atendimento.getAltura());
-
-	}
 
 
 }

@@ -58,7 +58,7 @@ public class EnfermeiroDAO {
 		ResultSet rs = stmt.executeQuery();
 		while(rs.next()) {
 			Enfermeiro e1 = new Enfermeiro();
-			
+			e1.setIdFuncionario(rs.getInt("id"));
 			e1.setNome(rs.getString("nome"));
 			e1.setCpf(rs.getString("cpf"));
 			e1.setIdade(rs.getInt("idade"));
