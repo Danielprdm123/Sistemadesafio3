@@ -135,6 +135,7 @@
             <TableColumn fx:id="tableHistorico" prefWidth="86.0" text="Historico" />
         </columns>
       </TableView>
-      <Button layoutX="836.0" layoutY="406.0" mnemonicParsing="false" text="Remover" />
+      <Button fx:id="remover" layoutX="836.0" layoutY="406.0" mnemonicParsing="false" onAction="#excluir" text="Remover" />
+      <Button fx:id="atualizar" layoutX="772.0" layoutY="407.0" mnemonicParsing="false" onAction="#editar" text="Atualizar" />
    </children>
 </Pane>

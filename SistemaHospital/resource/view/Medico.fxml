@@ -152,6 +152,7 @@
             <TableColumn fx:id="tableEspecialidade" prefWidth="121.6666259765625" text="Especialidade" />
         </columns>
       </TableView>
-      <Button layoutX="1045.0" layoutY="556.0" mnemonicParsing="false" text="Remover" />
+      <Button fx:id="remover" layoutX="1045.0" layoutY="556.0" mnemonicParsing="false" onAction="#excluir" text="Remover" />
+      <Button fx:id="atualizar" layoutX="965.0" layoutY="556.0" mnemonicParsing="false" onAction="#editar" text="Atualizar" />
    </children>
 </Pane>
