@@ -59,6 +59,8 @@ public class EntradaController extends Main implements Initializable {
 	private TableColumn<Entrada, String> tableSitua;
 	@FXML
 	private Button Remover;
+	@FXML
+	private Button atualizar;
 
 	@FXML
 	void enviarEntrada(ActionEvent event) throws SQLException, IOException {
@@ -113,5 +115,9 @@ public class EntradaController extends Main implements Initializable {
 
 		}
 	}
+	@FXML
+    void editar(ActionEvent event) {
+
+    }
 
 }

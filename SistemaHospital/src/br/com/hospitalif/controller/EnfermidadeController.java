@@ -22,75 +22,76 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class EnfermidadeController extends Main implements Initializable{
+public class EnfermidadeController extends Main implements Initializable {
 
-    @FXML
-    private Button btnEnviar;
+	@FXML
+	private Button btnEnviar;
 
-    @FXML
-    private TextField txtTipo;
+	@FXML
+	private TextField txtTipo;
 
-    @FXML
-    private Button btnVoltar;
+	@FXML
+	private Button btnVoltar;
 
-    @FXML
-    private TextField txtNome;
+	@FXML
+	private TextField txtNome;
 
-    @FXML
-    private TextArea txtDesc;
-    @FXML
-    private TableView<Enfermidade> ListaEnfermidade;
+	@FXML
+	private TextArea txtDesc;
+	@FXML
+	private TableView<Enfermidade> ListaEnfermidade;
 
-    @FXML
-    private TableColumn<Enfermidade, String> tableNome;
+	@FXML
+	private TableColumn<Enfermidade, String> tableNome;
 
-    @FXML
-    private TableColumn<Enfermidade, String> tableTipo;
+	@FXML
+	private TableColumn<Enfermidade, String> tableTipo;
 
-    @FXML
-    private TableColumn<Enfermidade, String> tableDesc;
-    @FXML
-    private Button remover;
+	@FXML
+	private TableColumn<Enfermidade, String> tableDesc;
+	@FXML
+	private Button remover;
+	@FXML
+	private Button Atualizar;
 
-   
+	@FXML
+	void Enviarenfermidade(ActionEvent event) throws SQLException, IOException {
+		String TipoEnfermidade = txtTipo.getText();
+		String NomeEnfermidade = txtNome.getText();
+		String descricao = txtDesc.getText();
+		Enfermidade e = new Enfermidade();
+		EnfermidadeDAO enDAO = new EnfermidadeDAO();
 
-    @FXML
-    void Enviarenfermidade(ActionEvent event) throws SQLException, IOException {
-    	String TipoEnfermidade = txtTipo.getText();
-    	String NomeEnfermidade = txtNome.getText();
-    	String descricao = txtDesc.getText();
-    	Enfermidade e = new Enfermidade();
-    	EnfermidadeDAO  enDAO = new EnfermidadeDAO();
-    	
-    	e.setTipo(TipoEnfermidade);
-    	e.setNome(NomeEnfermidade);
-    	e.setDescricao(descricao);
-        enDAO.save(e);
-        openpage(Rotas.DASH);
-    }
+		e.setTipo(TipoEnfermidade);
+		e.setNome(NomeEnfermidade);
+		e.setDescricao(descricao);
+		enDAO.save(e);
+		openpage(Rotas.DASH);
+	}
 
+	@FXML
+	void Voltardash(ActionEvent event) throws IOException {
+		openpage(Rotas.DASH);
 
-    @FXML
-    void Voltardash(ActionEvent event) throws IOException {
-    	openpage(Rotas.DASH);
+	}
 
-    }
-    @Override
+	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		tableNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		tableTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
 		tableDesc.setCellValueFactory(new PropertyValueFactory<>("descricao"));
-		
+
 		EnfermidadeDAO enfdao = new EnfermidadeDAO();
-    	List<Enfermidade> enfermidade = enfdao.select();
-    	ObservableList<Enfermidade> obsenf = FXCollections.observableArrayList(enfermidade);
-    	    	
-    	ListaEnfermidade.setItems(obsenf);
-		
+		List<Enfermidade> enfermidade = enfdao.select();
+		ObservableList<Enfermidade> obsenf = FXCollections.observableArrayList(enfermidade);
+
+		ListaEnfermidade.setItems(obsenf);
+
 	}
-    @FXML
-    void excluir(ActionEvent event) {
-    	try {
+
+	@FXML
+	void excluir(ActionEvent event) {
+		try {
 			Enfermidade e = ListaEnfermidade.getSelectionModel().getSelectedItem();
 			EnfermidadeDAO edao = new EnfermidadeDAO();
 			edao.removeById(e.getIdEnfermidade());
@@ -104,7 +105,9 @@ public class EnfermidadeController extends Main implements Initializable{
 		}
 	}
 
-    
+	@FXML
+	void editar(ActionEvent event) {
+
+	}
+
 }
-
-

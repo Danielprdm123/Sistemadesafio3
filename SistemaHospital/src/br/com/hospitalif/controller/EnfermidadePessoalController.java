@@ -44,6 +44,8 @@ public class EnfermidadePessoalController extends Main implements Initializable 
 	private TableColumn<EnfermidadePessoal, String> tableStatusEnf;
 	@FXML
 	private Button remover;
+	@FXML
+    private Button atualizar;
 
 	@FXML
 	void EnviarEnfermidadePessoal(ActionEvent event) throws SQLException, IOException {
@@ -91,5 +93,9 @@ public class EnfermidadePessoalController extends Main implements Initializable 
 
 		}
 	}
+	@FXML
+    void editar(ActionEvent event) {
+
+    }
 
 }
