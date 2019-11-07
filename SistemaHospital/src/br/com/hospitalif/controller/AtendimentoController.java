@@ -70,8 +70,8 @@ public class AtendimentoController extends Main implements Initializable {
 	private TableColumn<Atendimento, String> tableData;
 	@FXML
 	private Button remove;
-    @FXML
-    private Button atualizar;
+	@FXML
+	private Button atualizar;
 
 	public AtendimentoController() {
 		// TODO Auto-generated constructor stub
@@ -145,21 +145,30 @@ public class AtendimentoController extends Main implements Initializable {
 
 		}
 	}
+
 	@FXML
-    void editar(ActionEvent event) {
-		
+	void editar(ActionEvent event) {
+
 		try {
 			openpage(Rotas.ATENDIMENTO);
 			Atendimento a = listAtendimento.getSelectionModel().getSelectedItem();
+			AtendimentoDAO aDAO = new AtendimentoDAO();
 			txtComentarioEnfermeiro.setText(a.getComentarioEnfermeiro());
-			txtPeso.setText(""+ a.getPeso());
+			txtPeso.setText("" + a.getPeso());
+			txtDoenca.setText(a.getDoenca());
+			txtAltura.setText("" + a.getAltura());
+			txtComentarioMedico.setText(a.getComentarioMedico());
+			txtData.setValue(a.getData());
+			aDAO.update(a);
 			System.out.println(txtComentarioEnfermeiro.getText());
-			
-			
+
 		} catch (IOException e) {
-			
+
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    }
+	}
 
 }
