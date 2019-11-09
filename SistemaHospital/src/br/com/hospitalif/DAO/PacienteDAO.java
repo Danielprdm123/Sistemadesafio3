@@ -71,10 +71,10 @@ public class PacienteDAO {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere = "UPDATE Paciente SET(?,?,?,?,?,?,?,?,?) where id=(?)";
+		String sqlInsere = "UPDATE Paciente SET nome = (?), cpf =(?), idade=(?), tipoSanguineo = (?), sexo = (?), statusPessoa = (?), doenca = (?), historico = (?)  where id=(?)";
 		
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
-		stmt.setInt(1,p.getIdPaciente());	
+		stmt.setInt(9,p.getIdPaciente());	
 		stmt.setString(1,p.getNome());
 		stmt.setString(2, p.getCpf());
 		stmt.setInt(3, p.getIdade());
@@ -83,7 +83,7 @@ public class PacienteDAO {
 		stmt.setString(6, p.getStatusPessoa());
 		stmt.setString(7,p.getDoenca());
 		stmt.setString(8,p.getHistorico());
-		stmt.execute();
+		stmt.executeUpdate();
 		
 	}
 
