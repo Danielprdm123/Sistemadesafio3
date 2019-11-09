@@ -25,6 +25,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class AtendimentoController extends Main implements Initializable {
+	
+	private int idAtendimento;
 
 	@FXML
 	private DatePicker txtData;
@@ -72,14 +74,11 @@ public class AtendimentoController extends Main implements Initializable {
 	private Button remove;
 	@FXML
 	private Button atualizar;
-
-	public AtendimentoController() {
-		// TODO Auto-generated constructor stub
-
-	}
+	@FXML
+	private Button btnUpdate;
 
 	@FXML
-	void cadastrarAtendimento(ActionEvent event) throws SQLException, IOException {
+	void cadastrarAtendimento(ActionEvent event) {
 		try {
 			LocalDate data = txtData.getValue();
 			float peso = Float.parseFloat(txtPeso.getText());
@@ -97,9 +96,17 @@ public class AtendimentoController extends Main implements Initializable {
 			a.setAltura(altura);
 			a.setComentarioMedico(ComentarioMedico);
 			aDAO.save(a);
-			openpage(Rotas.DASH);
+			try {
+				openpage(Rotas.DASH);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} catch (NumberFormatException e) {
 			System.out.println("Campo Peso e altura vazios");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 	}
@@ -150,25 +157,69 @@ public class AtendimentoController extends Main implements Initializable {
 	void editar(ActionEvent event) {
 
 		try {
-			openpage(Rotas.ATENDIMENTO);
+			//openpage(Rotas.ATENDIMENTO);
 			Atendimento a = listAtendimento.getSelectionModel().getSelectedItem();
-			AtendimentoDAO aDAO = new AtendimentoDAO();
+			
+			System.out.println(a.getIdAtendimento());
+			
 			txtComentarioEnfermeiro.setText(a.getComentarioEnfermeiro());
 			txtPeso.setText("" + a.getPeso());
 			txtDoenca.setText(a.getDoenca());
 			txtAltura.setText("" + a.getAltura());
 			txtComentarioMedico.setText(a.getComentarioMedico());
 			txtData.setValue(a.getData());
-			aDAO.update(a);
-			System.out.println(txtComentarioEnfermeiro.getText());
+			
+			
 
-		} catch (IOException e) {
+		} catch (Exception e) {
 
 			e.printStackTrace();
+		}
+		
+	}
+	@FXML
+    void atualizarAtendimento(ActionEvent event) {
+		try {
+			
+			LocalDate data = txtData.getValue();
+			float peso = Float.parseFloat(txtPeso.getText());
+			String doenca = txtDoenca.getText();
+			String ComentarioEnfermeiro = txtComentarioEnfermeiro.getText();
+			float altura = Float.parseFloat(txtAltura.getText());
+			String ComentarioMedico = txtComentarioMedico.getText();
+
+			
+			
+			Atendimento a = new Atendimento();
+			AtendimentoDAO aDAO = new AtendimentoDAO();
+			
+			
+			// somente para pegar ID
+			Atendimento getId = listAtendimento.getSelectionModel().getSelectedItem();
+			a.setIdAtendimento(getId.getIdAtendimento());
+			
+			System.out.println("ID "  + a.getIdAtendimento());
+			
+			a.setData(data);
+			a.setPeso(peso);
+			a.setDoenca(doenca);
+			a.setComentarioEnfermeiro(ComentarioEnfermeiro);
+			a.setAltura(altura);
+			a.setComentarioMedico(ComentarioMedico);
+			aDAO.update(a);;
+			openpage(Rotas.ATENDIMENTO);
+		} catch (NumberFormatException e) {
+			System.out.println("Campo Peso e altura vazios");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+
 	}
+
+    
 
 }

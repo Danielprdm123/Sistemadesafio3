@@ -112,5 +112,13 @@
       </TableView>
       <Button fx:id="remove" layoutX="930.0" layoutY="414.0" mnemonicParsing="false" onAction="#excluir" text="Remover" />
       <Button fx:id="atualizar" layoutX="858.0" layoutY="414.0" mnemonicParsing="false" onAction="#editar" text="atualizar" />
+      <Button fx:id="btnUpdate" layoutX="592.0" layoutY="331.0" mnemonicParsing="false" onAction="#atualizarAtendimento" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Update" textFill="#f8f8ffba">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

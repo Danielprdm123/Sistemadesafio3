@@ -39,6 +39,9 @@ public class Main extends Application{
 		  loader = new FXMLLoader(getClass().getResource(rota));
 			Scene scene = new Scene(loader.load());
 			stageAtual.setScene(scene);
+			
+			
+			
 			stageAtual.show();
 	}
 	public static void main (String[] args) throws SQLException {
