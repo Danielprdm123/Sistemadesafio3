@@ -53,9 +53,11 @@ public class EnfermidadeController extends Main implements Initializable {
 	private Button remover;
 	@FXML
 	private Button Atualizar;
+	@FXML
+    private Button btnUpdate;
 
 	@FXML
-	void Enviarenfermidade(ActionEvent event) throws SQLException, IOException {
+	void Enviarenfermidade(ActionEvent event) {
 		String TipoEnfermidade = txtTipo.getText();
 		String NomeEnfermidade = txtNome.getText();
 		String descricao = txtDesc.getText();
@@ -65,8 +67,18 @@ public class EnfermidadeController extends Main implements Initializable {
 		e.setTipo(TipoEnfermidade);
 		e.setNome(NomeEnfermidade);
 		e.setDescricao(descricao);
-		enDAO.save(e);
-		openpage(Rotas.DASH);
+		try {
+			enDAO.save(e);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		try {
+			openpage(Rotas.DASH);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
 
 	@FXML
@@ -114,5 +126,31 @@ public class EnfermidadeController extends Main implements Initializable {
 		
 
 	}
+	@FXML
+    void atualizarEnfermidade(ActionEvent event) {
+		Enfermidade getId = ListaEnfermidade.getSelectionModel().getSelectedItem();
+		String TipoEnfermidade = txtTipo.getText();
+		String NomeEnfermidade = txtNome.getText();
+		String descricao = txtDesc.getText();
+		Enfermidade e = new Enfermidade();
+		EnfermidadeDAO enDAO = new EnfermidadeDAO();
+		e.setIdEnfermidade(getId.getIdEnfermidade());
+		e.setTipo(TipoEnfermidade);
+		e.setNome(NomeEnfermidade);
+		e.setDescricao(descricao);
+		try {
+			enDAO.updade(e);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		};
+		try {
+			openpage(Rotas.ENFERMIDADE);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+    }
 
 }

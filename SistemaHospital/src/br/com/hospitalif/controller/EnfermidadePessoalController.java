@@ -45,10 +45,12 @@ public class EnfermidadePessoalController extends Main implements Initializable 
 	@FXML
 	private Button remover;
 	@FXML
-    private Button atualizar;
+	private Button atualizar;
+	@FXML
+	private Button btnUpdate;
 
 	@FXML
-	void EnviarEnfermidadePessoal(ActionEvent event) throws SQLException, IOException {
+	void EnviarEnfermidadePessoal(ActionEvent event) {
 		String statusEnfermidade = txtStatusEnfermidade.getText();
 		String comentario = txtComentario.getText();
 
@@ -56,8 +58,18 @@ public class EnfermidadePessoalController extends Main implements Initializable 
 		EnfermidadePessoalDAO epDAO = new EnfermidadePessoalDAO();
 		ep.setStatusDeEnfermidade(statusEnfermidade);
 		ep.setComentario(comentario);
-		epDAO.save(ep);
-		openpage(Rotas.DASH);
+		try {
+			epDAO.save(ep);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			openpage(Rotas.DASH);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@FXML
@@ -93,12 +105,38 @@ public class EnfermidadePessoalController extends Main implements Initializable 
 
 		}
 	}
+
 	@FXML
-    void editar(ActionEvent event) {
+	void editar(ActionEvent event) {
 		EnfermidadePessoal en = ListaEnfermidadePessoal.getSelectionModel().getSelectedItem();
 		txtComentario.setText(en.getComentario());
 		txtStatusEnfermidade.setText(en.getStatusDeEnfermidade());
 
-    }
+	}
+
+	@FXML
+	void atualizarEnfermidadePessoal(ActionEvent event) {
+		EnfermidadePessoal getId = ListaEnfermidadePessoal.getSelectionModel().getSelectedItem();
+		String statusEnfermidade = txtStatusEnfermidade.getText();
+		String comentario = txtComentario.getText();
+		EnfermidadePessoal ep = new EnfermidadePessoal();
+		EnfermidadePessoalDAO epDAO = new EnfermidadePessoalDAO();
+		ep.setIdEnfermidadePessoal(getId.getIdEnfermidadePessoal());
+		ep.setStatusDeEnfermidade(statusEnfermidade);
+		ep.setComentario(comentario);
+		try {
+			epDAO.update(ep);;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			openpage(Rotas.ENFERMIDADEPESSOAL);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 
 }

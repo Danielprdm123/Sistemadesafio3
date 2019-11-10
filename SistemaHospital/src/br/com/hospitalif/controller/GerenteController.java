@@ -99,6 +99,8 @@ public class GerenteController extends Main implements Initializable {
 	private Button Remover;
 	@FXML
 	private Button atualizar;
+	@FXML
+	private Button btnUpdate;
 
 	@FXML
 	void Enviargerente(ActionEvent event) throws SQLException, IOException {
@@ -167,13 +169,55 @@ public class GerenteController extends Main implements Initializable {
 		txtCpf.setText(g.getCpf());
 		txtIdade.setText("" + g.getIdade());
 		textSangue.setText(g.getTipoSanguineo());
-		cboSexo.setText(g.getSexo());
-		cboSexo1.setText(g.getSexo());
 		txtStatus.setText(g.getStatusPessoa());
 		txtLogin.setText(g.getLogin());
 		txtSenha.setText(g.getSenha());
 		txtStatusf.setText(g.getStatusDeUsuario());
 		txtCargo.setText(g.getCargo());
+
+	}
+
+	@FXML
+	void atualizarGerente(ActionEvent event) {
+		try {
+			Gerente getId = listaGerente.getSelectionModel().getSelectedItem();
+			String nome = txtNome.getText();
+			String cpf = txtCpf.getText();
+			int idade = Integer.parseInt(txtIdade.getText());
+			String tipoSangue = textSangue.getText();
+			String sexo = cboSexo.getText();
+			String sexo1 = cboSexo1.getText();
+			String status = txtStatus.getText();
+			String login = txtLogin.getText();
+			String senha = txtSenha.getText();
+			String statusF = txtStatusf.getText();
+			String cargo = txtCargo.getText();
+
+			Gerente g = new Gerente();
+			GerenteDAO gDAO = new GerenteDAO();
+			g.setIdFuncionario(getId.getIdFuncionario());
+			g.setNome(nome);
+			g.setCpf(cpf);
+			g.setIdade(idade);
+			g.setTipoSanguineo(tipoSangue);
+			g.setSexo(sexo);
+			g.setSexo(sexo1);
+			g.setStatusPessoa(status);
+			g.setLogin(login);
+			g.setSenha(senha);
+			g.setStatusDeUsuario(statusF);
+			g.setCargo(cargo);
+			gDAO.update(g);;
+			openpage(Rotas.GERENTE);
+		} catch (NumberFormatException e) {
+			System.out.println("Campo idade vazio");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

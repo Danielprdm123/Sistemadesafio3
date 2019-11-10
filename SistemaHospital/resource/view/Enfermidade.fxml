@@ -23,7 +23,7 @@
             </Text>
          </children>
       </TextFlow>
-      <Button fx:id="btnEnviar" layoutX="426.0" layoutY="350.0" mnemonicParsing="false" onAction="#Enviarenfermidade" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Enviar" textFill="#f8f8ffba">
+      <Button fx:id="btnEnviar" layoutX="441.0" layoutY="347.0" mnemonicParsing="false" onAction="#Enviarenfermidade" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Enviar" textFill="#f8f8ffba">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -58,7 +58,7 @@
          </font>
       </Label>
       <TextField fx:id="txtTipo" layoutX="316.0" layoutY="185.0" prefHeight="45.0" prefWidth="189.0" />
-      <Button fx:id="btnVoltar" layoutX="192.0" layoutY="350.0" mnemonicParsing="false" onAction="#Voltardash" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Voltar" textFill="#f8f8ffba">
+      <Button fx:id="btnVoltar" layoutX="158.0" layoutY="347.0" mnemonicParsing="false" onAction="#Voltardash" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Voltar" textFill="#f8f8ffba">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -73,5 +73,10 @@
       </TableView>
       <Button fx:id="remover" layoutX="623.0" layoutY="366.0" mnemonicParsing="false" onAction="#excluir" text="Remover" />
       <Button fx:id="Atualizar" layoutX="550.0" layoutY="366.0" mnemonicParsing="false" onAction="#editar" text="Atualizar" />
+      <Button fx:id="btnUpdate" layoutX="311.0" layoutY="347.0" mnemonicParsing="false" onAction="#atualizarEnfermidade" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Update" textFill="#f8f8ffba">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

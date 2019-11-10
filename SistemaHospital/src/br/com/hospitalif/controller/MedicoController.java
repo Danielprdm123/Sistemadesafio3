@@ -107,6 +107,8 @@ public class MedicoController extends Main implements Initializable {
 
 	@FXML
 	private Button atualizar;
+	@FXML
+    private Button btnUpdate;
 
 	@FXML
 	void Enviarmedico(ActionEvent event) throws SQLException, IOException {
@@ -178,8 +180,6 @@ public class MedicoController extends Main implements Initializable {
 		txtCpf.setText(m.getCpf());
 		txtIdade.setText("" + m.getIdade());
 		textSangue.setText(m.getTipoSanguineo());
-		cboSexo.setText(m.getSexo());
-		cboSexo1.setText(m.getSexo());
 		txtStatus.setText(m.getStatusPessoa());
 		txtLogin.setText(m.getLogin());
 		txtSenha.setText(m.getSenha());
@@ -188,6 +188,48 @@ public class MedicoController extends Main implements Initializable {
 		txtEspecialidade.setText(m.getEspecialidade());
 
 	}
+	@FXML
+    void Atualizarmedico(ActionEvent event) throws IOException {
+		try {
+			Medico getId = ListaMedico.getSelectionModel().getSelectedItem();
+			String nome = txtNome.getText();
+			String cpf = txtCpf.getText();
+			int idade = Integer.parseInt(txtIdade.getText());
+			String tipoSangue = textSangue.getText();
+			String sexo = cboSexo.getText();
+			String sexo1 = cboSexo1.getText();
+			String status = txtStatus.getText();
+			String login = txtLogin.getText();
+			String senha = txtSenha.getText();
+			String statusF = txtStatusf.getText();
+			int NumRegristroMedico = Integer.parseInt(txtNumregistro.getText());
+			String especialidade = txtEspecialidade.getText();
+			Medico m = new Medico();
+			MedicoDAO mDAO = new MedicoDAO();
+			m.setIdFuncionario(getId.getIdFuncionario());
+			m.setNome(nome);
+			m.setCpf(cpf);
+			m.setIdade(idade);
+			m.setTipoSanguineo(tipoSangue);
+			m.setSexo(sexo);
+			m.setSexo(sexo1);
+			m.setStatusPessoa(status);
+			m.setLogin(login);
+			m.setSenha(senha);
+			m.setStatusDeUsuario(statusF);
+			m.setEspecialidade(especialidade);
+			m.setNumeroderegistro(NumRegristroMedico);
+			mDAO.update(m);;
+			openpage(Rotas.MEDICO);
+		} catch (NumberFormatException e) {
+			System.out.println("Campo idade vazio e num registro");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+    }
 
 	@FXML
 	void excluir(ActionEvent event) {

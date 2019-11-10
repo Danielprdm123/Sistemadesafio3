@@ -61,10 +61,12 @@ public class EntradaController extends Main implements Initializable {
 	private Button Remover;
 	@FXML
 	private Button atualizar;
+    @FXML
+    private Button btnUpdate;
 
 	@FXML
-	void enviarEntrada(ActionEvent event) throws SQLException, IOException {
-
+	void enviarEntrada(ActionEvent event)  {
+	
 		LocalDate dataEntrada = dtDataEntrada.getValue();
 		LocalDate dataSaida = dtDataSaida.getValue();
 		String SituacaoPaciente = txtSituacaoPaciente.getText();
@@ -75,8 +77,19 @@ public class EntradaController extends Main implements Initializable {
 		en.setDataDeSaida(dataSaida);
 		en.setSituacaoDePaciente(SituacaoPaciente);
 		en.setStatusDeEntrada(statusEntrada);
-		enDAO.save(en);
-		openpage(Rotas.DASH);
+		try {
+			enDAO.save(en);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			openpage(Rotas.DASH);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 	@FXML
@@ -122,6 +135,34 @@ public class EntradaController extends Main implements Initializable {
 		txtStatusEntrada.setText(e.getStatusDeEntrada());
 		dtDataEntrada.setValue(e.getDataEntrada());
 		dtDataSaida.setValue(e.getDataDeSaida());
+
+    }
+	@FXML
+    void atualizarEntrada(ActionEvent event) { 
+		Entrada getId = ListaEntrada.getSelectionModel().getSelectedItem();
+		LocalDate dataEntrada = dtDataEntrada.getValue();
+		LocalDate dataSaida = dtDataSaida.getValue();
+		String SituacaoPaciente = txtSituacaoPaciente.getText();
+		String statusEntrada = txtStatusEntrada.getText();
+		EntradaDAO enDAO = new EntradaDAO();
+		Entrada en = new Entrada();
+		en.setIdEntrada(getId.getIdEntrada());
+		en.setDataEntrada(dataEntrada);
+		en.setDataDeSaida(dataSaida);
+		en.setSituacaoDePaciente(SituacaoPaciente);
+		en.setStatusDeEntrada(statusEntrada);
+		try {
+			enDAO.update(en);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		try {
+			openpage(Rotas.ENTRADA);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
     }
 

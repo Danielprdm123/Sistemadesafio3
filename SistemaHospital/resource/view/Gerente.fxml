@@ -49,7 +49,7 @@
          </cursor>
       </Button>
       <TextField fx:id="txtCargo" layoutX="324.0" layoutY="389.0" prefHeight="34.0" prefWidth="187.0" />
-      <Button fx:id="btnEnviar" layoutX="475.0" layoutY="460.0" mnemonicParsing="false" onAction="#Enviargerente" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Enviar" textFill="#f8f8ffba">
+      <Button fx:id="btnEnviar" layoutX="387.0" layoutY="459.0" mnemonicParsing="false" onAction="#Enviargerente" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Enviar" textFill="#f8f8ffba">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -147,5 +147,13 @@
       </TableView>
       <Button fx:id="Remover" layoutX="819.0" layoutY="475.0" mnemonicParsing="false" onAction="#excluir" text="Remover" />
       <Button fx:id="atualizar" layoutX="740.0" layoutY="475.0" mnemonicParsing="false" onAction="#editar" text="atualizar" />
+      <Button fx:id="btnUpdate" layoutX="506.0" layoutY="459.0" mnemonicParsing="false" onAction="#atualizarGerente" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Update" textFill="#f8f8ffba">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </Pane>

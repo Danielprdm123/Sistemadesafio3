@@ -91,6 +91,8 @@ public class PacienteController extends Main implements Initializable {
 
 	@FXML
 	private Button atualizar;
+	@FXML
+	private Button btnUpdate;
 
 	@FXML
 	void Voltardash(ActionEvent event) throws IOException {
@@ -160,9 +162,47 @@ public class PacienteController extends Main implements Initializable {
 		txtStatus.setText(p.getStatusPessoa());
 		txtDoenca.setText(p.getDoenca());
 		txtHistorico.setText(p.getHistorico());
-		
 
 	}
+	@FXML
+    void atualizarPaciente(ActionEvent event) {
+		try {
+			Paciente getId = listaPaiente.getSelectionModel().getSelectedItem();
+			String nome = txtNome.getText();
+			String cpf = txtCpf.getText();
+			int idade = Integer.parseInt(txtIdade.getText());
+			String tipoSangue = textSangue.getText();
+			String sexo = cboSexo.getText();
+			String sexo1 = cboSexo1.getText();
+			String status = txtStatus.getText();
+			String historico = txtHistorico.getText();
+			String doenca = txtDoenca.getText();
+
+			Paciente p = new Paciente();
+			PacienteDAO pDAO = new PacienteDAO();
+			p.setIdPaciente(getId.getIdPaciente());
+			p.setNome(nome);
+			p.setCpf(cpf);
+			p.setIdade(idade);
+			p.setTipoSanguineo(tipoSangue);
+			p.setSexo(sexo);
+			p.setSexo(sexo1);
+			p.setStatusPessoa(status);
+			p.setDoenca(doenca);
+			p.setHistorico(historico);
+			pDAO.updade(p);;
+			openpage(Rotas.PACIENTE);
+		} catch (NumberFormatException e) {
+			System.out.println("Campo idade vazio");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+    }
 
 	@FXML
 	void excluir(ActionEvent event) {

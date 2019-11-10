@@ -25,7 +25,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class AtendimentoController extends Main implements Initializable {
-	
 
 	@FXML
 	private DatePicker txtData;
@@ -157,50 +156,42 @@ public class AtendimentoController extends Main implements Initializable {
 
 		try {
 			Atendimento a = listAtendimento.getSelectionModel().getSelectedItem();
-			
+
 			txtComentarioEnfermeiro.setText(a.getComentarioEnfermeiro());
 			txtPeso.setText("" + a.getPeso());
 			txtDoenca.setText(a.getDoenca());
 			txtAltura.setText("" + a.getAltura());
 			txtComentarioMedico.setText(a.getComentarioMedico());
 			txtData.setValue(a.getData());
-			
+
 		} catch (Exception e) {
 
 			e.printStackTrace();
 		}
-		
+
 	}
+
 	@FXML
-    void atualizarAtendimento(ActionEvent event) {
+	void atualizarAtendimento(ActionEvent event) {
 		try {
-			
+			// somente para pegar ID
+			Atendimento getId = listAtendimento.getSelectionModel().getSelectedItem();
 			LocalDate data = txtData.getValue();
 			float peso = Float.parseFloat(txtPeso.getText());
 			String doenca = txtDoenca.getText();
 			String ComentarioEnfermeiro = txtComentarioEnfermeiro.getText();
 			float altura = Float.parseFloat(txtAltura.getText());
 			String ComentarioMedico = txtComentarioMedico.getText();
-
-			
-			
 			Atendimento a = new Atendimento();
 			AtendimentoDAO aDAO = new AtendimentoDAO();
-			
-			
-			// somente para pegar ID
-			Atendimento getId = listAtendimento.getSelectionModel().getSelectedItem();
 			a.setIdAtendimento(getId.getIdAtendimento());
-			
-			System.out.println("ID "  + a.getIdAtendimento());
-			
 			a.setData(data);
 			a.setPeso(peso);
 			a.setDoenca(doenca);
 			a.setComentarioEnfermeiro(ComentarioEnfermeiro);
 			a.setAltura(altura);
 			a.setComentarioMedico(ComentarioMedico);
-			aDAO.update(a);;
+			aDAO.update(a);
 			openpage(Rotas.ATENDIMENTO);
 		} catch (NumberFormatException e) {
 			System.out.println("Campo Peso e altura vazios");
@@ -213,7 +204,5 @@ public class AtendimentoController extends Main implements Initializable {
 		}
 
 	}
-
-    
 
 }

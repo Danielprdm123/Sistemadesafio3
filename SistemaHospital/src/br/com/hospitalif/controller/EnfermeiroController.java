@@ -98,6 +98,9 @@ public class EnfermeiroController extends Main implements Initializable {
 	@FXML
     private Button atualizar;
 
+    @FXML
+    private Button btnUpdate;
+
 	@FXML
 	void enviarEnfermeiro(ActionEvent event) throws IOException, SQLException {
 		try {
@@ -183,13 +186,53 @@ public class EnfermeiroController extends Main implements Initializable {
 		txtCpf.setText(e.getCpf());
 		txtIdade.setText("" + e.getIdade());
 		textSangue.setText(e.getTipoSanguineo());
-		cboSexo.setText(e.getSexo());
-		cboSexo1.setText(e.getSexo());
 		txtStatus.setText(e.getStatusPessoa());
 		txtLogin.setText(e.getLogin());
 		txtSenha.setText(e.getSenha());
 		txtStatusf.setText(e.getStatusDeUsuario());
 		txtNumres.setText("" +e.getNumeroderegistro());
 
+    }
+	@FXML
+    void atualizarEnfermeiro(ActionEvent event) {
+		try {
+		Enfermeiro getId = ListaEnfermeiro.getSelectionModel().getSelectedItem(); 
+		String nome = txtNome.getText();
+		String cpf = txtCpf.getText();
+		int idade = Integer.parseInt(txtIdade.getText());
+		String tipoSangue = textSangue.getText();
+		String sexo = cboSexo.getText();
+		String sexo1 = cboSexo1.getText();
+		String status = txtStatus.getText();
+		String login = txtLogin.getText();
+		String senha = txtSenha.getText();
+		String statusF = txtStatusf.getText();
+		int NumRegistroEnfermeiro = Integer.parseInt(txtNumres.getText());
+
+		Enfermeiro e = new Enfermeiro();
+		EnfermeiroDAO eDAO = new EnfermeiroDAO();
+		e.setIdFuncionario(getId.getIdFuncionario());
+		e.setNome(nome);
+		e.setCpf(cpf);
+		e.setIdade(idade);
+		e.setTipoSanguineo(tipoSangue);
+		e.setSexo(sexo);
+		e.setSexo(sexo1);
+		e.setStatusPessoa(status);
+		e.setLogin(login);
+		e.setSenha(senha);
+		e.setStatusDeUsuario(statusF);
+		e.setNumeroderegistro(NumRegistroEnfermeiro);
+		eDAO.update(e);;
+		openpage(Rotas.ENFERMEIRO);
+	} catch (NumberFormatException e) {
+		System.out.println("Campo idade vazio e numero registro vazio");
+	} catch (SQLException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	} catch (IOException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	}
     }
 }
