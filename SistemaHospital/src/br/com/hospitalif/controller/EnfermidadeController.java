@@ -107,6 +107,11 @@ public class EnfermidadeController extends Main implements Initializable {
 
 	@FXML
 	void editar(ActionEvent event) {
+		Enfermidade e = ListaEnfermidade.getSelectionModel().getSelectedItem();
+		txtNome.setText(e.getNome());
+		txtDesc.setText(e.getDescricao());
+		txtTipo.setText(e.getTipo());
+		
 
 	}
 

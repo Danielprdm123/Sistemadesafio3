@@ -150,6 +150,16 @@ public class PacienteController extends Main implements Initializable {
 
 	@FXML
 	void editar(ActionEvent event) {
+		Paciente p = listaPaiente.getSelectionModel().getSelectedItem();
+		txtNome.setText(p.getNome());
+		txtCpf.setText(p.getCpf());
+		txtIdade.setText("" + p.getIdade());
+		textSangue.setText(p.getTipoSanguineo());
+		cboSexo.setText(p.getSexo());
+		cboSexo1.setText(p.getSexo());
+		txtStatus.setText(p.getStatusPessoa());
+		txtDoenca.setText(p.getDoenca());
+		txtHistorico.setText(p.getHistorico());
 		
 
 	}

@@ -173,6 +173,19 @@ public class MedicoController extends Main implements Initializable {
 
 	@FXML
 	void editar(ActionEvent event) {
+		Medico m = ListaMedico.getSelectionModel().getSelectedItem();
+		txtNome.setText(m.getNome());
+		txtCpf.setText(m.getCpf());
+		txtIdade.setText("" + m.getIdade());
+		textSangue.setText(m.getTipoSanguineo());
+		cboSexo.setText(m.getSexo());
+		cboSexo1.setText(m.getSexo());
+		txtStatus.setText(m.getStatusPessoa());
+		txtLogin.setText(m.getLogin());
+		txtSenha.setText(m.getSenha());
+		txtStatusf.setText(m.getStatusDeUsuario());
+		txtNumregistro.setText("" + m.getNumeroderegistro());
+		txtEspecialidade.setText(m.getEspecialidade());
 
 	}
 

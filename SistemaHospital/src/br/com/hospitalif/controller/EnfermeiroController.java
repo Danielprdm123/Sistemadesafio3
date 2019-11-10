@@ -178,6 +178,18 @@ public class EnfermeiroController extends Main implements Initializable {
 	}
 	@FXML
     void editar(ActionEvent event) {
+		Enfermeiro e = ListaEnfermeiro.getSelectionModel().getSelectedItem(); 
+		txtNome.setText(e.getNome());
+		txtCpf.setText(e.getCpf());
+		txtIdade.setText("" + e.getIdade());
+		textSangue.setText(e.getTipoSanguineo());
+		cboSexo.setText(e.getSexo());
+		cboSexo1.setText(e.getSexo());
+		txtStatus.setText(e.getStatusPessoa());
+		txtLogin.setText(e.getLogin());
+		txtSenha.setText(e.getSenha());
+		txtStatusf.setText(e.getStatusDeUsuario());
+		txtNumres.setText("" +e.getNumeroderegistro());
 
     }
 }

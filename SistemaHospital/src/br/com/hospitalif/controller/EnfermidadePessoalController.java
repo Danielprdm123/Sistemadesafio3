@@ -95,6 +95,9 @@ public class EnfermidadePessoalController extends Main implements Initializable 
 	}
 	@FXML
     void editar(ActionEvent event) {
+		EnfermidadePessoal en = ListaEnfermidadePessoal.getSelectionModel().getSelectedItem();
+		txtComentario.setText(en.getComentario());
+		txtStatusEnfermidade.setText(en.getStatusDeEnfermidade());
 
     }
 

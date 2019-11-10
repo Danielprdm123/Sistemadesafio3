@@ -117,6 +117,11 @@ public class EntradaController extends Main implements Initializable {
 	}
 	@FXML
     void editar(ActionEvent event) {
+		Entrada e = ListaEntrada.getSelectionModel().getSelectedItem();
+		txtSituacaoPaciente.setText(e.getSituacaoDePaciente());
+		txtStatusEntrada.setText(e.getStatusDeEntrada());
+		dtDataEntrada.setValue(e.getDataEntrada());
+		dtDataSaida.setValue(e.getDataDeSaida());
 
     }
 

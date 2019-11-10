@@ -26,7 +26,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class AtendimentoController extends Main implements Initializable {
 	
-	private int idAtendimento;
 
 	@FXML
 	private DatePicker txtData;
@@ -157,10 +156,7 @@ public class AtendimentoController extends Main implements Initializable {
 	void editar(ActionEvent event) {
 
 		try {
-			//openpage(Rotas.ATENDIMENTO);
 			Atendimento a = listAtendimento.getSelectionModel().getSelectedItem();
-			
-			System.out.println(a.getIdAtendimento());
 			
 			txtComentarioEnfermeiro.setText(a.getComentarioEnfermeiro());
 			txtPeso.setText("" + a.getPeso());
@@ -169,8 +165,6 @@ public class AtendimentoController extends Main implements Initializable {
 			txtComentarioMedico.setText(a.getComentarioMedico());
 			txtData.setValue(a.getData());
 			
-			
-
 		} catch (Exception e) {
 
 			e.printStackTrace();

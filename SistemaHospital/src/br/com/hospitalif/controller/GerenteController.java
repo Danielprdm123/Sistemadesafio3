@@ -162,6 +162,18 @@ public class GerenteController extends Main implements Initializable {
 
 	@FXML
 	void editar(ActionEvent event) {
+		Gerente g = listaGerente.getSelectionModel().getSelectedItem();
+		txtNome.setText(g.getNome());
+		txtCpf.setText(g.getCpf());
+		txtIdade.setText("" + g.getIdade());
+		textSangue.setText(g.getTipoSanguineo());
+		cboSexo.setText(g.getSexo());
+		cboSexo1.setText(g.getSexo());
+		txtStatus.setText(g.getStatusPessoa());
+		txtLogin.setText(g.getLogin());
+		txtSenha.setText(g.getSenha());
+		txtStatusf.setText(g.getStatusDeUsuario());
+		txtCargo.setText(g.getCargo());
 
 	}
 
