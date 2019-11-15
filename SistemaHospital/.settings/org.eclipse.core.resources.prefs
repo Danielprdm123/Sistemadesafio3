@@ -1,4 +1,9 @@
 eclipse.preferences.version=1
-encoding//resource/report/Enfermeiro.jrxml=UTF-8
-encoding//resource/report/Gerente.jrxml=UTF-8
+encoding//resource/report/AtendimentoRel.jrxml=UTF-8
+encoding//resource/report/EnfermeiroRel.jrxml=UTF-8
+encoding//resource/report/EnfermidadePessoalRel.jrxml=UTF-8
+encoding//resource/report/EnfermidadeRel.jrxml=UTF-8
+encoding//resource/report/EntradaRel.jrxml=UTF-8
+encoding//resource/report/GerenteRel.jrxml=UTF-8
 encoding//resource/report/MedicoRel.jrxml=UTF-8
+encoding//resource/report/PacienteRel.jrxml=UTF-8

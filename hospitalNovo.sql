@@ -13,7 +13,7 @@ senha varchar(50) ,
 statusUsuario varchar(200),
 numeroRegistro int,
 especialidade varchar(50),
-constraint PK_Medico primary key(idMedico));
+constraint PK_Medico primary key(id));
 
 create table Enfermeiro (
 id int not null AUTO_INCREMENT,
@@ -27,7 +27,7 @@ login varchar(50) ,
 senha varchar(50) ,
 statusUsuario varchar(200),
 numeroRegistro varchar(50),
-constraint PK_Enfermeiro primary key(idEnfermeiro));
+constraint PK_Enfermeiro primary key(id));
 
 create table Gerente (
 id int not null AUTO_INCREMENT,
@@ -41,7 +41,7 @@ login varchar(50) ,
 senha varchar(50) ,
 statusUsuario varchar(200),
 cargo varchar(50),
-constraint PK_Gerente primary key(idGerente));
+constraint PK_Gerente primary key(id));
 
 create table Paciente (
 id int not null AUTO_INCREMENT,
@@ -53,20 +53,20 @@ sexo varchar(50) ,
 statusPessoa varchar(200) ,
 doenca varchar (300) ,
 historico varchar (300),
-constraint PK_Paciente primary key(idPaciente));
+constraint PK_Paciente primary key(id));
 
 create table EnfermidadePessoal (
 id int not null AUTO_INCREMENT,
 comentario varchar(100) ,
 statusEnfermeiro varchar(100) ,
-constraint PK_EnfermidadePessoal primary key (idEnfermidadePessoal));
+constraint PK_EnfermidadePessoal primary key (id));
 
 create table Enfermidade(
 id int not null AUTO_INCREMENT,
 nome varchar(50) ,
 tipo varchar(50) ,
 descricao varchar(150) ,
-constraint PK_Enfermidade primary key (idEnfermidade));
+constraint PK_Enfermidade primary key (id));
 
 create table Entrada (
 id int not null AUTO_INCREMENT,
@@ -74,7 +74,7 @@ dataEntrada date ,
 dataSaida date ,
 statusEntrada varchar(50) ,
 situacaoPaciente varchar(300),
-constraint PK_Entrada primary key (idEntrada));
+constraint PK_Entrada primary key (id));
 
 create table Atendimento (
 id int not null AUTO_INCREMENT,
@@ -84,5 +84,5 @@ altura float ,
 peso float ,
 dtData date ,
 doenca varchar(300) ,
-constraint PK_Atendimento primary key (idAtendimento));
+constraint PK_Atendimento primary key (id));
 
