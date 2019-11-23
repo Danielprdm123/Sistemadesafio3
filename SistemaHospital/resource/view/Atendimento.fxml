@@ -120,5 +120,13 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
+      <Button fx:id="btnRel" layoutX="527.0" layoutY="411.0" mnemonicParsing="false" onAction="#relatorio" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #00BFFF;" text="Relatorio" textFill="#fafcffba">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

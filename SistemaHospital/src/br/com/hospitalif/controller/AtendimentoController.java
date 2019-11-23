@@ -74,6 +74,8 @@ public class AtendimentoController extends Main implements Initializable {
 	private Button atualizar;
 	@FXML
 	private Button btnUpdate;
+	@FXML
+	private Button btnRel;
 
 	@FXML
 	void cadastrarAtendimento(ActionEvent event) {
@@ -204,5 +206,9 @@ public class AtendimentoController extends Main implements Initializable {
 		}
 
 	}
+	@FXML
+    void relatorio(ActionEvent event) {
+
+    }
 
 }
