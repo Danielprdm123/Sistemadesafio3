@@ -58,8 +58,9 @@ constraint PK_Paciente primary key(id));
 create table EnfermidadePessoal (
 id int not null AUTO_INCREMENT,
 comentario varchar(100) ,
-statusEnfermeiro varchar(100) ,
+statusDeEnfermidade varchar(100) ,
 constraint PK_EnfermidadePessoal primary key (id));
+
 
 create table Enfermidade(
 id int not null AUTO_INCREMENT,
@@ -85,4 +86,4 @@ peso float ,
 dtData date ,
 doenca varchar(300) ,
 constraint PK_Atendimento primary key (id));
-
+select* from enfermidadePessoal;
