@@ -1,7 +1,13 @@
 package br.com.hospitalif.util;
 
-public class Rotas {
+import br.com.hospitalif.report.PrintReport;
+
+public class Rotas extends PrintReport{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static String ADMINISTRADOR = "/view/Administrador.fxml";
 	public static String ATENDENTE = "/view/Atendente.fxml";
 	public static String ATENDIMENTO = "/view/Atendimento.fxml";
