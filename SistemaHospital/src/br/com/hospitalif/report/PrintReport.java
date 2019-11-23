@@ -21,7 +21,7 @@ public class PrintReport extends JFrame {
 		JasperReport jasperReport = JasperCompileManager.compileReport(reportSrcFile);
 		// Colocar os parâmetros em uma Collection caso precise
 		HashMap<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("peso",new String("10"));
+		parameters.put("","");
 		ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
 		list.add(parameters);
 		JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(list);
