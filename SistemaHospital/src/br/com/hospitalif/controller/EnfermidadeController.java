@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import app.Main;
 import br.com.hospitalif.DAO.EnfermidadeDAO;
 import br.com.hospitalif.model.Enfermidade;
+import br.com.hospitalif.report.PrintReport;
 import br.com.hospitalif.util.Rotas;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,6 +22,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import net.sf.jasperreports.engine.JRException;
 
 public class EnfermidadeController extends Main implements Initializable {
 
@@ -55,7 +57,8 @@ public class EnfermidadeController extends Main implements Initializable {
 	private Button Atualizar;
 	@FXML
     private Button btnUpdate;
-
+	@FXML
+	private Button btnRel;
 	@FXML
 	void Enviarenfermidade(ActionEvent event) {
 		String TipoEnfermidade = txtTipo.getText();
@@ -151,6 +154,22 @@ public class EnfermidadeController extends Main implements Initializable {
 			e1.printStackTrace();
 		}
 
+    }
+	@FXML
+    void relatorio(ActionEvent event) {
+		String relatorio = "EnfermidadeRel.jrxml";
+		try {
+			new PrintReport().showReport(relatorio);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JRException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
 }

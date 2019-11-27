@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import app.Main;
 import br.com.hospitalif.DAO.PacienteDAO;
 import br.com.hospitalif.model.Paciente;
+import br.com.hospitalif.report.PrintReport;
 import br.com.hospitalif.util.Rotas;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,6 +24,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
+import net.sf.jasperreports.engine.JRException;
 
 public class PacienteController extends Main implements Initializable {
 
@@ -93,6 +95,8 @@ public class PacienteController extends Main implements Initializable {
 	private Button atualizar;
 	@FXML
 	private Button btnUpdate;
+	@FXML
+	private Button btnRel;
 
 	@FXML
 	void Voltardash(ActionEvent event) throws IOException {
@@ -220,5 +224,21 @@ public class PacienteController extends Main implements Initializable {
 		}
 
 	}
+	@FXML
+    void relatorio(ActionEvent event) {
+		String relatorio = "PacienteRel.jrxml";
+		try {
+			new PrintReport().showReport(relatorio);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JRException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
 
 }

@@ -30,7 +30,7 @@
             </Text>
          </children>
       </TextFlow>
-      <Button fx:id="btnCadastrar" layoutX="609.0" layoutY="387.0" mnemonicParsing="false" onAction="#cadastrarPaciente" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Cadastrar" textFill="#f8f8ffba">
+      <Button fx:id="btnCadastrar" layoutX="631.0" layoutY="364.0" mnemonicParsing="false" onAction="#cadastrarPaciente" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Cadastrar" textFill="#f8f8ffba">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -61,7 +61,7 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="btnVoltar" layoutX="166.0" layoutY="387.0" mnemonicParsing="false" onAction="#Voltardash" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Voltar" textFill="#f8f8ffba">
+      <Button fx:id="btnVoltar" layoutX="156.0" layoutY="364.0" mnemonicParsing="false" onAction="#Voltardash" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Voltar" textFill="#f8f8ffba">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -137,13 +137,21 @@
       </TableView>
       <Button fx:id="remover" layoutX="836.0" layoutY="406.0" mnemonicParsing="false" onAction="#excluir" text="Remover" />
       <Button fx:id="atualizar" layoutX="772.0" layoutY="407.0" mnemonicParsing="false" onAction="#editar" text="Atualizar" />
-      <Button fx:id="btnUpdate" layoutX="480.0" layoutY="387.0" mnemonicParsing="false" onAction="#atualizarPaciente" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Update" textFill="#f8f8ffba">
+      <Button fx:id="btnUpdate" layoutX="503.0" layoutY="364.0" mnemonicParsing="false" onAction="#atualizarPaciente" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #228B22;" text="Update" textFill="#f8f8ffba">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+      </Button>
+      <Button fx:id="btnRel" layoutX="377.0" layoutY="404.0" mnemonicParsing="false" onAction="#relatorio" prefHeight="14.0" prefWidth="99.0" style="-fx-background-color: #00BFFF;" text="Relatorio" textFill="#fafcffba">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
       </Button>
    </children>
 </Pane>
